@@ -7,13 +7,7 @@
   display: flex;
   flex-wrap: wrap;
   color: $color-d-6;
-
-  @media only screen and (max-width: 991px) {
-    .breadcrumbs {
-      display: none;
-    }
-  }
-
+  display: none;
   &__item {
     list-style: none;
     margin: 0 0 5px 0;

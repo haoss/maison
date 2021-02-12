@@ -1,4 +1,17 @@
 /* header */
 .header {
-  background-color: $color-gray;
+  background-color: $primary-color;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  &__wrapper {
+    height: 88px;
+    display: flex;
+    align-items: center;
+  }
+  &-holder {
+    height: 88px;
+  }
 }
