@@ -6,24 +6,19 @@ $grid-gutter-width: 30px;
 
 $grid-breakpoints: (
   xs: 0,
-  sm: 576px,
+  sm: 600px,
   md: 768px,
   lg: 992px,
-  xl: 1200px
+  xl: 1280px,
+  xxl: 1600px
 );
 
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1140px
-);
-
-$theme-colors: (
-  "primary": green,
-  "danger": pink,
-  "custom-color": yellow,
-  "custom-color2": lightblue
+  xl: 1200px,
+  xxl: 1560px
 );
 
 @import "node_modules/bootstrap/scss/functions";

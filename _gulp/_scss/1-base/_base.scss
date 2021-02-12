@@ -19,11 +19,22 @@ html, body {
 body {
   // background-color: alpha(var(--color-primary), 1);
   background: $color-white;
-  font-size: rem(16px);
-  font-family: $primary-font;
+  font-size: 20px;
+  font-family: $font-oswald;
   color: $primary-color;
+  font-weight: 200;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
+  &.is-fixed {
+    overflow: hidden;
+    touch-action: none;
+    -ms-touch-action: none;
+  }
+}
+
+.base {
+  overflow: hidden;
+  position: relative;
 }
 
 //  Typography
@@ -34,15 +45,35 @@ body {
   margin: 0 0 15px 0;
 }
 .h1, h1 {
-  font-size: rem(21px);
+  font-size: 30px;
   line-height: 1.05;
   letter-spacing: -1px;
   margin-bottom: 25px;
+  font-weight: 200;
+  @include media-breakpoint-up(sm) {
+    font-size: 35px;
+  }
+  @include media-breakpoint-up(md) {
+    font-size: 40px;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: 50px;
+  }
+  @include media-breakpoint-up(xxl) {
+    font-size: 60px;
+  }
 }
 .h2, h2 {
-  font-size: rem(18px);
+  font-size: 30px;
   line-height: 1.14;
   margin-bottom: 20px;
+  font-weight: 300;
+  @include media-breakpoint-up(sm) {
+    font-size: 35px;
+  }
+  @include media-breakpoint-up(xxl) {
+    font-size: 40px;
+  }
 }
 .h3, h3 {
   font-size: rem(16px);
@@ -65,8 +96,8 @@ small, .small {
 }
 
 p {
-  line-height: 22px;
-  margin: 0 0 20px 0;
+  line-height: 1.5;
+  margin: 0 0 30px 0;
 }
 
 em, i, .em, .i {
@@ -74,7 +105,7 @@ em, i, .em, .i {
 }
 
 strong, b, .strong, .b {
-  font-weight: bold;
+  font-weight: 400;
 }
 
 hr {
@@ -114,7 +145,7 @@ img, .img {
   margin: 0 auto;
   // width: 1280px;
   width: 100%;
-  min-width: 320px;
+  min-width: 375px;
   padding: 0 15px;
 }
 
