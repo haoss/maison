@@ -29,7 +29,7 @@
       background: {
         image: $bg-dot;
         position: 0 0;
-        repear: repeat;
+        repeat: repeat;
       };
     }
     img {
@@ -41,19 +41,25 @@
   @include media-breakpoint-up(md) {
     padding-bottom: 100px;
     &__img {
-      height: 220px;
+      img {
+        height: 220px;
+      }
     }
   }
   @include media-breakpoint-up(lg) {
     &__img {
-      height: 354px;
+      img {
+        height: 354px;
+      }
     }
   }
   @include media-breakpoint-up(xl) {
     padding-bottom: 120px;
     padding-top: 100px;
     &__img {
-      height: 498px;
+      img {
+        height: 498px;
+      }
     }
   }
 }
@@ -116,13 +122,276 @@
   h1, .h1 {
     color: $color-white;
   }
+  @include media-breakpoint-up(lg) {
+    &__wrapper {
+      height: 250px;
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    &__wrapper {
+      height: 300px;
+    }
+  }
+  @include media-breakpoint-up(xxl) {
+    &__wrapper {
+      height: 400px;
+    }
+  }
 }
 
 .form {
   background: $primary-color;
   color: $color-white;
-  padding: 30px 24px;
+  padding: 24px 30px 30px 30px;
+  max-width: 1010px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
   &__legend {
     color: $color-white;
+  }
+  .btn {
+    max-width: 330px;
+    margin: 0 auto;
+  }
+  .field-checkbox {
+    max-width: 310px;
+    margin-bottom: 27px;
+  }
+  @include media-breakpoint-up(md) {
+    margin-bottom: -90px;
+    padding: 24px 40px 34px 40px;
+    &__wrapper {
+      display: flex;
+      &>* {
+        &:first-child {
+          width: 240px;
+          flex-shrink: 0;
+          margin-right: 20px;
+        }
+        &:last-child {
+          flex-grow: 1;
+        }
+      }
+    }
+    textarea {
+      max-height: 160px;
+    }
+    &__bottom {
+      display: flex;
+      align-items: center;
+      margin-top: -5px;
+      &>* {
+        &:first-child {
+          flex-grow: 1;
+        }
+        &:last-child {
+          flex-shrink: 0;
+        }
+      }
+      .form-group {
+        margin-bottom: 0;
+      }
+    }
+    .field-checkbox {
+      margin-bottom: 0;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 38px 50px 34px 50px;
+    &__wrapper {
+      display: flex;
+      &>* {
+        &:first-child {
+          width: 310px;
+        }
+      }
+    }
+    .field-checkbox {
+      max-width: inherit;
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    margin-bottom: -217px;
+  }
+  @include media-breakpoint-up(xxl) {
+    margin-bottom: -290px;
+  }
+}
+
+.insta {
+  margin-bottom: 70px;
+  position: relative;
+  overflow: hidden;
+  &-carousel {
+    background: $primary-color;
+    .slick-slide {
+      width: 173px;
+      img {
+        width: 100%;
+        height: 173px;
+        object-fit: cover;
+        display: block;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  &__block {
+    width: 100%;
+    position: absolute;
+    height: 0;
+    &-block {
+      position: absolute;
+      width: 173px;
+      height: 173px;
+      background: $primary-color;
+      left: 50%;
+      transform: translateX(-100%);
+      z-index: 5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $color-white;
+      text-align: center;
+      font-size: 12px;
+      text-transform: uppercase;
+      i {
+        font-size: 50px;
+        margin: 0 auto 8px;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: $color-white;
+      }
+      &>div {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  &__btns {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    button {
+      height: 50px;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      position: absolute;
+      left: 50%;
+      margin-top: -50px;
+      cursor: pointer;
+      &::before {
+        font-family: $font-icomoon;
+      }
+    }
+    &-left {
+      transform: translateX(0%);
+      background: $primary-color;
+      color: $color-white;
+      &::before {
+        content: '\e901';
+      }
+    }
+    &-right {
+      color: $primary-color;
+      background: $color-white;
+      transform: translateX(-100%);
+      &::before {
+        content: '\e902';
+      }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    &-carousel {
+      .slick-slide {
+        width: 200px;
+        img {
+          width: 200px;
+          height: 200px;
+        }
+      }
+    }
+    &__block {
+      &-block {
+        font-size: 14px;
+        width: 200px;
+        height: 200px;
+        i {
+          font-size: 75px;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 100px;
+    &-carousel {
+      .slick-slide {
+        width: 237px;
+        img {
+          width: 237px;
+          height: 237px;
+        }
+      }
+    }
+    &__block {
+      &-block {
+        font-size: 20px;
+        width: 237px;
+        height: 237px;
+        i {
+          margin-bottom: 11px;
+        }
+        &>div {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 120px;
+    &-carousel {
+      .slick-slide {
+        width: 320px;
+        img {
+          width: 320px;
+          height: 320px;
+        }
+      }
+    }
+    &__block {
+      &-block {
+        font-size: 20px;
+        width: 320px;
+        height: 320px;
+        i {
+          font-size: 125px;
+          margin-bottom: 22px;
+        }
+      }
+    }
+    &__btns {
+      button {
+        transition: all 0.35s;
+      }
+      &-left {
+        &:hover {
+          color: $primary-color;
+          background: $color-white;
+        }
+      }
+      &-right {
+        &:hover {
+          background: $primary-color;
+          color: $color-white;
+        }
+      }
+    }
   }
 }

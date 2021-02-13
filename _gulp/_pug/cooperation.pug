@@ -7,7 +7,7 @@ html(lang="ru")
 
   include ./_include/_head
 
-  body
+  body.is-fixed
     .base
       // Preloader
       include ./_include/_preloader
@@ -30,111 +30,113 @@ html(lang="ru")
       .content
         .container
 
-          // Content document
-          .content__document
-            p
-              strong Приглашаем к сотрудничеству региональных корпоративных клиентов!
-            p Мы с радостью сообщаем Вам, что ведем активное расширение географии продаж!
-            p В связи с этим, приглашаем к сотрудничеству региональных дилеров, заинтересованных в развитии продаж в области интерьерного декора и готовых работать в формате дистрибьюции.
-            p
-              strong Своим партнерам в регионах мы готовы предложить:
-            ul
-              li самый полный ассортимент мебели м аксессуаров от ведущих брендов США и Европы;
-              li лучшие цены на продукцию;
-              li кратчайшие сроки поставки заказов;
-              li всестороннюю маркетинговую поддержку;
-              li отлаженные логистические схемы и четкое соблюдение сроков поставок;
-              li прогрессивную систему скидок и бонусов;
-              li оперативность в предоставлении всей необходимой информации по продукции;
-              li защиту и сопровождение проектов.
-            p
-              strong Мы можем разместить индивидуальный заказ на фабриках, с которыми сотрудничаем, а также изготовить предметы мебели специально под ваши проекты!
-          // /end Content document
+          .row.justify-content-center
+            .col-xl-10
+              // Content document
+              .content__document
+                p
+                  strong Приглашаем к сотрудничеству региональных корпоративных клиентов!
+                p Мы с радостью сообщаем Вам, что ведем активное расширение географии продаж!
+                p В связи с этим, приглашаем к сотрудничеству региональных дилеров, заинтересованных в развитии продаж в области интерьерного декора и готовых работать в формате дистрибьюции.
+                p
+                  strong Своим партнерам в регионах мы готовы предложить:
+                ul
+                  li самый полный ассортимент мебели м аксессуаров от ведущих брендов США и Европы;
+                  li лучшие цены на продукцию;
+                  li кратчайшие сроки поставки заказов;
+                  li всестороннюю маркетинговую поддержку;
+                  li отлаженные логистические схемы и четкое соблюдение сроков поставок;
+                  li прогрессивную систему скидок и бонусов;
+                  li оперативность в предоставлении всей необходимой информации по продукции;
+                  li защиту и сопровождение проектов.
+                p
+                  strong Мы можем разместить индивидуальный заказ на фабриках, с которыми сотрудничаем, а также изготовить предметы мебели специально под ваши проекты!
+              // /end Content document
 
-          // Form
-          .form
-            form(action="#!" autocomplete="off") 
-              legend.form__legend Для обсуждения всех условий сотрудничества заполните форму обратной связи:
-              .form__wrapper
-                fieldset
-                  .form-group
-                    +field-text({
-                      title: '',
-                      hasJs: false,
-                      isTextarea: false,
-                      hasError: false,
-                      helpText: '',
-                      mods: 'dark',
-                      val: '',
-                      attrs: {
-                        name: 'name',
-                        placeholder: 'Ваше имя',
-                        required: true
-                      }
-                    })
-                  .form-group
-                    +field-text({
-                      title: '',
-                      hasJs: false,
-                      isTextarea: false,
-                      hasError: false,
-                      helpText: '',
-                      mods: 'dark',
-                      val: '',
-                      attrs: {
-                        name: 'phone',
-                        placeholder: 'Телефон',
-                        required: true,
-                        class: 'j-phone-mask'
-                      }
-                    })
-                  .form-group
-                    +field-text({
-                      title: '',
-                      hasJs: false,
-                      isTextarea: false,
-                      hasError: false,
-                      helpText: '',
-                      mods: 'dark',
-                      val: '',
-                      attrs: {
-                        name: 'email',
-                        placeholder: 'E-mail',
-                        required: true
-                      }
-                    })
-                fieldset
-                  .form-group
-                    +field-text({
-                      title: '',
-                      hasJs: false,
-                      isTextarea: true,
-                      hasError: false,
-                      helpText: '',
-                      mods: 'dark',
-                      val: '',
-                      attrs: {
-                        name: 'message',
-                        placeholder: 'Ваше сообщение',
-                        rows: 7
-                      }
-                    })
-              .form__bottom
-                .div1
-                  .form-group
-                    +field-checkbox({
-                      title: 'Согласен на обработку <a href="#!" target="_blank">персональных данных</a> и с <a href="#!" target="_blank">политикой конфиденциальных данных</a>',
-                      isLink: false,
-                      mods: 'dark',
-                      attrs: {
-                        name: 'checkbox',
-                        checked: true,
-                      }
-                    })
-                .div2
-                  button(type="submit").btn.--white.--block
-                    span Отправить
-          // /end Form
+              // Form
+              .form
+                form(action="#!" autocomplete="off") 
+                  legend.form__legend Для обсуждения всех условий сотрудничества заполните форму обратной связи:
+                  .form__wrapper
+                    fieldset
+                      .form-group
+                        +field-text({
+                          title: '',
+                          hasJs: false,
+                          isTextarea: false,
+                          hasError: false,
+                          helpText: '',
+                          mods: 'dark',
+                          val: '',
+                          attrs: {
+                            name: 'name',
+                            placeholder: 'Ваше имя',
+                            required: true
+                          }
+                        })
+                      .form-group
+                        +field-text({
+                          title: '',
+                          hasJs: false,
+                          isTextarea: false,
+                          hasError: false,
+                          helpText: '',
+                          mods: 'dark',
+                          val: '',
+                          attrs: {
+                            name: 'phone',
+                            placeholder: 'Телефон',
+                            required: true,
+                            class: 'j-phone-mask'
+                          }
+                        })
+                      .form-group
+                        +field-text({
+                          title: '',
+                          hasJs: false,
+                          isTextarea: false,
+                          hasError: false,
+                          helpText: '',
+                          mods: 'dark',
+                          val: '',
+                          attrs: {
+                            name: 'email',
+                            placeholder: 'E-mail',
+                            required: true
+                          }
+                        })
+                    fieldset
+                      .form-group
+                        +field-text({
+                          title: '',
+                          hasJs: false,
+                          isTextarea: true,
+                          hasError: false,
+                          helpText: '',
+                          mods: 'dark',
+                          val: '',
+                          attrs: {
+                            name: 'message',
+                            placeholder: 'Ваше сообщение',
+                            rows: 7
+                          }
+                        })
+                  .form__bottom
+                    .div1
+                      .form-group
+                        +field-checkbox({
+                          title: 'Согласен на обработку <a href="#!" target="_blank">персональных данных</a> и с <a href="#!" target="_blank">политикой конфиденциальных данных</a>',
+                          isLink: false,
+                          mods: 'dark',
+                          attrs: {
+                            name: 'checkbox',
+                            checked: true,
+                          }
+                        })
+                    .div2
+                      button(type="submit").btn.--white.--block
+                        span Отправить
+              // /end Form
 
         // Content img
         .content__img

@@ -176,8 +176,32 @@ legend {
     &:hover {
       border-color: $primary-color;
       background-color: $color-white;
+      &.error {
+        border-color: $color-s-1;
+      }
       .--dark & {
         border-color: rgba($color-white,.3);
+        &.error {
+          border-color: $color-s-1;
+        }
+      }
+    }
+    &.error {
+      border-color: $color-s-1;
+      background-color: $color-white;
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.7609 11.5834L9.0275 1.65289C8.70869 1.1007 8.13767 0.770996 7.49999 0.770996C6.86235 0.770996 6.29129 1.1007 5.97249 1.65289L0.239128 11.5834C-0.0797093 12.1356 -0.0797093 12.795 0.239128 13.3472C0.557965 13.8994 1.12896 14.2291 1.76663 14.2291H13.2334C13.871 14.2291 14.442 13.8994 14.7609 13.3472C15.0797 12.795 15.0797 12.1356 14.7609 11.5834ZM13.9998 12.9078C13.8398 13.1849 13.5533 13.3503 13.2334 13.3503H1.76663C1.44665 13.3503 1.16013 13.1849 1.00017 12.9078C0.840211 12.6307 0.840211 12.2999 1.00017 12.0228L6.73359 2.09231C6.89355 1.81522 7.18007 1.64981 7.50002 1.64981C7.81994 1.64981 8.10649 1.81522 8.26646 2.09231L13.9998 12.0228C14.1598 12.2999 14.1598 12.6307 13.9998 12.9078Z' fill='%23EB5757'/%3E%3Cpath d='M7.93933 5.15649H7.06055V9.5505H7.93933V5.15649Z' fill='%23EB5757'/%3E%3Cpath d='M7.50007 10.4294C7.17701 10.4294 6.91418 10.6923 6.91418 11.0153C6.91418 11.3384 7.17701 11.6012 7.50007 11.6012C7.82309 11.6012 8.08595 11.3384 8.08595 11.0153C8.08595 10.6923 7.82312 10.4294 7.50007 10.4294Z' fill='%23EB5757'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      padding-right: 45px;
+      &+label {
+        color: $color-s-1;
+        font-size: rem(12px);
+        margin: 0;
+        padding-left: 0px;
+        font-weight: 300;
+        position: absolute;
+      }
+      .--dark & {
+        background-color: transparent;
       }
     }
     &.css-input {
@@ -274,8 +298,8 @@ legend {
 textarea.field-text__input {
   height: auto;
   resize: vertical;
-  padding: 9px 10px;
   background-position: calc(100% - 10px) 12px;
+  padding-top: 11px;
 }
 
 .field-checkbox, .field-radio {
@@ -284,7 +308,7 @@ textarea.field-text__input {
   margin: 0;
   display: flex;
   text-decoration: none;
-  min-height: 24px;
+  min-height: 21px;
   $this: &;
   &__span-input {
     position: absolute;
@@ -314,7 +338,7 @@ textarea.field-text__input {
     font-size: 12px;
     color: $primary-color;
     display: block;
-    padding: 0;
+    padding: 2px 0 0 0;
     cursor: pointer;
     font-weight: 300;
     a {

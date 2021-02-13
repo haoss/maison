@@ -18,5 +18,267 @@ header.header
       .logo
         a(href="#!") 
           img(src="./images/logo.svg", width="120", height="31", alt="")
+      .div2 2
+      .div3 3
+      .header__links
+        button(type="button").btn-search
+        a(href="#!").btn-favourite
+        button(type="button" data-id="cart").btn-cart
+        button(type="button" data-id="enter").btn-user
+        button(type="button" data-id="menu").btn-burger
 
 .header-holder
+
+#menu.navigation.d-none
+  button(type="button").btn-close
+  .navigation__wrapper
+    .navigation__wrapper-body
+      .navigation__body
+        nav(role="navigation").menu
+          ul
+            li: a(href="#!") Доставка 
+            li: a(href="#!") Оплата 
+            li: a(href="#!") Как заказать 
+            li: a(href="#!") О компании
+            li: a(href="#!") Контакты 
+            li: a(href="#!") Акции 
+            li: a(href="#!") Новости 
+            li: a(href="#!") Статьи 
+            li: a(href="#!") Отзывы 
+            li: a(href="#!") Партнерам
+            li: a(href="#!") Проекты
+        .navigation__about MAISON - это новый проект, который собрал в себе лучшие бренды со всего мира и многолетний опыт работы в сфере дизайна интерьера.
+      .navigation__contacts
+        .div1
+          div
+            a(href="tel:") 8 (495) 
+              b 532-87-72
+          div
+            a(href="mailto:") shop@maison-home.ru
+        .div2
+          .navigation__social
+            a(href="#!" target="_blank") 
+              i.icon-social-instagram
+            a(href="#!" target="_blank") 
+              i.icon-social-facebook
+
+#enter.navigation.d-none
+  button(type="button").btn-close
+  .navigation__wrapper
+    .navigation__wrapper-body
+      .navigation__body
+        .navigation__title Вход на сайт
+        form(action="" autocomplete="off") 
+          fieldset 
+            .form-group
+              +field-text({
+                title: '',
+                hasJs: false,
+                isTextarea: false,
+                hasError: false,
+                helpText: '',
+                mods: '',
+                val: '',
+                attrs: {
+                  name: 'login',
+                  placeholder: 'Логин',
+                  required: true
+                }
+              })
+            .form-group
+              +field-text({
+                title: '',
+                hasJs: false,
+                isTextarea: false,
+                hasError: false,
+                helpText: '',
+                mods: '',
+                val: '',
+                attrs: {
+                  name: 'password',
+                  placeholder: 'Пароль',
+                  required: true
+                }
+              })
+          .form-group.--mb10
+            button(type="submit").btn.--block Войти на сайт
+          .text-center
+            a(href="#!").--fs14 Забыли пароль?
+            hr
+            p.--mb0.--fs14 Еще не зарегистрированные на сайте?
+            a(href="#!").link.--fs14.text-uppercase.--no-udernline
+              b Зарегистрироваться
+      .navigation__contacts
+        .div1
+          div
+            a(href="tel:") 8 (495) 
+              b 532-87-72
+          div
+            a(href="mailto:") shop@maison-home.ru
+        .div2
+          .navigation__social
+            a(href="#!" target="_blank") 
+              i.icon-social-instagram
+            a(href="#!" target="_blank") 
+              i.icon-social-facebook
+
+#enter.navigation.d-none
+  button(type="button").btn-close
+  .navigation__wrapper
+    .navigation__wrapper-body
+      .navigation__body
+        .navigation__title Регистрация на сайте
+        form(action="" autocomplete="off") 
+          fieldset 
+            .form-group
+              +field-text({
+                title: '',
+                hasJs: false,
+                isTextarea: false,
+                hasError: false,
+                helpText: '',
+                mods: '',
+                val: '',
+                attrs: {
+                  name: 'email',
+                  placeholder: 'Email',
+                  required: true
+                }
+              })
+            .form-group
+              +field-text({
+                title: '',
+                hasJs: false,
+                isTextarea: false,
+                hasError: false,
+                helpText: '',
+                mods: '',
+                val: '',
+                attrs: {
+                  name: 'password',
+                  placeholder: 'Пароль',
+                  required: true
+                }
+              })
+            .form-group
+              +field-text({
+                title: '',
+                hasJs: false,
+                isTextarea: false,
+                hasError: false,
+                helpText: '',
+                mods: '',
+                val: '',
+                attrs: {
+                  name: 'password',
+                  placeholder: 'Повторите пароль',
+                  required: true
+                }
+              })
+          .form-group
+            button(type="submit").btn.--block зарегистрироваться
+          .text-center
+            p.--mb0.--fs14 Уже зарегистрированные на сайте?
+            a(href="#!").link.--fs14.text-uppercase.--no-udernline
+              b Войти на сайт
+      .navigation__contacts
+        .div1
+          div
+            a(href="tel:") 8 (495) 
+              b 532-87-72
+          div
+            a(href="mailto:") shop@maison-home.ru
+        .div2
+          .navigation__social
+            a(href="#!" target="_blank") 
+              i.icon-social-instagram
+            a(href="#!" target="_blank") 
+              i.icon-social-facebook
+
+#recovery.navigation.d-none
+  button(type="button").btn-close
+  .navigation__wrapper
+    .navigation__wrapper-body
+      .navigation__body
+        .navigation__title Восстановление
+        form(action="" autocomplete="off") 
+          fieldset 
+            .form-group
+              +field-text({
+                title: '',
+                hasJs: false,
+                isTextarea: false,
+                hasError: false,
+                helpText: '',
+                mods: '',
+                val: '',
+                attrs: {
+                  name: 'email',
+                  placeholder: 'Email',
+                  required: true
+                }
+              })
+          .form-group
+            button(type="submit").btn.--block Войти на сайт
+          .text-center
+            p.--mb0.--fs14 Вспомнили доступы?
+            a(href="#!").link.--fs14.text-uppercase.--no-udernline
+              b Войти на сайт
+      .navigation__contacts
+        .div1
+          div
+            a(href="tel:") 8 (495) 
+              b 532-87-72
+          div
+            a(href="mailto:") shop@maison-home.ru
+        .div2
+          .navigation__social
+            a(href="#!" target="_blank") 
+              i.icon-social-instagram
+            a(href="#!" target="_blank") 
+              i.icon-social-facebook
+
+#cart.navigation
+  button(type="button").btn-close
+  .navigation__wrapper
+    .navigation__wrapper-body
+      .navigation__body
+        .navigation__title Ваша корзина
+        form(action="" autocomplete="off") 
+          fieldset 
+            .cart-row
+              .cart-row__title Кашпо круглое (черное с бронзой) 
+              .cart-row__wrapper
+                .div1
+                  button(type="button").cart-row__close
+                .div2
+                  a(href="#!") 
+                    img(src="./tmp/cart-small-img.png", alt="").cart-row__img
+                .div3
+                  .cart-row__price 56 778 
+                    i.icon-rouble
+            .cart-row
+              .cart-row__title Кашпо круглое (черное с бронзой) Кашпо круглое (черное с бронзой) 
+              .cart-row__wrapper
+                .div1
+                  button(type="button").cart-row__close
+                .div2
+                  a(href="#!") 
+                    img(src="./tmp/cart-small-img.png", alt="").cart-row__img
+                .div3
+                  .cart-row__price 56 778 
+                    i.icon-rouble
+            .cart-row
+              .cart-row__title Кашпо круглое (черное с бронзой) 
+              .cart-row__wrapper
+                .div1
+                  button(type="button").cart-row__close
+                .div2
+                  a(href="#!") 
+                    img(src="./tmp/cart-small-img.png", alt="").cart-row__img
+                .div3
+                  .cart-row__price 56 778 
+                    i.icon-rouble
+            .clear30
+          .form-group
+            button(type="submit").btn.--block Оформить заказ

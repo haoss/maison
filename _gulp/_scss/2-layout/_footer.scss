@@ -1,4 +1,358 @@
 /* footer */
 .footer {
-  background-color: $color-gray;
+  &__bottom {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 14px;
+    padding: 18px 0;
+    font-weight: 300;
+    color: rgba($primary-color,.5);
+    a {
+      color: rgba($primary-color,.5);
+      text-decoration: none;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+    &>div {
+      &.div2 {
+        padding-top: 5px;
+      }
+    }
+    &::before{ 
+      content: '';
+      position: absolute;
+      left: -200px;
+      right: -200px;
+      top: 0;
+      height: 1px;
+      background: $primary-color;
+      opacity: 0.1;
+    }
+  }
+  &__logo {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 300;
+    img {
+      margin-bottom: 21px;
+      display: block;
+    }
+    span {
+      display: block;
+      max-width: 255px;
+      letter-spacing: 0.05em;
+    }
+  }
+  &__contacts {
+    font-size: 16px;
+    font-weight: 300;
+    display: flex;
+    margin-bottom: 30px;
+    a {
+      text-decoration: none;
+      &[href*="tel:"] {
+        font-size: 20px;
+      }
+      b {
+        font-weight: 500;
+      }
+    }
+    &>div {
+      flex-shrink: 0;
+      &.div2 {
+        position: relative;
+        margin-left: 16px;
+        padding-left: 16px;
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 4px;
+          width: 1px;
+          height: 25px;
+          background: $color-black;
+          opacity: 0.2;
+        }
+      }
+    }
+  }
+  &__social {
+    font-size: 0;
+    padding-top: 4px;
+    i {
+      font-size: 25px;
+      &.icon-social-facebook {
+        font-size: 24px;
+      }
+    }
+    a {
+      vertical-align: middle;
+      display: inline-block;
+      &+a {
+        margin-left: 13px;
+      }
+    }
+  }
+  &__title {
+    position: relative;
+    padding-right: 25px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 0.2em;
+    &::before {
+      content: '\e90e';
+      font-family: $font-icomoon;
+      top: 3px;
+      font-size: 17px;
+      position: absolute;
+      right: 0;
+      transition: all 0.35s;
+      width: 17px;
+      height: 17px;
+      line-height: 1;
+    }
+    &.is-active {
+      &::before {
+        content: '\e910';
+      }
+    }
+  }
+  &__nav {
+    font-size: 18px;
+    display: none;
+    font-weight: 300;
+    ul {
+      margin: 15px 0 0 0;
+      padding-left: 13px;
+      white-space: nowrap;
+      li {
+        list-style: none;
+        margin: 0 0 10px 0;
+        padding: 0;
+        &::before {
+          display: none;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &>a, &>span {
+          text-decoration: none;
+        }
+        &.active {
+          &>a, &>span {
+            text-decoration: underline;
+          }
+        }
+        &>a {
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  &__navigation {
+    &>div {
+      padding-bottom: 21px;
+      &.div2 {
+        padding-top: 16px;
+        border-top: 1px solid rgba($color-black,.1);
+      }
+    }
+  }
+  &__center {
+    &>div {
+      &.div2 {
+        display: none;
+      }
+    }
+    address {
+      font-size: 16px;
+      padding-left: 70px;
+      position: relative;
+      font-weight: 300;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 2px;
+        background: rgba($color-black,.05);
+        left: 0;
+        top: 12px;
+      }
+    }
+  }
+  @include media-breakpoint-up(sm) {
+    &__wrapper {
+      display: flex;
+      &>div {
+        &.div1 {
+          flex-grow: 1;
+        }
+        &.div2 {
+          flex-shrink: 0;
+          width: 240px;
+          margin-left: 15px;
+        }
+      }
+    }
+    &__title {
+      font-size: 13px;
+      &::before {
+        top: 1px;
+      }
+    }
+    &__nav {
+      font-size: 16px;
+    }
+    &__bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      &>div {
+        &.div2 {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    &__wrapper {
+      justify-content: space-between;
+      &>div {
+        &.div1 {
+          flex-grow: 1;
+        }
+        &.div2 {
+          width: 330px;
+        }
+      }
+    }
+    &__title {
+      font-size: 16px;
+      &::before {
+        top: 2px;
+      }
+    }
+    &__contacts {
+      margin-bottom: 35px;
+    }
+    &__bottom {
+      &::before {
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    &__nav {
+      display: block !important;
+    }
+    &__title {
+      font-size: 10px;
+      padding-right: 0;
+      margin-bottom: 28px;
+      color: rgba($primary-color,.5);
+      font-weight: 500;
+      &::before {
+        display: none;
+      }
+    }
+    &__wrapper {
+      margin-bottom: 35px;
+      &>div {
+        &.div1 {
+          flex-shrink: 0;
+          margin-right: 65px;
+          flex-grow: 0;
+        }
+        &.div2 {
+          width: 100%;
+          flex-grow: 1;
+          width: auto;
+          margin-left: 0;
+        }
+      }
+    }
+    &__nav {
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    &__navigation {
+      display: flex;
+      &>div {
+        padding: 0;
+        min-width: 190px;
+        &.div1 {
+          flex-grow: 1;
+          ul {
+            column-count: 2;
+          }
+        }
+        &.div2 {
+          flex-shrink: 0;
+          padding: 0;
+          border: 0;
+        }
+      }
+    }
+    &__contacts {
+      margin-bottom: 0;
+    }
+    &__center {
+      display: flex;
+      &>div {
+        &.div1 {
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    &__center {
+      display: flex;
+      &>div {
+        &.div2 {
+          display: block;
+          width: 270px;
+          margin-left: 15px;
+          flex-shrink: 0;
+        }
+      }
+    }
+    &__social {
+      a {
+        opacity: 1;
+        transition: all 0.35s;
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(xxl) {
+    &__center {
+      &>div {
+        &.div2 {
+          width: 330px;
+          margin-left: 15px;
+        }
+      }
+    }
+    &__title {
+      font-size: 12px;
+    }
+    &__navigation {
+      &>div {
+        min-width: 300px;
+      }
+    }
+  }
 }

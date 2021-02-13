@@ -1,6 +1,81 @@
+// Insta carousel
+.insta
+  .insta__btns
+    button(type="button")#insta-left.insta__btns-left
+    button(type="button")#insta-right.insta__btns-right
+  .insta__block
+    .insta__block-block
+      div
+        i.icon-instagram-big
+          span.path1
+          span.path2
+          span.path3
+          span.path4
+          span.path5
+          span.path6
+        a(href="#!" target="_blank") #MAISON-HOME.RU
+  .insta-carousel
+    img(src="./tmp/insta-carousel-img-1.png", alt="")
+    img(src="./tmp/insta-carousel-img-2.png", alt="")
+    img(src="./tmp/insta-carousel-img-3.png", alt="")
+    img(src="./tmp/insta-carousel-img-4.png", alt="")
+    img(src="./tmp/insta-carousel-img-1.png", alt="")
+    img(src="./tmp/insta-carousel-img-2.png", alt="")
+    img(src="./tmp/insta-carousel-img-3.png", alt="")
+    img(src="./tmp/insta-carousel-img-4.png", alt="")
+// /end Insta carousel
+
 // Footer
 footer.footer
   .container
     
-    div &copy; 2018
+    .footer__wrapper
+      .div1
+        .footer__logo
+          img(src="./images/logo-footer.svg", width="161", height="44" alt="")
+          span MAISON - это новый проект, который собрал в себе лучшие бренды со всего мира и многолетний опыт работы в сфере дизайна интерьера.
+        .footer__contacts
+          .div1
+            div
+              a(href="tel:") 8 (495) 
+                b 532-87-72
+            div
+              a(href="mailto:") shop@maison-home.ru
+          .div2
+            .footer__social
+              a(href="#!" target="_blank") 
+                i.icon-social-instagram
+              a(href="#!" target="_blank") 
+                i.icon-social-facebook
+      .div2
+        .footer__center
+          .div1
+            .footer__navigation
+              .div1
+                .footer__title.j-footer-nav Информация покупателям
+                .footer__nav
+                  ul
+                    li: a(href="#!") Доставка
+                    li: a(href="#!") Оплата
+                    li: a(href="#!") Как заказать
+                    li: a(href="#!") Акции
+                    li: a(href="#!") Новости
+                    li: a(href="#!") Статьи
+                    li: a(href="#!") Отзыв
+              .div2
+                .footer__title.j-footer-nav.is-active Информация партнерам
+                .footer__nav(style="display: block")
+                  ul
+                    li: a(href="#!") Категории 
+                    li: a(href="#!") О компании
+                    li: a(href="#!") Контакты
+                    li: a(href="#!") Партнерам
+          .div2
+            address Московская область, Красногорский р-н., Новорижское ш., 5-й км от МКАД, близ деревни Воронки
+            address Московская область, Рублево-Успенское шоссе 186, ТД Жуковка Плаза
+    
+    .footer__bottom
+      .div1 Copyright © MAISON. Все права защищены.
+      .div2 Создание и разработка сайта в студии 
+        a(href="#!" target="_blank") Piarme
   

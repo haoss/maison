@@ -10,8 +10,80 @@
     height: 88px;
     display: flex;
     align-items: center;
+    transition: all 0.35s;
+    .is-scroll & {
+      height: 60px;
+    }
+    &>div {
+      &.div2 {
+        flex-grow: 1;
+      }
+      &.div3 {
+        display: none;
+      }
+    }
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    &>button, &>a {
+      flex-shrink: 0;
+      font-size: 20px;
+      height: 20px;
+      color: $color-white;
+      background: transparent;
+      text-decoration: none;
+      display: block;
+      &::before {
+        display: block;
+        line-height: 1;
+        font-family: $font-icomoon;
+      }
+      &+* {
+        margin-left: 20px;
+      }
+    }
   }
   &-holder {
     height: 88px;
+    transition: all 0.35s;
+  }
+  &.is-scroll + .header-holder {
+    height: 60px;
+  }
+  @include media-breakpoint-up(lg) {
+    &__wrapper {
+      height: 90px;
+    }
+    &-holder {
+      height: 90px;
+    }
+  }
+}
+
+.btn-search {
+  &::before {
+    content: '\e912';
+  }
+}
+.btn-cart {
+  &::before {
+    content: '\e914';
+  }
+}
+.btn-user {
+  &::before {
+    content: '\e917';
+  }
+}
+.btn-favourite {
+  &::before {
+    content: '\e908';
+  }
+}
+.btn-burger {
+  &::before {
+    content: '\e91f';
   }
 }

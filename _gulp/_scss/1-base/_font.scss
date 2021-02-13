@@ -88,11 +88,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('../font/icomoon/fonts/icomoon.eot?ylv6ik');
-  src:  url('../font/icomoon/fonts/icomoon.eot?ylv6ik#iefix') format('embedded-opentype'),
-    url('../font/icomoon/fonts/icomoon.ttf?ylv6ik') format('truetype'),
-    url('../font/icomoon/fonts/icomoon.woff?ylv6ik') format('woff'),
-    url('../font/icomoon/fonts/icomoon.svg?ylv6ik#icomoon') format('svg');
+  src:  url('../font/icomoon/fonts/icomoon.eot?3zycvl');
+  src:  url('../font/icomoon/fonts/icomoon.eot?3zycvl#iefix') format('embedded-opentype'),
+    url('../font/icomoon/fonts/icomoon.ttf?3zycvl') format('truetype'),
+    url('../font/icomoon/fonts/icomoon.woff?3zycvl') format('woff'),
+    url('../font/icomoon/fonts/icomoon.svg?3zycvl#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -113,6 +113,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-burger:before {
+  content: "\e91f";
+}
 .icon-carret-down:before {
   content: "\e900";
 }
