@@ -15,28 +15,28 @@
         <link rel="stylesheet" href="./css/style.min.css?v0">
         <link rel="stylesheet" href="./css/add.css?v0">
     </head>
-    <body class="is-fixed">
+    <body>
         <div class="base">
             <!-- Preloader-->
             <!-- Header-->
             <header class="header">
                 <div class="container">
                     <div class="header__wrapper">
-                        <div class="logo"><a href="#!"> <img src="./images/logo.svg" width="120" height="31" alt=""></a></div>
+                        <div class="logo"><a href="#!"> <img class="svg-inline" src="./images/logo.svg" width="120" height="31" alt=""></a></div>
                         <div class="div2">2</div>
-                        <div class="div3">3</div>
+                        <div class="header__phone"><a href="tel:">8 (495) <b>532-87-72</b></a></div>
                         <div class="header__links">
                             <button class="btn-search" type="button"></button><a class="btn-favourite" href="#!"></a>
-                            <button class="btn-cart" type="button" data-id="cart"></button>
-                            <button class="btn-user" type="button" data-id="enter"></button>
-                            <button class="btn-burger" type="button" data-id="menu"></button>
+                            <button class="btn-cart j-btn" type="button" data-id="cart"></button>
+                            <button class="btn-user j-btn" type="button" data-id="enter"></button>
+                            <button class="btn-burger j-btn" type="button" data-id="menu"></button>
                         </div>
                     </div>
                 </div>
             </header>
             <div class="header-holder"></div>
-            <div class="navigation d-none" id="menu">
-                <button class="btn-close" type="button"></button>
+            <div class="navigation j-btn-target" id="menu">
+                <button class="btn-close j-btn" type="button" data-id="menu"></button>
                 <div class="navigation__wrapper">
                     <div class="navigation__wrapper-body">
                         <div class="navigation__body">
@@ -69,8 +69,8 @@
                     </div>
                 </div>
             </div>
-            <div class="navigation d-none" id="enter">
-                <button class="btn-close" type="button"></button>
+            <div class="navigation j-btn-target" id="enter">
+                <button class="btn-close j-btn" type="button" data-id="enter"></button>
                 <div class="navigation__wrapper">
                     <div class="navigation__wrapper-body">
                         <div class="navigation__body">
@@ -91,9 +91,11 @@
                                 <div class="form-group --mb10">
                                     <button class="btn --block" type="submit">Войти на сайт</button>
                                 </div>
-                                <div class="text-center"><a class="--fs14" href="#!">Забыли пароль?</a>
+                                <div class="text-center">
+                                    <button class="link --fs14 j-btn" type="button" data-id="recovery">Забыли пароль?</button>
                                     <hr>
-                                    <p class="--mb0 --fs14">Еще не зарегистрированные на сайте?</p><a class="link --fs14 text-uppercase --no-udernline" href="#!"><b>Зарегистрироваться</b></a>
+                                    <p class="--mb0 --fs14">Еще не зарегистрированные на сайте?</p>
+                                    <button class="link --fs14 text-uppercase --no-udernline j-btn" type="button" data-id="register"><b>Зарегистрироваться</b></button>
                                 </div>
                             </form>
                         </div>
@@ -109,8 +111,8 @@
                     </div>
                 </div>
             </div>
-            <div class="navigation d-none" id="enter">
-                <button class="btn-close" type="button"></button>
+            <div class="navigation j-btn-target" id="register">
+                <button class="btn-close j-btn" type="button" data-id="register"></button>
                 <div class="navigation__wrapper">
                     <div class="navigation__wrapper-body">
                         <div class="navigation__body">
@@ -137,7 +139,8 @@
                                     <button class="btn --block" type="submit">зарегистрироваться</button>
                                 </div>
                                 <div class="text-center">
-                                    <p class="--mb0 --fs14">Уже зарегистрированные на сайте?</p><a class="link --fs14 text-uppercase --no-udernline" href="#!"><b>Войти на сайт</b></a>
+                                    <p class="--mb0 --fs14">Уже зарегистрированные на сайте?</p>
+                                    <button class="link --fs14 text-uppercase --no-udernline j-btn" type="button" data-id="enter"><b>Войти на сайт</b></button>
                                 </div>
                             </form>
                         </div>
@@ -153,8 +156,8 @@
                     </div>
                 </div>
             </div>
-            <div class="navigation d-none" id="recovery">
-                <button class="btn-close" type="button"></button>
+            <div class="navigation j-btn-target" id="recovery">
+                <button class="btn-close j-btn" type="button" data-id="recovery"></button>
                 <div class="navigation__wrapper">
                     <div class="navigation__wrapper-body">
                         <div class="navigation__body">
@@ -171,7 +174,8 @@
                                     <button class="btn --block" type="submit">Войти на сайт</button>
                                 </div>
                                 <div class="text-center">
-                                    <p class="--mb0 --fs14">Вспомнили доступы?</p><a class="link --fs14 text-uppercase --no-udernline" href="#!"><b>Войти на сайт</b></a>
+                                    <p class="--mb0 --fs14">Вспомнили доступы?</p>
+                                    <button class="link --fs14 text-uppercase --no-udernline j-btn" type="button" data-id="enter"><b>Войти на сайт</b></button>
                                 </div>
                             </form>
                         </div>
@@ -187,11 +191,11 @@
                     </div>
                 </div>
             </div>
-            <div class="navigation" id="cart">
-                <button class="btn-close" type="button"></button>
+            <div class="navigation j-btn-target" id="cart">
+                <button class="btn-close j-btn" type="button" data-id="cart"></button>
                 <div class="navigation__wrapper">
                     <div class="navigation__wrapper-body">
-                        <div class="navigation__body">
+                        <div class="navigation__body --mb0">
                             <div class="navigation__title">Ваша корзина</div>
                             <form action="" autocomplete="off"> 
                                 <fieldset> 
@@ -353,7 +357,7 @@
                 <div class="container">
                     <div class="footer__wrapper">
                         <div class="div1">
-                            <div class="footer__logo"><img src="./images/logo-footer.svg" width="161" height="44" alt=""><span>MAISON - это новый проект, который собрал в себе лучшие бренды со всего мира и многолетний опыт работы в сфере дизайна интерьера.</span></div>
+                            <div class="footer__logo"><img class="svg-inline" src="./images/logo-footer.svg" width="161" height="44" alt=""><span>MAISON - это новый проект, который собрал в себе лучшие бренды со всего мира и многолетний опыт работы в сфере дизайна интерьера.</span></div>
                             <div class="footer__contacts">
                                 <div class="div1">
                                     <div><a href="tel:">8 (495) <b>532-87-72</b></a></div>
@@ -408,7 +412,6 @@
                     </div>
                 </div>
             </footer>
-            <div style="height: 1000px; background-color: #000"></div>
         </div>
         <!-- Load Scripts-->
         <!-- Footer js-->

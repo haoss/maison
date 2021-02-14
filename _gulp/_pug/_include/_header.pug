@@ -17,20 +17,22 @@ header.header
     .header__wrapper
       .logo
         a(href="#!") 
-          img(src="./images/logo.svg", width="120", height="31", alt="")
+          img(src="./images/logo.svg", width="120", height="31", alt="").svg-inline
       .div2 2
-      .div3 3
+      .header__phone
+        a(href="tel:") 8 (495) 
+          b 532-87-72
       .header__links
         button(type="button").btn-search
         a(href="#!").btn-favourite
-        button(type="button" data-id="cart").btn-cart
-        button(type="button" data-id="enter").btn-user
-        button(type="button" data-id="menu").btn-burger
+        button(type="button" data-id="cart").btn-cart.j-btn
+        button(type="button" data-id="enter").btn-user.j-btn
+        button(type="button" data-id="menu").btn-burger.j-btn
 
 .header-holder
 
-#menu.navigation.d-none
-  button(type="button").btn-close
+#menu.navigation.j-btn-target
+  button(type="button" data-id="menu").btn-close.j-btn
   .navigation__wrapper
     .navigation__wrapper-body
       .navigation__body
@@ -62,8 +64,8 @@ header.header
             a(href="#!" target="_blank") 
               i.icon-social-facebook
 
-#enter.navigation.d-none
-  button(type="button").btn-close
+#enter.navigation.j-btn-target
+  button(type="button" data-id="enter").btn-close.j-btn
   .navigation__wrapper
     .navigation__wrapper-body
       .navigation__body
@@ -103,10 +105,10 @@ header.header
           .form-group.--mb10
             button(type="submit").btn.--block Войти на сайт
           .text-center
-            a(href="#!").--fs14 Забыли пароль?
+            button(type="button" data-id="recovery").link.--fs14.j-btn Забыли пароль?
             hr
             p.--mb0.--fs14 Еще не зарегистрированные на сайте?
-            a(href="#!").link.--fs14.text-uppercase.--no-udernline
+            button(type="button" data-id="register").link.--fs14.text-uppercase.--no-udernline.j-btn
               b Зарегистрироваться
       .navigation__contacts
         .div1
@@ -122,8 +124,8 @@ header.header
             a(href="#!" target="_blank") 
               i.icon-social-facebook
 
-#enter.navigation.d-none
-  button(type="button").btn-close
+#register.navigation.j-btn-target
+  button(type="button" data-id="register").btn-close.j-btn
   .navigation__wrapper
     .navigation__wrapper-body
       .navigation__body
@@ -179,7 +181,7 @@ header.header
             button(type="submit").btn.--block зарегистрироваться
           .text-center
             p.--mb0.--fs14 Уже зарегистрированные на сайте?
-            a(href="#!").link.--fs14.text-uppercase.--no-udernline
+            button(type="button" data-id="enter").link.--fs14.text-uppercase.--no-udernline.j-btn
               b Войти на сайт
       .navigation__contacts
         .div1
@@ -195,8 +197,8 @@ header.header
             a(href="#!" target="_blank") 
               i.icon-social-facebook
 
-#recovery.navigation.d-none
-  button(type="button").btn-close
+#recovery.navigation.j-btn-target
+  button(type="button" data-id="recovery").btn-close.j-btn
   .navigation__wrapper
     .navigation__wrapper-body
       .navigation__body
@@ -222,7 +224,7 @@ header.header
             button(type="submit").btn.--block Войти на сайт
           .text-center
             p.--mb0.--fs14 Вспомнили доступы?
-            a(href="#!").link.--fs14.text-uppercase.--no-udernline
+            button(type="button" data-id="enter").link.--fs14.text-uppercase.--no-udernline.j-btn
               b Войти на сайт
       .navigation__contacts
         .div1
@@ -238,11 +240,11 @@ header.header
             a(href="#!" target="_blank") 
               i.icon-social-facebook
 
-#cart.navigation
-  button(type="button").btn-close
+#cart.navigation.j-btn-target
+  button(type="button" data-id="cart").btn-close.j-btn
   .navigation__wrapper
     .navigation__wrapper-body
-      .navigation__body
+      .navigation__body.--mb0
         .navigation__title Ваша корзина
         form(action="" autocomplete="off") 
           fieldset 

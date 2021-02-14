@@ -14,6 +14,35 @@ html(lang="ru")
 
       include ./_include/_header
 
+      // Main blocks
+      .main-blocks
+        .main-blocks__carousel
+          img(src="./tmp/main-big-img.png", alt="").img-fluid
+          img(src="./tmp/main-big-img-2.png", alt="").img-fluid
+          img(src="./tmp/main-big-img.png", alt="").img-fluid
+          img(src="./tmp/main-big-img-2.png", alt="").img-fluid
+          img(src="./tmp/main-big-img.png", alt="").img-fluid
+          img(src="./tmp/main-big-img-2.png", alt="").img-fluid
+        .main-blocks__bottom
+          h1 Изысканные решения
+            small под самый требовательный вкус
+        .main-blocks__list
+          a(href="#!").main-blocks__list-img
+            img(src="./tmp/main-blocks-img-1.png", alt="")
+            span.span
+              span Шелковая коллекция Beauty Sleep 
+              b Бьюти тренд 2020
+          a(href="#!").main-blocks__list-img
+            img(src="./tmp/main-blocks-img-2.png", alt="")
+            span.span
+              span Salt&Pepper tableweare goes RAWW!
+              b by Australian
+          a(href="#!").main-blocks__list-img
+            img(src="./tmp/main-blocks-img-3.png", alt="")
+            span.span
+              span Подвесной светильник Calle Terzani
+              b Bella in Italiano
+
       // Content
       .content
         .container
@@ -44,4 +73,9 @@ html(lang="ru")
     // Load Scripts
     include ./_include/_footer-js
     script(src="./js/common.js")
+
+    script().
+      $(document).ready(function(){
+        $('.header').addClass('--main');
+      })
 

@@ -6,6 +6,19 @@
   top: 0;
   left: 0;
   right: 0;
+  transition: background 0.35s, box-shadow 0.35s;
+  &.--main {
+    background-color: transparent;
+    box-shadow: 0px 4px 15px rgba($color-black,0);
+    &.is-scroll {
+      background: rgba($color-white,.8);
+      box-shadow: 0px 4px 15px rgba($color-black,.02);
+      backdrop-filter: blur(20px);
+    }
+  }
+  .is-fixed & {
+    padding-right: 3px;
+  }
   &__wrapper {
     height: 88px;
     display: flex;
@@ -43,6 +56,27 @@
       &+* {
         margin-left: 20px;
       }
+      .--main.is-scroll & {
+        color: $primary-color;
+      }
+    }
+  }
+  &__phone {
+    display: none;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    font-weight: 500;
+    a {
+      color: $color-white;
+      text-decoration: none;
+      b {
+        font-weight: 700;
+        font-size: 20px;
+      }
+      .--main.is-scroll & {
+        color: $primary-color;
+      }
     }
   }
   &-holder {
@@ -52,12 +86,73 @@
   &.is-scroll + .header-holder {
     height: 60px;
   }
+  &.--main + .header-holder {
+    display: none;
+  }
+  @include media-breakpoint-up(sm) {
+    &__links {
+      &>button, &>a {
+        &+* {
+          margin-left: 30px;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    &__wrapper {
+      &>div {
+        &.div3 {
+          display: block;
+          margin-right: 42px;
+        }
+      }
+    }
+    &__phone {
+      display: block;
+      margin-right: 42px;
+    }
+  }
   @include media-breakpoint-up(lg) {
     &__wrapper {
       height: 90px;
     }
     &-holder {
       height: 90px;
+    }
+    &__phone {
+      margin-right: 63px;
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    &__links {
+      &>button, &>a {
+        opacity: 1;
+        transition: all 0.35s;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+    &__phone {
+      a {
+        opacity: 1;
+        transition: all 0.35s;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(xxl) {
+    &__phone {
+      margin-right: 104px;
+    }
+    &__links {
+      &>button, &>a {
+        &+* {
+          margin-left: 40px;
+        }
+      }
     }
   }
 }
@@ -85,5 +180,22 @@
 .btn-burger {
   &::before {
     content: '\e91f';
+  }
+}
+
+.logo {
+  .--main & {
+    svg {
+      path {
+        fill: $color-white;
+      }
+    }
+  }
+  .--main.is-scroll & {
+    svg {
+      path {
+        fill: $primary-color;
+      }
+    }
   }
 }

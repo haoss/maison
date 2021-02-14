@@ -72,12 +72,22 @@ $(document).on('ready', function(){
     pauseOnHover: false
   });
 
+  $('.main-blocks__carousel').slick({
+    mobileFirst: true,
+    dots: false,
+    arrow: false,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: false,
+    fade: true
+  });
+
   phoneMask();
   mobileNav();
-  inputFocus();
   headerScroll();
   // oneCarousel();
   footerNav();
+  jNavigation();
 
   // Chrome Smooth Scroll
   try {
@@ -237,39 +247,6 @@ function mobileNav() {
   })*/
 }
 
-function inputFocus(){
-  var jinput = $(".css-input");
-
-  jinput.each(function(){
-    var _this = $(this);
-    var val = _this.val();
-    var field = _this.parents('.j-field-text');
-
-    if (val.length > 0 && _this.is('input') || val.length > 0 && _this.is('textarea')) {
-      field.addClass("active-full");
-    } else {
-      field.removeClass("active-full");
-    }
-
-    // input on focus
-    _this.focus(function () {
-      field.addClass("active");
-    }).blur(function () {
-      field.removeClass("active");
-    })
-
-    _this.on('change', function () {
-      var val = _this.val();
-
-      if (val == '') {
-        field.removeClass("active-full");
-      } else {
-        field.addClass("active-full");
-      }
-    });
-  })
-}
-
 function headerScroll() {
   var header = $('.header');
   var navigation = $('.navigation');
@@ -328,4 +305,35 @@ function footerNav() {
       }
     });
   })
+}
+
+function jNavigation() {
+  var btn = $('.j-btn');
+  var navigation = $('.j-btn-target');
+  var body = $('body');
+  var btnTarget;
+  
+  $(document).on('click', '.j-btn', function(e){
+    e.stopPropagation();
+    var _this = $(this);
+    btnTarget = $('#' + _this.data('id') + '.navigation');
+    body.removeClass('is-fixed');
+    
+    if (btnTarget.hasClass('is-active')) {
+      btnTarget.removeClass('is-active');
+    } else if (!btnTarget.hasClass('is-active')) {
+      navigation.removeClass('is-active');
+      btnTarget.addClass('is-active');
+      body.addClass('is-fixed');
+    }
+  });
+
+  $(document).on('click', function(e){
+    navigation.removeClass('is-active');
+    body.removeClass('is-fixed');
+  });
+
+  $(document).on('click', '.j-btn-target', function(e){
+    e.stopPropagation();
+  });
 }
