@@ -46,9 +46,31 @@ html(lang="ru")
       // Content
       .content.--pt0.--pb0
         
+        // Main category
+        .main-category
+        // /end Main category
+
         // Main video
         .main-video
+          .main-video__block
+            img(src="./tmp/main-video-img.png", alt="").main-video__block-img
+            a(href="https://www.youtube.com/watch?v=0-7IHOXkiV8" data-fancybox).main-video__play
+          .main-video__bottom
+            .container
+              .main-video__bottom-icon
+              .main-video__bottom-content 
+                div MAISON - это новый проект, который собрал в себе лучшие бренды со всего мира и многолетний опыт работы в сфере дизайна интерьера. 
         // /end Main video
+
+        // Main catalog
+        .main-catalog
+          .container
+            .main-catalog__title
+              div
+                .main-catalog__title-shadow
+                  div Must Have 
+                .main-catalog__title-div Совершенство в каждой детали
+        // /end Main catalog
 
         // Main about
         .main-about

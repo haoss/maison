@@ -115,7 +115,7 @@ $(document).on('ready', function(){
     autoplaySpeed: 4000,
     pauseOnHover: true,
     variableWidth: true,
-    centerPadding: '0px'
+    centerPadding: '30px'
   });
 
   phoneMask();
