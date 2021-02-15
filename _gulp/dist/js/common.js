@@ -79,7 +79,43 @@ $(document).on('ready', function(){
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: false,
-    fade: true
+    fade: true,
+    responsive: [
+      {
+        breakpoint: 1279,
+        settings: {
+          dots: true,
+          customPaging: function(slick,index) {
+            var index = index + 1;
+            if (index >= 0 && index <= 9) {
+              index = '0' + index
+            }
+            return '<span class="span">' + '<span>' + index + '</span>' + '</span>';
+          }
+        }
+      }
+    ]
+  });
+
+  $('.main-choice__carousel').slick({
+    mobileFirst: true,
+    dots: false,
+    arrow: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: false,
+    fade: true,
+  });
+
+  $('.main-choice__carousel2').slick({
+    mobileFirst: true,
+    dots: false,
+    arrow: false,
+    autoplay: false,
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
+    variableWidth: true,
+    centerPadding: '0px'
   });
 
   phoneMask();

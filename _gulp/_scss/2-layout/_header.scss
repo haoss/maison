@@ -157,6 +157,13 @@
   }
 }
 
+.logo {
+  svg, img {
+    width: 121px;
+    height: 32px;
+  }
+}
+
 .btn-search {
   &::before {
     content: '\e912';

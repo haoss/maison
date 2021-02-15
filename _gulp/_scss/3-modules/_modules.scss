@@ -405,6 +405,7 @@
 
 .main-blocks {
   position: relative;
+  background-color: $primary-color;
   &__bottom {
     background: $primary-color;
     text-align: center;
@@ -481,6 +482,71 @@
       }
     }
   }
+  &__carousel {
+    position: relative;
+    overflow: hidden;
+    &.slick-dotted {
+      margin: 0;
+    }
+    .slick-dots {
+      left: auto;
+      width: 50px;
+      right: 30px;
+      top: 0;
+      bottom: 0;
+      transform: none;
+      color: $color-white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: right;
+      li {
+        padding: 0;
+        margin: 0 0 10px 0;
+        width: 100%;
+        height: auto;
+        font-weight: bold;
+        &::before {
+          display: none;
+        }
+        &>.span {
+          font-size: 0;
+          transition: all 0.35s;
+          display: block;
+          overflow: hidden;
+          &::after {
+            content: '';
+            height: 2px;
+            width: 35px;
+            background: #929292;
+            display: block;
+            transition: all 0.35s;
+            margin-right: 0;
+            margin-left: auto;
+          }
+          &>span {
+            display: block;
+            line-height: 0px;
+            margin: 0;
+            transition: all 0.35s;
+          }
+        }
+        &.slick-active {
+          &>.span {
+            &::after {
+              width: 50px;
+              background: $color-white;
+            }
+            span {
+              line-height: 20px;
+              margin-bottom: 5px;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
   @include media-breakpoint-up(sm) {
     &__bottom {
       h1, .h1 {
@@ -515,9 +581,10 @@
       position: absolute;
       background: 0 0;
       top: 110px;
-      left: 0;
-      right: 0;
-      padding: 0 15px;
+      left: 15px;
+      right: 15px;
+      padding-left: 0;
+      padding-right: 0;
       h1, .h1 {
         font-size: 40px;
         small {
@@ -565,6 +632,8 @@
     }
     &__bottom {
       top: 175px;
+      left: 50px;
+      right: 50px;
       h1, .h1 {
         font-size: 70px;
         small {
@@ -598,4 +667,399 @@
       }
     }
   }
+}
+
+.main-about {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  color: $color-white;
+  font-size: 16px;
+  overflow: hidden;
+  text-align: center;
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background: {
+      image: $bg-dot;
+      position: 0 0;
+      repeat: repeat;
+    };
+  }
+  &::after {
+    background: linear-gradient(90.09deg, rgba(37, 36, 38, 0) 0.06%, rgba(37, 36, 38, 0.75) 47.79%);
+    z-index: 1;
+  }
+  &__img {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+  &>.container {
+    position: relative;
+    z-index: 10;
+  }
+  &__logo {
+    margin-bottom: 20px;
+    img, svg {
+      width: 150px;
+      height: 40px;
+    }
+  }
+  &__content {
+    letter-spacing: 0.05em;
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  @include media-breakpoint-up(sm) {
+    padding-top: 55px;
+    padding-bottom: 40px;
+    font-size: 18px;
+  }
+  @include media-breakpoint-up(md) {
+    text-align: right;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    font-size: 20px;
+    &__logo {
+      img, svg {
+        width: 238px;
+        height: 63px;
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 20px;
+    &__content {
+      max-width: 710px;
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    min-height: 557px;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    &__logo {
+      margin-bottom: 45px;
+      img, svg {
+        width: 280px;
+        height: 74px;
+      }
+    }
+  }
+  @include media-breakpoint-up(xxl) {
+    min-height: 750px;
+    font-size: 24px;
+    &__logo {
+      margin-bottom: 55px;
+      img, svg {
+        width: 342px;
+        height: 91px;
+      }
+    }
+    &__content {
+      max-width: 850px;
+    }
+  }
+}
+
+.main-choice {
+  position: relative;
+  padding-top: 55px;
+  padding-bottom: 40px;
+  font-size: 18px;
+  &__top {
+    margin-bottom: 72px;
+    display: flex;
+    flex-direction: column;
+    &>div {
+      &.div2 {
+        padding-right: 50px;
+      }
+    }
+  }
+  &__bottom {
+    border-top: 1px solid rgba($primary-color,.1);
+    padding-top: 40px;
+  }
+  &__title {
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 17px;
+    text-align: center;
+    &-shadow {
+      display: none;
+    }
+    &-div {
+      letter-spacing: 0.1em;
+    }
+    &>div {
+      display: inline-block;
+    }
+  }
+  &__content {
+    margin-bottom: 35px;
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__carousel {
+    .slick-arrow {
+      height: 50px;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top: auto;
+      transform: none;
+      cursor: pointer;
+      font-size: 0;
+      left: auto;
+      &::before {
+        font-size: 14px;
+        font-family: $font-icomoon;
+        opacity: 1;
+        color: currentColor;
+      }
+    }
+    .slick-prev {
+      transform: translateX(0%);
+      right: -50px;
+      color: $color-white;
+      background: $primary-color;
+      &::before {
+        content: '\e901';
+      }
+    }
+    .slick-next {
+      color: $primary-color;
+      background: $color-white;
+      &::before {
+        content: '\e902';
+      }
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__link {
+    overflow: hidden;
+    background: $color-white;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 157px;
+    height: 157px;
+    position: relative;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+    .span {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.35s;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 50px;
+      align-items: center;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      background: $primary-color;
+      &::before {
+        font-size: 14px;
+        font-family: $font-icomoon;
+        color: $color-white;
+        content: '\e902';
+      }
+    }
+  }
+  &__carousel2 {
+    .slick-arrow {
+      display: none;
+    }
+    .slick-slide {
+      width: 157px;
+      margin-right: 30px;
+    }
+  }
+  @include media-breakpoint-up(sm) {
+    padding-top: 88px;
+    &__carousel2 {
+      .slick-slide {
+        width: 150px;
+      }
+    }
+    &__link {
+      width: 150px;
+      height: 150px;
+    }
+    &__title {
+      font-size: 35px;
+      &>div {
+        transform: translateX(-30px);
+      }
+      &-div {
+        position: relative;
+        z-index: 5;
+      }
+      &-shadow {
+        display: block;
+        font-size: 50px;
+        white-space: nowrap;
+        font-family: $font-playfair;
+        position: absolute;
+        line-height: 1;
+        left: 50%;
+        letter-spacing: 0.05em;
+        transform: translateX(-72px) translateY(-35px);
+        div {
+          opacity: 0.03;
+        }
+        &::before {
+          width: 130px;
+          height: 2px;
+          background: $primary-color;
+          position: absolute;
+          content: '';
+          left: -150px;
+          top: 50%;
+          margin-top: -1px;
+          opacity: 0.05;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    &__title {
+      &-shadow {
+        font-size: 60px;
+        transform: translateX(-77px) translateY(-44px);
+      }
+      &-div {
+        letter-spacing: 0.2em;
+      }
+    }
+    &__bottom {
+      padding-top: 85px;
+    }
+    &__link {
+      height: 210px;
+    }
+    &__carousel2 {
+      .slick-slide {
+        width: 210px;
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    padding-top: 108px;
+    &__title {
+      margin-bottom: 25px;
+    }
+    &__top {
+      flex-direction: row;
+      &>div {
+        &.div1 {
+          order: 2;
+          flex-grow: 1;
+          padding-left: 27px;
+        }
+        &.div2 {
+          flex-shrink: 0;
+          width: 500px;
+          order: 1;
+        }
+      }
+    }
+    &__content {
+      margin-bottom: 0;
+    }
+    &__bottom {
+      padding-top: 40px;
+    }
+    &__link {
+      height: 130px;
+    }
+    &__carousel2 {
+      .slick-slide {
+        width: 130px;
+      }
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    padding-top: 123px;
+    padding-bottom: 55px;
+    font-size: 20px;
+    &__carousel {
+      .slick-arrow {
+        transition: all 0.35s;
+      }
+      .slick-prev {
+        &:hover {
+          color: $primary-color;
+          background: $color-white;
+        }
+      }
+      .slick-next {
+        &:hover {
+          background: $primary-color;
+          color: $color-white;
+        }
+      }
+    }
+    &__top {
+      margin-bottom: 85px;
+      &>div {
+        &.div2 {
+          width: 620px;
+        }
+        &.div1 {
+          padding-top: 62px;
+        }
+      }
+    }
+    &__link {
+      height: 170px;
+      box-shadow: 0px 4px 30px rgba(0, 0, 0, 0);
+      margin: 20px 0;
+      &:hover {
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.05);
+        .span {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+    &__carousel2 {
+      margin: -20px 0;
+      .slick-slide {
+        width: 170px;
+      }
+    }
+  }
+  @include media-breakpoint-up(xxl) {}
 }
