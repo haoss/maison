@@ -86,18 +86,6 @@
        url('../font/oswald/oswald-v36-latin_cyrillic-700.svg#Oswald') format('svg'); /* Legacy iOS */
 }
 
-@font-face {
-  font-family: 'icomoon';
-  src:  url('../font/icomoon/fonts/icomoon.eot?3zycvl');
-  src:  url('../font/icomoon/fonts/icomoon.eot?3zycvl#iefix') format('embedded-opentype'),
-    url('../font/icomoon/fonts/icomoon.ttf?3zycvl') format('truetype'),
-    url('../font/icomoon/fonts/icomoon.woff?3zycvl') format('woff'),
-    url('../font/icomoon/fonts/icomoon.svg?3zycvl#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
 /* playfair-display-regular - latin_cyrillic */
 @font-face {
   font-family: 'Playfair Display';
@@ -111,6 +99,18 @@
        url('../font/playfair-display/playfair-display-v22-latin_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
        url('../font/playfair-display/playfair-display-v22-latin_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../font/playfair-display/playfair-display-v22-latin_cyrillic-regular.svg#PlayfairDisplay') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../font/icomoon/fonts/icomoon.eot?dde4p0');
+  src:  url('../font/icomoon/fonts/icomoon.eot?dde4p0#iefix') format('embedded-opentype'),
+    url('../font/icomoon/fonts/icomoon.ttf?dde4p0') format('truetype'),
+    url('../font/icomoon/fonts/icomoon.woff?dde4p0') format('woff'),
+    url('../font/icomoon/fonts/icomoon.svg?dde4p0#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -128,6 +128,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-plus-bold:before {
+  content: "\e920";
+}
 .icon-burger:before {
   content: "\e91f";
 }

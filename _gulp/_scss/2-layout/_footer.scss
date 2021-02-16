@@ -338,6 +338,9 @@
         }
       }
     }
+    &__title {
+      cursor: default;
+    }
   }
   @include media-breakpoint-up(xxl) {
     &__center {
