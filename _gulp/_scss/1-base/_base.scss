@@ -82,6 +82,9 @@ body {
   line-height: 1.14;
   margin-bottom: 15px;
   font-weight: 300;
+  .content__document & {
+    margin-bottom: 30px;
+  }
   @include media-breakpoint-up(sm) {
     font-size: 35px;
   }
@@ -226,24 +229,27 @@ ul {
   }
 }
 ol {
-  padding-left: 0px;
-  counter-reset: section;
-  margin-bottom: 30px;
-  li {
-    padding-left: 20px;
-    position: relative;
-    list-style: none;
-    &::before {
-      counter-increment: section;
-      content: counter(section)".";
-      font-size: 16px;
-      line-height: 1;
-      font-weight: 400;
-      position: absolute;
-      left: 0;
-      top: 9px;
+  &:not(.breadcrumbs) {
+    padding-left: 0px;
+    counter-reset: section;
+    margin-bottom: 30px;
+    li {
+      padding-left: 20px;
+      position: relative;
+      list-style: none;
+      &::before {
+        counter-increment: section;
+        content: counter(section)".";
+        font-size: 16px;
+        line-height: 1;
+        font-weight: 400;
+        position: absolute;
+        left: 0;
+        top: 9px;
+      }
     }
   }
+  
 }
 
 /* bg */

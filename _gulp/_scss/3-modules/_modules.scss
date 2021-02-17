@@ -125,16 +125,25 @@
   @include media-breakpoint-up(lg) {
     &__wrapper {
       height: 250px;
+      .--category & {
+        height: 200px;
+      }
     }
   }
   @include media-breakpoint-up(xl) {
     &__wrapper {
       height: 300px;
+      .--category & {
+        height: 200px;
+      }
     }
   }
   @include media-breakpoint-up(xxl) {
     &__wrapper {
       height: 400px;
+      .--category & {
+        height: 200px;
+      }
     }
   }
 }
