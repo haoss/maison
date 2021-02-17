@@ -1907,14 +1907,14 @@
   }
   &__link {
     overflow: hidden;
-    background: $color-white;
+    background: transparent;
     display: flex !important;
     align-items: center;
     justify-content: center;
-    width: 214px;
-    height: 214px;
+    width: 346px;
+    height: 346px;
     position: relative;
-    margin: 0 auto;
+    margin: 0 auto -1px;
     img {
       max-width: 100%;
       max-height: 100%;
@@ -1941,60 +1941,114 @@
         content: '\e902';
       }
     }
+    .line {
+      position: absolute;
+      z-index: -1;
+      background: $color-white;
+      border: 1px solid rgba($primary-color,.1);
+      width: 25px;
+      height: 25px;
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.35s;
+      &.--top {
+        top: 0;
+        left: 0;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+      }
+      &.--right {
+        top: 0;
+        right: 0;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+      }
+      &.--left {
+        bottom: 0;
+        left: 0;
+        border-top-color: transparent;
+        border-right-color: transparent;
+      }
+      &.--bottom {
+        bottom: 0;
+        right: 0;
+        border-left-color: transparent;
+        border-top-color: transparent;
+      }
+    }
   }
   @include media-breakpoint-up(sm) {
     &__row {
       flex-direction: row;
       &>div {
         width: 50%;
+        &:nth-child(even) {
+          margin-left: -1px;
+        }
       }
     }
     &__link {
-      width: 255px;
+      width: 100%;
       height: 255px;
+      
     }
   }
   @include media-breakpoint-up(md) {
     &__link {
-      width: 342px;
       height: 342px;
     }
   }
   @include media-breakpoint-up(lg) {
     &__row {
+      margin-left: 1px;
       &>div {
         width: 33.3%;
+        &:nth-child(even) {
+          margin-left: 0;
+        }
+        &:nth-child(1), &:nth-child(2), &:nth-child(4), &:nth-child(5), &:nth-child(7), &:nth-child(8), &:nth-child(10), &:nth-child(11) {
+          margin-right: -1px;
+        }
       }
     }
     &__link {
-      width: 310px;
       height: 280px;
     }
   }
   @include media-breakpoint-up(xl) {
     &__row {
       margin-bottom: 100px;
+      position: relative;
       &>div {
         width: 25%;
+        @include first(12) {
+          margin-right: 0;
+        }
+        &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(9), &:nth-child(10), &:nth-child(11) {
+          margin-right: -1px !important;
+        }
       }
     }
     &__link {
-      width: 291px;
       height: 280px;
       box-shadow: 0px 4px 30px rgba($color-black, 0);
       &:hover {
         z-index: 1;
         box-shadow: 0px 4px 30px rgba($color-black,.05);
+        background: $color-white;
         .span {
           opacity: 1;
           visibility: visible;
+        }
+        .line {
+          opacity: 0;
+          visibility: hidden;
         }
       }
     }
   }
   @include media-breakpoint-up(xxl) {
     &__link {
-      width: 380px;
       height: 380px;
     }
   }
