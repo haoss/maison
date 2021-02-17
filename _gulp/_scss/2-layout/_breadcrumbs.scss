@@ -67,7 +67,13 @@
   @include media-breakpoint-up(md) {
     display: flex;
   }
-  @include media-breakpoint-up(lg) {
-
+  @include media-breakpoint-up(xl) {
+    &__item {
+      &>a {
+        &:hover {
+          color: $color-white;
+        }
+      }
+    }
   }
 }

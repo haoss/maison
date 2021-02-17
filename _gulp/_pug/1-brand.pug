@@ -1,0 +1,101 @@
+doctype
+
+html(lang="ru")
+
+  -var active = '1 бренд' //активный пункт меню, список в header.jade
+  -var pageTitle = '1 бренд' + ' - Эксклюзивный магазин MAISON' //title страницы для генерации верстки
+
+  include ./_include/_head
+
+  body
+    .base
+      // Preloader
+      include ./_include/_preloader
+
+      include ./_include/_header
+
+      // Top img
+      .top-img
+        img(src="./tmp/top-img-1.png", alt="").top-img__bg
+        .top-img__wrapper
+          .container
+
+            h1 The Rug Company
+            +breadcrumbs()
+              +breadcrumbs-item('Эксклюзивный магазин MAISON', './index.html')
+              +breadcrumbs-item('Название раздела', '#!')
+              +breadcrumbs-item('Название страницы')
+
+      // Content
+      .content
+        .container
+
+          // 1 brand
+          .one-brand
+            .one-brand__row
+              .div1
+                p The Rug Company — всемирно известный британский производитель элитных ковров класса люкс. Бренд был основан в Лондоне в 1997 году супругами Сюзанной и Кристофером Шарп. Пара хотела вдохнуть новую жизнь в забытое к тому времени искусство ковроткачества, а также донести ценность и эксклюзивность ручной работы. 
+                p Компания начала сотрудничать с модными дизайнерами и архитекторами ещё в конце 90-х гг., идею подсказала фешн-редактор британского Vogue Люсинда Чемберс. В результате именно коллаборации принесли бренду мировую известность.
+                p В портфолио бренда — коллекции, выпущенные совместно с такими звёздами, как Келли Уэстлер, Том Браун, Александр МакКуин, Том Диксон и др. 
+              .div2
+                .one-brand__thumb
+                  img(src="./tmp/one-brand-img-1.png", alt="")
+            .one-brand__row.--even
+              .div1
+                p Каждый дизайнерский ковер The Rug Company сделан вручную: от скручивания пряжи в нити до создания рисунка на ткацком станке. Производство расположено в Непале, стране, где секреты ремесла передаются из поколения в поколение с незапамятных времен.⠀
+                p Непальское ковроткачество отличают изумительно чистые и насыщенные цвета. Удивительно, но уникальные старинные технологии производства ковров и окрашивания материалов позволяют воплотить любые фантазии современных дизайнеров, сотрудничающих с The Rug Company.
+              .div2
+                .one-brand__thumb
+                  img(src="./tmp/one-brand-img-2.png", alt="")
+          // /end 1 brand
+
+          // About brand
+          .about-brand
+            h2 Многовековые традиции и современный дизайн
+            p Каждый дизайнерский ковер The Rug Company сделан вручную: от скручивания пряжи в нити до создания рисунка на ткацком станке. Производство расположено в Непале, стране, где секреты ремесла передаются из поколения в поколение с незапамятных времен.⠀
+          // /end About brand
+
+          // Category brand
+          .category-brand
+            .category-brand__title
+              div
+                .category-brand__title-shadow
+                  div Brand categories
+                .category-brand__title-div Бренд представлен в категориях
+            .row
+              .col-12.col-md-6.col-lg-4
+                .category-brand__block
+                  .category-brand__block-thumb
+                    a(href="#!")
+                      img(src="./tmp/category-brand-img-1.png", alt="")
+                  .category-brand__block-title
+                    div Гобелены
+                      small 1 200 позиций
+              .col-12.col-md-6.col-lg-4
+                .category-brand__block
+                  .category-brand__block-thumb
+                    a(href="#!")
+                      img(src="./tmp/category-brand-img-2.png", alt="")
+                  .category-brand__block-title
+                    div Подушки
+                      small 1 200 позиций
+              .col-12.col-md-6.col-lg-4
+                .category-brand__block
+                  .category-brand__block-thumb
+                    a(href="#!")
+                      img(src="./tmp/category-brand-img-3.png", alt="")
+                  .category-brand__block-title
+                    div Ковры
+                      small 1 200 позиций
+            
+          // /end Category brand
+
+      // /end Content
+
+      include ./_include/_footer
+      //- div(style="height: 1000px; background-color: #000")
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+

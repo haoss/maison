@@ -208,6 +208,7 @@ img, .img {
 
 ul {
   padding-left: 0;
+  margin-bottom: 30px;
   li {
     list-style-type: none;
     list-style-position: inside;
@@ -220,12 +221,29 @@ ul {
       font-size: 12px;
       left: 0;
       line-height: 1;
-      top: 12px;
+      top: 11px;
     }
   }
 }
-ol li {
-  list-style-type: decimal;
+ol {
+  padding-left: 0px;
+  counter-reset: section;
+  margin-bottom: 30px;
+  li {
+    padding-left: 20px;
+    position: relative;
+    list-style: none;
+    &::before {
+      counter-increment: section;
+      content: counter(section)".";
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 400;
+      position: absolute;
+      left: 0;
+      top: 9px;
+    }
+  }
 }
 
 /* bg */

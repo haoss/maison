@@ -1,0 +1,128 @@
+doctype
+
+html(lang="ru")
+
+  -var active = 'О компании' //активный пункт меню, список в header.jade
+  -var pageTitle = 'О компании' + ' - Эксклюзивный магазин MAISON' //title страницы для генерации верстки
+
+  include ./_include/_head
+
+  body
+    .base
+      // Preloader
+      include ./_include/_preloader
+
+      include ./_include/_header
+
+      // Top img
+      .top-img
+        img(src="./tmp/top-img-1.png", alt="").top-img__bg
+        .top-img__wrapper
+          .container
+
+            h1 О компании
+            +breadcrumbs()
+              +breadcrumbs-item('Эксклюзивный магазин MAISON', './index.html')
+              +breadcrumbs-item('Название раздела', '#!')
+              +breadcrumbs-item('Название страницы')
+
+      // Content
+      .content
+        .container
+
+          .row.justify-content-center
+            .col-12.col-lg-10
+              .content__document
+                p MAISON - это новый проект, который собрал в себе лучшие бренды со всего мира и многолетний опыт работы в сфере дизайна интерьера. Мы создали не просто магазин или дизайн-студию - мы создали абсолютно новую концепцию работы с клиентом, ориентированную на его потребности. Выбор подарка для близкого человека, подбор аксессуаров и мебели для дома или комплектация "под ключ" - специалисты MAISON проконсультируют по всем вопросам.
+                p Каждый предмет в MAISON имеет право носить звание "Лучший выбор" - мы очень тщательно подходим к вопросу выбора фабрик, которые представленны у нас. Мы работаем с производителями, а значит, готовы предложить Вам лучшую цену. При этом мы работаем не только с брендами, имена которых, говорят сами за себя, но и, с удовольствием открываем для Вас новые "имена", не уступающие по качеству и дизайну.
+
+          // Advantages
+          .advantages
+            .advantages__row
+              div
+                .advantages__block
+                  span.line.--top
+                  span.line.--right
+                  span.line.--bottom
+                  span.line.--left
+                  .advantages__block-number 01
+                  .advantages__block-text Индивидуальный подход, премиальный сервис
+              div
+                .advantages__block
+                  span.line.--top
+                  span.line.--right
+                  span.line.--bottom
+                  span.line.--left
+                  .advantages__block-number 02
+                  .advantages__block-text Контроль каждого шага заказа до момента доставки
+              div
+                .advantages__block
+                  span.line.--top
+                  span.line.--right
+                  span.line.--bottom
+                  span.line.--left
+                  .advantages__block-number 03
+                  .advantages__block-text Официальные дилеры ralph lauren
+              div
+                .advantages__block
+                  span.line.--top
+                  span.line.--right
+                  span.line.--bottom
+                  span.line.--left
+                  .advantages__block-number 04
+                  .advantages__block-text Весь спектр услуг (подбор и комплектация)
+              div
+                .advantages__block
+                  span.line.--top
+                  span.line.--right
+                  span.line.--bottom
+                  span.line.--left
+                  .advantages__block-number 05
+                  .advantages__block-text Эксклюзивность
+              div
+                .advantages__block
+                  span.line.--top
+                  span.line.--right
+                  span.line.--bottom
+                  span.line.--left
+                  .advantages__block-number 06
+                  .advantages__block-text Оригинальные товары из США и Европы
+          // /end Advantages
+
+        // About quote
+        .about-quote
+          .container
+            .row.justify-content-center
+              .col-12.col-lg-10
+                .about-quote__quote
+                  p Мы как никто другой знаем, что текcтиль в интерьере очень важен. Благодаря ему создается уют и комфорт в каждом доме. 
+                  .about-quote__quote-name Джон Гальяно 
+                    span Основатель компании
+          .about-quote__img
+            img(src="./tmp/about-quote-img.png", alt="")
+
+        .container
+          .row.justify-content-center
+            .col-12.col-lg-10
+              .content__document
+                p Благодаря ежедневной работе профессионалов - наш подход основывается на ИДЕЕ. Мы не продаем, мы вдохновляем. Каждый предмет сам по себе всего лишь предмет, НО… Если этот предмет поместить в контекст дополняющих друг друга деталей, то тогда рождается идея, а идея рождает желание, а желание создает настроение. И вот каждый день можно превратить в настоящее торжество, большое или маленькое - и уже не имеет значение званный ужин или романтический завтрак - подача всегда имеет значение.
+                p Для удобства наших клиентов мы создали шторную студию MAISON, в которой представлено множество тканей различных производителей - Англия, Франция, Италия. Поэтому всегда легко выбрать оббивку для мебели, ткань для декоративных подушек, покрывал, и конечно, портьер. Наши дизайнеры всегда рады помочь с выбором, предложить идею для нестандартного окна и выехать на замеры.
+                p Мы как никто другой знаем, что текcтиль в интерьере очень важен. Благодаря ему создается уют и комфорт в каждом доме. Поэтому мы постарались представить у нас лучших из лучших производителей текстиля - будь то постельное или столовое белье, полотенца, халаты, изделия из кашемира. Также у нас представлены FASHION коллекции одежды для дома и сна. И, конечно, мы всегда рады помочь подобрать Вам подушки и одеяла из нашего наличия или по Вашим индивидуальным размерам.
+
+        // About video
+        .about-video
+          .about-video__block
+            a(href="https://www.youtube.com/watch?v=0-7IHOXkiV8" data-fancybox)
+            img(src="./tmp/main-video-img.png", alt="").about-video__block-img
+            .about-video__play
+        // /end About video
+
+      // /end Content
+
+      include ./_include/_footer
+      //- div(style="height: 1000px; background-color: #000")
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+
