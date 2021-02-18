@@ -120,6 +120,18 @@ $(document).on('ready', function(){
 
   $('select.niceSelect').niceSelect();
 
+  $('.contacts__carousel').slick({
+    mobileFirst: true,
+    dots: false,
+    arrow: true,
+    autoplay: false,
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
+    fade: false,
+    variableWidth: true,
+    slidesToShow: 1
+  });
+
   phoneMask();
   mobileNav();
   headerScroll();

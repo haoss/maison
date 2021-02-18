@@ -2,7 +2,7 @@
 <html lang="ru">
     <head>
         <meta charset="utf-8">
-        <title>Новости - Эксклюзивный магазин MAISON</title>
+        <title>Спецпредложения - Эксклюзивный магазин MAISON</title>
         <meta name="description" content="">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -246,10 +246,10 @@
                 </div>
             </div>
             <!-- Top img-->
-            <div class="top-img"><img class="top-img__bg" src="./tmp/top-img-1.png" alt="">
+            <div class="top-img --thin"><img class="top-img__bg" src="./tmp/top-img-1.png" alt="">
                 <div class="top-img__wrapper">
                     <div class="container">
-                        <h1>Новости</h1>
+                        <h1>Спецпредложения</h1>
                             <ol class="breadcrumbs" aria-label="Breadcrumb" role="navigation">
                                     <li class="breadcrumbs__item"><a href="./index.html">Эксклюзивный магазин MAISON</a>
                                     </li>
@@ -264,24 +264,26 @@
             <!-- Content-->
             <div class="content">
                 <div class="container">
-                    <!-- News-->
-                    <div class="news">
-                        <div class="news__head">
-                            <div class="news__sort">
-                                <label>Категория:</label>
-                                <div class="news__select">
+                    <!-- Catalog-->
+                    <div class="catalog">
+                        <div class="catalog__head">
+                            <div class="catalog__sort">
+                                <label>Выводить по:</label>
+                                <div class="catalog__select">
                                     <select class="niceSelect">
-                                        <option value="Все материалы">Все материалы</option>
-                                        <option value="Текстиль">Текстиль</option>
-                                        <option value="Мебель">Мебель</option>
+                                        <option value="Увеличению цены" selected>Увеличению цены</option>
+                                        <option value="Уменьшению цены">Уменьшению цены</option>
+                                        <option value="Актуальность">Актуальность</option>
+                                        <option value="Популярность">Популярность</option>
+                                        <option value="В наличии">В наличии</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="news__sort --limit">
+                            <div class="catalog__sort --limit">
                                 <label>Выводить по:</label>
-                                <div class="news__select">
+                                <div class="catalog__select">
                                     <select class="niceSelect">
-                                        <option value="18" selected="selected">18</option>
+                                        <option value="18" selected>18</option>
                                         <option value="36">36</option>
                                         <option value="64">64</option>
                                         <option value="96">96</option>
@@ -290,57 +292,189 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row" id="grid">
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <div class="news__block">
-                                    <div class="news__block-thumb"><a href="#!"> <img src="./tmp/news-img-1.png" alt=""></a></div>
-                                    <div class="news__block-category">Текстиль</div>
-                                    <div class="news__block-title"><a href="#!">The Rug Company x Fashion Designer Mary Katrantzou</a></div>
-                                    <div class="news__block-info"> <span>Иванова Екатерина</span><span>30 Декабря, 2020</span></div>
+                        <div class="row catalog__row">
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="catalog__block">
+                                    <div class="catalog__block-label">-50<small>%</small></div>
+                                    <button class="catalog__block-favourite" type="button"></button>
+                                    <div class="catalog__block-thumb"><a href="#!"> <img src="./tmp/catalog-img-1.png" alt=""></a>
+                                        <button class="btn" type="button">Подробнее</button>
+                                    </div>
+                                    <div class="catalog__block-title">Диван (ткань - ёлочка, ножки- темная бронза)</div>
+                                    <div class="catalog__block-price">
+                                        <div><b>165 627<i class="icon-rouble"></i></b>
+                                            <button type="button"><i class="icon-plus-bold"></i>В корзину</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <div class="news__block">
-                                    <div class="news__block-thumb"><a href="#!"> <img src="./tmp/news-img-2.png" alt=""></a></div>
-                                    <div class="news__block-category">Текстиль</div>
-                                    <div class="news__block-title"><a href="#!">Weaving Ancient Craft into Contemporary Design</a></div>
-                                    <div class="news__block-info"> <span>Иванова Екатерина</span><span>30 Декабря, 2020</span></div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="catalog__block">
+                                    <div class="catalog__block-label">-50<small>%</small></div>
+                                    <button class="catalog__block-favourite is-active" type="button"></button>
+                                    <div class="catalog__block-thumb"><a href="#!"> <img src="./tmp/catalog-img-2.png" alt=""></a>
+                                        <button class="btn" type="button">Подробнее</button>
+                                    </div>
+                                    <div class="catalog__block-title">Стеллаж для книг</div>
+                                    <div class="catalog__block-price">
+                                        <div><b>52 325<i class="icon-rouble"></i></b>
+                                            <button type="button"><i class="icon-plus-bold"></i>В корзину</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <div class="news__block">
-                                    <div class="news__block-thumb"><a href="#!"> <img src="./tmp/news-img-3.png" alt=""></a></div>
-                                    <div class="news__block-category">Текстиль</div>
-                                    <div class="news__block-title"><a href="#!">The Rug Company x Fashion Designer Mary Katrantzou</a></div>
-                                    <div class="news__block-info"> <span>Иванова Екатерина</span><span>30 Декабря, 2020</span></div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="catalog__block">
+                                    <div class="catalog__block-label">-50<small>%</small></div>
+                                    <button class="catalog__block-favourite" type="button"></button>
+                                    <div class="catalog__block-thumb"><a href="#!"> <img src="./tmp/catalog-img-3.png" alt=""></a>
+                                        <button class="btn" type="button">Подробнее</button>
+                                    </div>
+                                    <div class="catalog__block-title">Ваза Lamina</div>
+                                    <div class="catalog__block-price">
+                                        <div><b>52 325<i class="icon-rouble"></i></b>
+                                            <button type="button"><i class="icon-plus-bold"></i>В корзину</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <div class="news__block">
-                                    <div class="news__block-thumb"><a href="#!"> <img src="./tmp/news-img-4.png" alt=""></a></div>
-                                    <div class="news__block-category">Текстиль</div>
-                                    <div class="news__block-title"><a href="#!">Weaving Ancient Craft into Contemporary Design</a></div>
-                                    <div class="news__block-info"> <span>Иванова Екатерина</span><span>30 Декабря, 2020</span></div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="catalog__block">
+                                    <div class="catalog__block-label">-50<small>%</small></div>
+                                    <button class="catalog__block-favourite" type="button"></button>
+                                    <div class="catalog__block-thumb"><a href="#!"> <img src="./tmp/catalog-img-4.png" alt=""></a>
+                                        <button class="btn" type="button">Подробнее</button>
+                                    </div>
+                                    <div class="catalog__block-title">Кашпо круглое (черное с бронзой) </div>
+                                    <div class="catalog__block-price">
+                                        <div><b>528 857<i class="icon-rouble"></i></b>
+                                            <button type="button"><i class="icon-plus-bold"></i>В корзину</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <div class="news__block">
-                                    <div class="news__block-thumb"><a href="#!"> <img src="./tmp/news-img-5.png" alt=""></a></div>
-                                    <div class="news__block-category">Текстиль</div>
-                                    <div class="news__block-title"><a href="#!">The Rug Company x Fashion Designer Mary Katrantzou</a></div>
-                                    <div class="news__block-info"> <span>Иванова Екатерина</span><span>30 Декабря, 2020</span></div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="catalog__block">
+                                    <div class="catalog__block-label">-50<small>%</small></div>
+                                    <button class="catalog__block-favourite" type="button"></button>
+                                    <div class="catalog__block-thumb"><a href="#!"> <img src="./images/no-image.svg" alt=""></a>
+                                        <button class="btn" type="button">Подробнее</button>
+                                    </div>
+                                    <div class="catalog__block-title">Прикроватный столик Ayton</div>
+                                    <div class="catalog__block-price">
+                                        <div><b>23 654<i class="icon-rouble"></i></b>
+                                            <button type="button"><i class="icon-plus-bold"></i>В корзину</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <div class="news__block">
-                                    <div class="news__block-thumb"><a href="#!"> <img src="./tmp/news-img-6.png" alt=""></a></div>
-                                    <div class="news__block-category">Текстиль</div>
-                                    <div class="news__block-title"><a href="#!">Weaving Ancient Craft into Contemporary Design</a></div>
-                                    <div class="news__block-info"> <span>Иванова Екатерина</span><span>30 Декабря, 2020</span></div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="catalog__block">
+                                    <div class="catalog__block-label">-50<small>%</small></div>
+                                    <button class="catalog__block-favourite" type="button"></button>
+                                    <div class="catalog__block-thumb"><a href="#!"> <img src="./tmp/catalog-img-6.png" alt=""></a>
+                                        <button class="btn" type="button">Подробнее</button>
+                                    </div>
+                                    <div class="catalog__block-title">Люстра Signature by Barbara Barry</div>
+                                    <div class="catalog__block-price">
+                                        <div><b>84 352<i class="icon-rouble"></i></b>
+                                            <button type="button"><i class="icon-plus-bold"></i>В корзину</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="catalog__block">
+                                    <div class="catalog__block-label">-50<small>%</small></div>
+                                    <button class="catalog__block-favourite" type="button"></button>
+                                    <div class="catalog__block-thumb"><a href="#!"> <img src="./tmp/catalog-img-7.png" alt=""></a>
+                                        <button class="btn" type="button">Подробнее</button>
+                                    </div>
+                                    <div class="catalog__block-title">Прикроватный столик Cannes</div>
+                                    <div class="catalog__block-price">
+                                        <div><b>66 454<i class="icon-rouble"></i></b>
+                                            <button type="button"><i class="icon-plus-bold"></i>В корзину</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="catalog__block">
+                                    <div class="catalog__block-label">-50<small>%</small></div>
+                                    <button class="catalog__block-favourite" type="button"></button>
+                                    <div class="catalog__block-thumb"><a href="#!"> <img src="./tmp/catalog-img-8.png" alt=""></a>
+                                        <button class="btn" type="button">Подробнее</button>
+                                    </div>
+                                    <div class="catalog__block-title">Барный шкаф Dillon Cabinet</div>
+                                    <div class="catalog__block-price">
+                                        <div><b>99 199<i class="icon-rouble"></i></b>
+                                            <button type="button"><i class="icon-plus-bold"></i>В корзину</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="catalog__block">
+                                    <div class="catalog__block-label">-50<small>%</small></div>
+                                    <button class="catalog__block-favourite" type="button"></button>
+                                    <div class="catalog__block-thumb"><a href="#!"> <img src="./tmp/catalog-img-1.png" alt=""></a>
+                                        <button class="btn" type="button">Подробнее</button>
+                                    </div>
+                                    <div class="catalog__block-title">Диван (ткань - ёлочка, ножки- темная бронза)</div>
+                                    <div class="catalog__block-price">
+                                        <div><b>165 627<i class="icon-rouble"></i></b>
+                                            <button type="button"><i class="icon-plus-bold"></i>В корзину</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="catalog__block">
+                                    <div class="catalog__block-label">-50<small>%</small></div>
+                                    <button class="catalog__block-favourite" type="button"></button>
+                                    <div class="catalog__block-thumb"><a href="#!"> <img src="./tmp/catalog-img-2.png" alt=""></a>
+                                        <button class="btn" type="button">Подробнее</button>
+                                    </div>
+                                    <div class="catalog__block-title">Стеллаж для книг</div>
+                                    <div class="catalog__block-price">
+                                        <div><b>52 325<i class="icon-rouble"></i></b>
+                                            <button type="button"><i class="icon-plus-bold"></i>В корзину</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="catalog__block">
+                                    <div class="catalog__block-label">-50<small>%</small></div>
+                                    <button class="catalog__block-favourite" type="button"></button>
+                                    <div class="catalog__block-thumb"><a href="#!"> <img src="./tmp/catalog-img-3.png" alt=""></a>
+                                        <button class="btn" type="button">Подробнее</button>
+                                    </div>
+                                    <div class="catalog__block-title">Ваза Lamina</div>
+                                    <div class="catalog__block-price">
+                                        <div><b>52 325<i class="icon-rouble"></i></b>
+                                            <button type="button"><i class="icon-plus-bold"></i>В корзину</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="catalog__block">
+                                    <div class="catalog__block-label">-50<small>%</small></div>
+                                    <button class="catalog__block-favourite" type="button"></button>
+                                    <div class="catalog__block-thumb"><a href="#!"> <img src="./tmp/catalog-img-4.png" alt=""></a>
+                                        <button class="btn" type="button">Подробнее</button>
+                                    </div>
+                                    <div class="catalog__block-title">Ваза Lamina</div>
+                                    <div class="catalog__block-price">
+                                        <div><b>52 325<i class="icon-rouble"></i></b>
+                                            <button type="button"><i class="icon-plus-bold"></i>В корзину</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                            <div class="pagination" aria-label="Page navigation">
+                            <div class="pagination  --catalog" aria-label="Page navigation">
                                 <ul>
                                     <li class="pagination__prev"><a href="#!"></a></li>
                                         <li class="pagination__item"><a href="#!">1</a></li>
@@ -352,7 +486,18 @@
                                 </ul>
                             </div>
                     </div>
-                    <!-- /end News-->
+                    <!-- /end Catalog-->
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-10">
+                            <div class="content__document --pb0">
+                                <h2>Элитные диваны из США и Европы в шоурумах MAISON</h2>
+                                <p>В MAISONпредставлена самая большая коллекция элитной американской мебели в Москве. В нашем каталоге вы найдете продукцию ведущих брендов США и Европы: Ralph Lauren Home, Baker Furniture, Barbara Barry, Kelly Wearstler, Century, Sherrill Furniture, Chelini, Moissonnier, Fornasetti и др. </p>
+                                <p> <b>Американская мечта Ralph Lauren Home </b></p>
+                                <p>Один из самых выдающихся современных дизайнеров, обладатель титула Командора Британской империи, американец Ральф Лорен более 30 лет производит предметы интерьера под торговой маркой Ralph Lauren Home. О своей мебели сам дизайнер когда-то ёмко сказал: "Я продаю мечту". текстиль от Ральфа Лорена изготовляется вручную, по старинным технологиям, из самых дорогих натуральных материалов, при этом марка не забывает об экологии и принципах устойчивого производства (sustainability). Аристократичная, шикарная текстиль Ralph Lauren украшает интерьеры домов знаменитостей и сильных мира сего по всему миру. В России она пользуется неизменным спросом благодаря сочетанию безупречного качества и выразительного дизайна.  </p>
+                                <p>текстиль Ralph Lauren Home создается по эскизам самого Ральфа, при этом дизайнер тщательно контролирует все этапы производства. Пожалуй, никто не умеет так виртуозно комбинировать элементы стилей различных эпох, смешивать английскую классику с голливудским шиком, создавая современные интерьеры для жизни на все времена.  </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- /end Content-->

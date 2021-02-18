@@ -1,0 +1,286 @@
+doctype
+
+html(lang="ru")
+
+  -var active = 'Спецпредложения' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Спецпредложения' + ' - Эксклюзивный магазин MAISON' //title страницы для генерации верстки
+
+  include ./_include/_head
+
+  body
+    .base
+      // Preloader
+      include ./_include/_preloader
+
+      include ./_include/_header
+
+      // Top img
+      .top-img.--thin
+        img(src="./tmp/top-img-1.png", alt="").top-img__bg
+        .top-img__wrapper
+          .container
+
+            h1 Спецпредложения
+            +breadcrumbs()
+              +breadcrumbs-item('Эксклюзивный магазин MAISON', './index.html')
+              +breadcrumbs-item('Название раздела', '#!')
+              +breadcrumbs-item('Название страницы')
+
+      // Content
+      .content
+        .container
+
+          // Catalog
+          .catalog
+            .catalog__head
+              .catalog__sort
+                label Выводить по:
+                .catalog__select
+                  select.niceSelect
+                    option(value="Увеличению цены" selected) Увеличению цены
+                    option(value="Уменьшению цены") Уменьшению цены
+                    option(value="Актуальность") Актуальность
+                    option(value="Популярность") Популярность
+                    option(value="В наличии") В наличии
+                  
+              .catalog__sort.--limit
+                label Выводить по:
+                .catalog__select
+                  select.niceSelect
+                    option(value='18', selected) 18
+                    option(value='36') 36
+                    option(value='64') 64
+                    option(value='96') 96
+                    option(value='Все') Все
+            .row.catalog__row
+              .col-12.col-sm-6.col-lg-4.col-xl-3
+                .catalog__block
+                  .catalog__block-label -50
+                    small %
+                  button.catalog__block-favourite(type="button")
+                  .catalog__block-thumb
+                    a(href="#!") 
+                      img(src="./tmp/catalog-img-1.png", alt="")
+                    button(type="button").btn Подробнее
+                  .catalog__block-title Диван (ткань - ёлочка, ножки- темная бронза)
+                  .catalog__block-price
+                    div
+                      b 165 627
+                        i.icon-rouble
+                      button(type="button")
+                        i.icon-plus-bold
+                        | В корзину
+              .col-12.col-sm-6.col-lg-4.col-xl-3
+                .catalog__block
+                  .catalog__block-label -50
+                    small %
+                  button.catalog__block-favourite.is-active(type="button")
+                  .catalog__block-thumb
+                    a(href="#!") 
+                      img(src="./tmp/catalog-img-2.png", alt="")
+                    button(type="button").btn Подробнее
+                  .catalog__block-title Стеллаж для книг
+                  .catalog__block-price
+                    div
+                      b 52 325
+                        i.icon-rouble
+                      button(type="button")
+                        i.icon-plus-bold
+                        | В корзину
+              .col-12.col-sm-6.col-lg-4.col-xl-3
+                .catalog__block
+                  .catalog__block-label -50
+                    small %
+                  button.catalog__block-favourite(type="button")
+                  .catalog__block-thumb
+                    a(href="#!") 
+                      img(src="./tmp/catalog-img-3.png", alt="")
+                    button(type="button").btn Подробнее
+                  .catalog__block-title Ваза Lamina
+                  .catalog__block-price
+                    div
+                      b 52 325
+                        i.icon-rouble
+                      button(type="button")
+                        i.icon-plus-bold
+                        | В корзину
+              .col-12.col-sm-6.col-lg-4.col-xl-3
+                .catalog__block
+                  .catalog__block-label -50
+                    small %
+                  button.catalog__block-favourite(type="button")
+                  .catalog__block-thumb
+                    a(href="#!") 
+                      img(src="./tmp/catalog-img-4.png", alt="")
+                    button(type="button").btn Подробнее
+                  .catalog__block-title Кашпо круглое (черное с бронзой) 
+                  .catalog__block-price
+                    div
+                      b 528 857
+                        i.icon-rouble
+                      button(type="button")
+                        i.icon-plus-bold
+                        | В корзину
+              .col-12.col-sm-6.col-lg-4.col-xl-3
+                .catalog__block
+                  .catalog__block-label -50
+                    small %
+                  button.catalog__block-favourite(type="button")
+                  .catalog__block-thumb
+                    a(href="#!") 
+                      img(src="./images/no-image.svg", alt="")
+                    button(type="button").btn Подробнее
+                  .catalog__block-title Прикроватный столик Ayton
+                  .catalog__block-price
+                    div
+                      b 23 654
+                        i.icon-rouble
+                      button(type="button")
+                        i.icon-plus-bold
+                        | В корзину
+              .col-12.col-sm-6.col-lg-4.col-xl-3
+                .catalog__block
+                  .catalog__block-label -50
+                    small %
+                  button.catalog__block-favourite(type="button")
+                  .catalog__block-thumb
+                    a(href="#!") 
+                      img(src="./tmp/catalog-img-6.png", alt="")
+                    button(type="button").btn Подробнее
+                  .catalog__block-title Люстра Signature by Barbara Barry
+                  .catalog__block-price
+                    div
+                      b 84 352
+                        i.icon-rouble
+                      button(type="button")
+                        i.icon-plus-bold
+                        | В корзину
+              .col-12.col-sm-6.col-lg-4.col-xl-3
+                .catalog__block
+                  .catalog__block-label -50
+                    small %
+                  button.catalog__block-favourite(type="button")
+                  .catalog__block-thumb
+                    a(href="#!") 
+                      img(src="./tmp/catalog-img-7.png", alt="")
+                    button(type="button").btn Подробнее
+                  .catalog__block-title Прикроватный столик Cannes
+                  .catalog__block-price
+                    div
+                      b 66 454
+                        i.icon-rouble
+                      button(type="button")
+                        i.icon-plus-bold
+                        | В корзину
+              .col-12.col-sm-6.col-lg-4.col-xl-3
+                .catalog__block
+                  .catalog__block-label -50
+                    small %
+                  button.catalog__block-favourite(type="button")
+                  .catalog__block-thumb
+                    a(href="#!") 
+                      img(src="./tmp/catalog-img-8.png", alt="")
+                    button(type="button").btn Подробнее
+                  .catalog__block-title Барный шкаф Dillon Cabinet
+                  .catalog__block-price
+                    div
+                      b 99 199
+                        i.icon-rouble
+                      button(type="button")
+                        i.icon-plus-bold
+                        | В корзину
+              .col-12.col-sm-6.col-lg-4.col-xl-3
+                .catalog__block
+                  .catalog__block-label -50
+                    small %
+                  button.catalog__block-favourite(type="button")
+                  .catalog__block-thumb
+                    a(href="#!") 
+                      img(src="./tmp/catalog-img-1.png", alt="")
+                    button(type="button").btn Подробнее
+                  .catalog__block-title Диван (ткань - ёлочка, ножки- темная бронза)
+                  .catalog__block-price
+                    div
+                      b 165 627
+                        i.icon-rouble
+                      button(type="button")
+                        i.icon-plus-bold
+                        | В корзину
+              .col-12.col-sm-6.col-lg-4.col-xl-3
+                .catalog__block
+                  .catalog__block-label -50
+                    small %
+                  button.catalog__block-favourite(type="button")
+                  .catalog__block-thumb
+                    a(href="#!") 
+                      img(src="./tmp/catalog-img-2.png", alt="")
+                    button(type="button").btn Подробнее
+                  .catalog__block-title Стеллаж для книг
+                  .catalog__block-price
+                    div
+                      b 52 325
+                        i.icon-rouble
+                      button(type="button")
+                        i.icon-plus-bold
+                        | В корзину
+              .col-12.col-sm-6.col-lg-4.col-xl-3
+                .catalog__block
+                  .catalog__block-label -50
+                    small %
+                  button.catalog__block-favourite(type="button")
+                  .catalog__block-thumb
+                    a(href="#!") 
+                      img(src="./tmp/catalog-img-3.png", alt="")
+                    button(type="button").btn Подробнее
+                  .catalog__block-title Ваза Lamina
+                  .catalog__block-price
+                    div
+                      b 52 325
+                        i.icon-rouble
+                      button(type="button")
+                        i.icon-plus-bold
+                        | В корзину
+              .col-12.col-sm-6.col-lg-4.col-xl-3
+                .catalog__block
+                  .catalog__block-label -50
+                    small %
+                  button.catalog__block-favourite(type="button")
+                  .catalog__block-thumb
+                    a(href="#!") 
+                      img(src="./tmp/catalog-img-4.png", alt="")
+                    button(type="button").btn Подробнее
+                  .catalog__block-title Ваза Lamina
+                  .catalog__block-price
+                    div
+                      b 52 325
+                        i.icon-rouble
+                      button(type="button")
+                        i.icon-plus-bold
+                        | В корзину
+            +pagination('catalog')
+              +pagination-item('1', '#!')
+              +pagination-item('2', '#!')
+              +pagination-item('3', '', true)
+              +pagination-item('4', '#!')
+              +pagination-item('5', '#!')
+          // /end Catalog
+
+          .row.justify-content-center
+            .col-12.col-lg-10
+              .content__document.--pb0
+                h2 Элитные диваны из США и Европы в шоурумах MAISON
+                p В MAISONпредставлена самая большая коллекция элитной американской мебели в Москве. В нашем каталоге вы найдете продукцию ведущих брендов США и Европы: Ralph Lauren Home, Baker Furniture, Barbara Barry, Kelly Wearstler, Century, Sherrill Furniture, Chelini, Moissonnier, Fornasetti и др. 
+                p 
+                  b Американская мечта Ralph Lauren Home 
+                p Один из самых выдающихся современных дизайнеров, обладатель титула Командора Британской империи, американец Ральф Лорен более 30 лет производит предметы интерьера под торговой маркой Ralph Lauren Home. О своей мебели сам дизайнер когда-то ёмко сказал: "Я продаю мечту". текстиль от Ральфа Лорена изготовляется вручную, по старинным технологиям, из самых дорогих натуральных материалов, при этом марка не забывает об экологии и принципах устойчивого производства (sustainability). Аристократичная, шикарная текстиль Ralph Lauren украшает интерьеры домов знаменитостей и сильных мира сего по всему миру. В России она пользуется неизменным спросом благодаря сочетанию безупречного качества и выразительного дизайна.  
+                p текстиль Ralph Lauren Home создается по эскизам самого Ральфа, при этом дизайнер тщательно контролирует все этапы производства. Пожалуй, никто не умеет так виртуозно комбинировать элементы стилей различных эпох, смешивать английскую классику с голливудским шиком, создавая современные интерьеры для жизни на все времена.  
+
+      // /end Content
+
+      include ./_include/_footer
+      //- div(style="height: 1000px; background-color: #000")
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+

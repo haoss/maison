@@ -100,6 +100,9 @@
       }
     }
   }
+  &.--catalog {
+    margin-bottom: 70px;
+  }
   @include media-breakpoint-up(sm) {
     ul {
       &>li {
@@ -111,6 +114,10 @@
   }
   @include media-breakpoint-up(md) {}
   @include media-breakpoint-up(lg) {}
-  @include media-breakpoint-up(xl) {}
+  @include media-breakpoint-up(xl) {
+    &.--catalog {
+      margin-bottom: 100px;
+    }
+  }
   @include media-breakpoint-up(xxl) {}
 }

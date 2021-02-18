@@ -1,0 +1,200 @@
+doctype
+
+html(lang="ru")
+
+  -var active = 'Контакты салонов' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Контакты салонов' + ' - Эксклюзивный магазин MAISON' //title страницы для генерации верстки
+
+  include ./_include/_head
+
+  body
+    .base
+      // Preloader
+      include ./_include/_preloader
+
+      include ./_include/_header
+
+      // Top img
+      .top-img
+        img(src="./tmp/top-img-1.png", alt="").top-img__bg
+        .top-img__wrapper
+          .container
+
+            h1 Контакты салонов
+            +breadcrumbs()
+              +breadcrumbs-item('Эксклюзивный магазин MAISON', './index.html')
+              +breadcrumbs-item('Название раздела', '#!')
+              +breadcrumbs-item('Название страницы')
+
+      // Content
+      .content
+        .container
+
+          // Contacts
+          .contacts
+            .row.contacts__row
+              .col-12.col-lg-6.order-lg-2
+                .contacts__content.d-lg-none
+                  h2 Шоурум на Новорижской
+                  p Московская область, Красногорский р-н., Новорижское ш., 5-й км от МКАД, близ деревни Воронки
+                  p
+                    a(href="tel:") 8 (495) 
+                      b 532-87-72
+                    br
+                    a(href="mailto:") shop@maison-home.ru
+                  
+                  .clear
+                  a(href="#!").btn.contacts__btn Посмотреть товары в салоне
+
+                #map1.contacts__map
+                .d-none.d-lg-block
+                  a(href="#!").btn.contacts__btn Посмотреть товары в салоне
+
+              .col-12.col-lg-6.order-lg-1
+                .contacts__content.d-none.d-lg-block
+                  h2 Шоурум на Новорижской
+                  p Московская область, Красногорский р-н., Новорижское ш., 5-й км от МКАД, близ деревни Воронки
+                  p
+                    a(href="tel:") 8 (495) 
+                      b 532-87-72
+                    br
+                    a(href="mailto:") shop@maison-home.ru
+                .contacts__carousel
+                  a(href="./tmp/contacts-img-1.png" data-fancybox="images").contacts__carousel-img
+                    img(src="./tmp/contacts-img-1.png", width="133", height="133" alt="")
+                  a(href="./tmp/contacts-img-2.png" data-fancybox="images").contacts__carousel-img
+                    img(src="./tmp/contacts-img-2.png", width="133", height="133" alt="")
+                  a(href="./tmp/contacts-img-3.png" data-fancybox="images").contacts__carousel-img
+                    img(src="./tmp/contacts-img-3.png", width="133", height="133" alt="")
+                  a(href="./tmp/contacts-img-4.png" data-fancybox="images").contacts__carousel-img
+                    img(src="./tmp/contacts-img-4.png", width="133", height="133" alt="")
+                  a(href="./tmp/contacts-img-5.png" data-fancybox="images").contacts__carousel-img
+                    img(src="./tmp/contacts-img-5.png", width="133", height="133" alt="")
+                  a(href="./tmp/contacts-img-6.png" data-fancybox="images").contacts__carousel-img
+                    img(src="./tmp/contacts-img-6.png", width="133", height="133" alt="")
+
+            .row.contacts__row
+              .col-12.col-lg-6.order-lg-2
+                .contacts__content.d-lg-none
+                  h2 Магазин в ТД Жуковка Плаза
+                  p Московская область, Рублево-Успенское шоссе 186, ТД Жуковка Плаза
+                  p
+                    a(href="tel:") 8 (495) 
+                      b 532-87-72
+                    br
+                    a(href="mailto:") shop@maison-home.ru
+                  
+                  .clear
+                  a(href="#!").btn.contacts__btn Посмотреть товары в салоне
+
+                #map2.contacts__map
+                .d-none.d-lg-block
+                  a(href="#!").btn.contacts__btn Посмотреть товары в салоне
+
+              .col-12.col-lg-6.order-lg-1
+                .contacts__content.d-none.d-lg-block
+                  h2 Магазин в ТД Жуковка Плаза
+                  p Московская область, Рублево-Успенское шоссе 186, ТД Жуковка Плаза
+                  p
+                    a(href="tel:") 8 (495) 
+                      b 532-87-72
+                    br
+                    a(href="mailto:") shop@maison-home.ru
+                .contacts__carousel
+                  a(href="./tmp/contacts-img-4.png" data-fancybox="images").contacts__carousel-img
+                    img(src="./tmp/contacts-img-4.png", width="133", height="133" alt="")
+                  a(href="./tmp/contacts-img-5.png" data-fancybox="images").contacts__carousel-img
+                    img(src="./tmp/contacts-img-5.png", width="133", height="133" alt="")
+                  a(href="./tmp/contacts-img-6.png" data-fancybox="images").contacts__carousel-img
+                    img(src="./tmp/contacts-img-6.png", width="133", height="133" alt="")
+                  a(href="./tmp/contacts-img-1.png" data-fancybox="images").contacts__carousel-img
+                    img(src="./tmp/contacts-img-1.png", width="133", height="133" alt="")
+                  a(href="./tmp/contacts-img-2.png" data-fancybox="images").contacts__carousel-img
+                    img(src="./tmp/contacts-img-2.png", width="133", height="133" alt="")
+                  a(href="./tmp/contacts-img-3.png" data-fancybox="images").contacts__carousel-img
+                    img(src="./tmp/contacts-img-3.png", width="133", height="133" alt="")
+                  
+          // /end contacts
+
+      // /end Content
+
+      include ./_include/_footer
+      //- div(style="height: 1000px; background-color: #000")
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+
+    //  Google Map 
+    script(src='https://maps.googleapis.com/maps/api/js?sensor=false')
+    script.
+      
+      function initialize() {
+        var myLatlng = new google.maps.LatLng(55.7474675,37.2843648);
+        var map_options = {
+          zoom: 13,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          center: myLatlng,
+          scrollwheel: false,
+          disableDefaultUI: true
+        }
+    
+        var map = new google.maps.Map(document.getElementById('map1'), map_options)
+        var myIcon = new google.maps.MarkerImage('./images/map_icon.png', null, null, null, new google.maps.Size(159,79));
+    
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          icon: myIcon
+        });
+    
+        /* Remove if you dont want B/W Google Map */
+        var styles = [
+          {
+            featureType: "all",
+            stylers: [
+              { saturation: -100 }
+            ]
+          }
+        ];
+    
+        map.setOptions({styles: styles});
+      }
+
+      function initialize2() {
+        var myLatlng = new google.maps.LatLng(55.7380157,37.247104);
+        var map_options = {
+          zoom: 13,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          center: myLatlng,
+          scrollwheel: false,
+          disableDefaultUI: true
+        }
+    
+        var map = new google.maps.Map(document.getElementById('map2'), map_options)
+        var myIcon = new google.maps.MarkerImage('./images/map_icon.png', null, null, null, new google.maps.Size(159,79));
+    
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          icon: myIcon
+        });
+    
+        /* Remove if you dont want B/W Google Map */
+        var styles = [
+          {
+            featureType: "all",
+            stylers: [
+              { saturation: -100 }
+            ]
+          }
+        ];
+    
+        map.setOptions({styles: styles});
+      }
+    
+      google.maps.event.addDomListener(window, 'load', initialize);
+      google.maps.event.addDomListener(window, 'load', initialize2);
+      
+    //  Google Map Ends! 
+
