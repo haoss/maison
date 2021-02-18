@@ -125,10 +125,6 @@ $(document).on('ready', function(){
   footerNav();
   jNavigation();
 
-  var grid = document.querySelector('#grid');
-  var item = document.createElement('article');
-  salvattore.appendElements(grid, [item]);
-
   // Chrome Smooth Scroll
   try {
     $.browserSelector();
@@ -143,7 +139,9 @@ $(document).on('ready', function(){
   simpleForm('form.form-callback');
 });
 
-$(window).on('load', function() { });
+$(window).on('load', function() {
+  $('#grid').masonry({});
+});
 $(window).on('scroll', function() {
   headerScroll();
 });

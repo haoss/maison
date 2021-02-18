@@ -2889,6 +2889,7 @@
     &-thumb {
       overflow: hidden;
       margin-bottom: 25px;
+      background: $primary-color;
       img {
         max-width: 100%;
         height: auto;
@@ -2927,24 +2928,10 @@
       }
     }
   }
-  .column { float: left; }
-  .size-1of1 { width: 100%; }
-  .size-1of2 { width: 50%; }
-  .size-1of3 { width: 33.333%; }
-  #grid[data-columns]::before {
-    content: '1 .column.size-1of1';
-  }
-  @include media-breakpoint-up(sm) {
-    #grid[data-columns]::before {
-      content: '1 .column.size-1of1';
-    }
-  }
   @include media-breakpoint-up(md) {
-    #grid[data-columns]::before {
-      content: '2 .column.size-1of2';
-    }
     &__block {
       max-width: inherit;
+      min-width: 100%;
     }
     &__row {
       margin-left: -15px;
@@ -2954,11 +2941,32 @@
       padding: 0 15px;
     }
   }
-  @include media-breakpoint-up(lg) {
-    #grid[data-columns]::before {
-      content: '3 .column.size-1of3';
+  @include media-breakpoint-up(lg) {}
+  @include media-breakpoint-up(xl) {
+    &__block {
+      [class*="-thumb"] {
+        img {
+          transform: scale(1);
+          transition: all 0.35s;
+          opacity: 1;
+        }
+      }
+      [class*="-title"] {
+        a {
+          &:hover {
+            color: rgba($primary-color,.6);
+          }
+        }
+      }
+      &:hover {
+        [class*="-thumb"] {
+          img {
+            opacity: 0.7;
+            transform: scale(1.2);
+          }
+        }
+      }
     }
   }
-  @include media-breakpoint-up(xl) {}
   @include media-breakpoint-up(xxl) {}
 }

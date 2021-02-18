@@ -32,67 +32,73 @@ html(lang="ru")
 
           // News
           .news
-            #grid.news__row(data-columns)
-              .news__block.item
-                .news__block-thumb
-                  a(href="#!") 
-                    img(src="./tmp/news-img-1.png", alt="")
-                .news__block-category Текстиль
-                .news__block-title
-                  a(href="#!") The Rug Company x Fashion Designer Mary Katrantzou
-                .news__block-info 
-                  span Иванова Екатерина
-                  span 30 Декабря, 2020
-              .news__block.item
-                .news__block-thumb
-                  a(href="#!") 
-                    img(src="./tmp/news-img-2.png", alt="")
-                .news__block-category Текстиль
-                .news__block-title
-                  a(href="#!") Weaving Ancient Craft into Contemporary Design
-                .news__block-info 
-                  span Иванова Екатерина
-                  span 30 Декабря, 2020
-              .news__block.item
-                .news__block-thumb
-                  a(href="#!") 
-                    img(src="./tmp/news-img-3.png", alt="")
-                .news__block-category Текстиль
-                .news__block-title
-                  a(href="#!") The Rug Company x Fashion Designer Mary Katrantzou
-                .news__block-info 
-                  span Иванова Екатерина
-                  span 30 Декабря, 2020
-              .news__block.item
-                .news__block-thumb
-                  a(href="#!") 
-                    img(src="./tmp/news-img-4.png", alt="")
-                .news__block-category Текстиль
-                .news__block-title
-                  a(href="#!") Weaving Ancient Craft into Contemporary Design
-                .news__block-info 
-                  span Иванова Екатерина
-                  span 30 Декабря, 2020
-              .news__block.item
-                .news__block-thumb
-                  a(href="#!") 
-                    img(src="./tmp/news-img-5.png", alt="")
-                .news__block-category Текстиль
-                .news__block-title
-                  a(href="#!") The Rug Company x Fashion Designer Mary Katrantzou
-                .news__block-info 
-                  span Иванова Екатерина
-                  span 30 Декабря, 2020
-              .news__block.item
-                .news__block-thumb
-                  a(href="#!") 
-                    img(src="./tmp/news-img-6.png", alt="")
-                .news__block-category Текстиль
-                .news__block-title
-                  a(href="#!") Weaving Ancient Craft into Contemporary Design
-                .news__block-info 
-                  span Иванова Екатерина
-                  span 30 Декабря, 2020
+            #grid.row
+              .col-12.col-md-6.col-lg-4
+                .news__block
+                  .news__block-thumb
+                    a(href="#!") 
+                      img(src="./tmp/news-img-1.png", alt="")
+                  .news__block-category Текстиль
+                  .news__block-title
+                    a(href="#!") The Rug Company x Fashion Designer Mary Katrantzou
+                  .news__block-info 
+                    span Иванова Екатерина
+                    span 30 Декабря, 2020
+              .col-12.col-md-6.col-lg-4
+                .news__block
+                  .news__block-thumb
+                    a(href="#!") 
+                      img(src="./tmp/news-img-2.png", alt="")
+                  .news__block-category Текстиль
+                  .news__block-title
+                    a(href="#!") Weaving Ancient Craft into Contemporary Design
+                  .news__block-info 
+                    span Иванова Екатерина
+                    span 30 Декабря, 2020
+              .col-12.col-md-6.col-lg-4
+                .news__block
+                  .news__block-thumb
+                    a(href="#!") 
+                      img(src="./tmp/news-img-3.png", alt="")
+                  .news__block-category Текстиль
+                  .news__block-title
+                    a(href="#!") The Rug Company x Fashion Designer Mary Katrantzou
+                  .news__block-info 
+                    span Иванова Екатерина
+                    span 30 Декабря, 2020
+              .col-12.col-md-6.col-lg-4
+                .news__block
+                  .news__block-thumb
+                    a(href="#!") 
+                      img(src="./tmp/news-img-4.png", alt="")
+                  .news__block-category Текстиль
+                  .news__block-title
+                    a(href="#!") Weaving Ancient Craft into Contemporary Design
+                  .news__block-info 
+                    span Иванова Екатерина
+                    span 30 Декабря, 2020
+              .col-12.col-md-6.col-lg-4
+                .news__block
+                  .news__block-thumb
+                    a(href="#!") 
+                      img(src="./tmp/news-img-5.png", alt="")
+                  .news__block-category Текстиль
+                  .news__block-title
+                    a(href="#!") The Rug Company x Fashion Designer Mary Katrantzou
+                  .news__block-info 
+                    span Иванова Екатерина
+                    span 30 Декабря, 2020
+              .col-12.col-md-6.col-lg-4
+                .news__block
+                  .news__block-thumb
+                    a(href="#!") 
+                      img(src="./tmp/news-img-6.png", alt="")
+                  .news__block-category Текстиль
+                  .news__block-title
+                    a(href="#!") Weaving Ancient Craft into Contemporary Design
+                  .news__block-info 
+                    span Иванова Екатерина
+                    span 30 Декабря, 2020
             +pagination()
               +pagination-item('1', '#!')
               +pagination-item('2', '#!')
