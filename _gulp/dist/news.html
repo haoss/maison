@@ -266,6 +266,30 @@
                 <div class="container">
                     <!-- News-->
                     <div class="news">
+                        <div class="news__sorting">
+                            <div class="news__sort">
+                                <label>Категория:</label>
+                                <div class="news__select">
+                                    <select class="niceSelect">
+                                        <option value="Все материалы">Все материалы</option>
+                                        <option value="Текстиль">Текстиль</option>
+                                        <option value="Мебель">Мебель</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="news__sort --limit">
+                                <label>Выводить по:</label>
+                                <div class="news__select">
+                                    <select class="niceSelect">
+                                        <option value="18" selected="selected">18</option>
+                                        <option value="36">36</option>
+                                        <option value="64">64</option>
+                                        <option value="96">96</option>
+                                        <option value="Все">Все</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                         <div class="row" id="grid">
                             <div class="col-12 col-md-6 col-lg-4">
                                 <div class="news__block">
@@ -419,6 +443,7 @@
         <script src="./js/libs/jquery.validate.min.js"></script>
         <script src="./js/libs/fancybox/jquery.fancybox.min.js"></script>
         <script src="./js/libs/masonry.pkgd.min.js"></script>
+        <script src="./js/libs/nice-select/jquery.nice-select.min.js"></script>
         <script src="./js/common.js"></script>
     </body>
 </html>

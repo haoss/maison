@@ -118,6 +118,8 @@ $(document).on('ready', function(){
     centerPadding: '30px'
   });
 
+  $('select.niceSelect').niceSelect();
+
   phoneMask();
   mobileNav();
   headerScroll();

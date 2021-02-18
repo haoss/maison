@@ -32,6 +32,24 @@ html(lang="ru")
 
           // News
           .news
+            .news__sorting
+              .news__sort
+                label Категория:
+                .news__select
+                  select.niceSelect
+                    option(value="Все материалы") Все материалы
+                    option(value="Текстиль") Текстиль
+                    option(value="Мебель") Мебель
+                  
+              .news__sort.--limit
+                label Выводить по:
+                .news__select
+                  select.niceSelect
+                    option(value='18', selected='selected') 18
+                    option(value='36') 36
+                    option(value='64') 64
+                    option(value='96') 96
+                    option(value='Все') Все
             #grid.row
               .col-12.col-md-6.col-lg-4
                 .news__block
