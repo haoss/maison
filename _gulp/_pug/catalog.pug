@@ -1,0 +1,466 @@
+doctype
+
+html(lang="ru")
+
+  -var active = 'Элитные диваны' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Элитные диваны' + ' - Эксклюзивный магазин MAISON' //title страницы для генерации верстки
+
+  include ./_include/_head
+
+  body
+    .base
+      // Preloader
+      include ./_include/_preloader
+
+      include ./_include/_header
+
+      // Top img
+      .top-img.--thin
+        img(src="./tmp/top-img-1.png", alt="").top-img__bg
+        .top-img__wrapper
+          .container
+
+            h1 Элитные диваны
+            +breadcrumbs()
+              +breadcrumbs-item('Эксклюзивный магазин MAISON', './index.html')
+              +breadcrumbs-item('Название раздела', '#!')
+              +breadcrumbs-item('Название страницы')
+
+      // Content
+      .content
+        .container
+
+          .row
+            .col-12.col-lg-4.col-xl-3
+              #filterBlock.filter.j-btn-target
+                button.btn-close.j-btn(type='button' data-id='filterBlock')
+                .filter__wrapper
+                  .filter__wrapper-body
+                    .filter__title Фильтр товаров
+
+                    .filter__block
+                      .filter__head(data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1") Текстиль
+                        i.icon-carret-down
+                      .filter__block-wrapper.show#collapse1
+                        ul.catalog-menu
+                          li
+                            .li-name
+                              a(href='#!') Комплекты постельного белья
+                              .arrow
+                            ul
+                              li
+                                a(href='#!') Одеяла
+                              li
+                                a(href='#!') Подушки
+                          li: a(href="#!") Комплекты постельного белья
+                          li: a(href="#!") Подушки и одеяла
+                          li: a(href="#!") Покрывала
+                          li: a(href="#!") Пледы
+                          li: a(href="#!") Декоративные подушки
+                          li: a(href="#!") Тапочки
+                          li: a(href="#!") Халаты
+                          li: a(href="#!") Домашняя одежда
+                          li: a(href="#!") Уход за одеждой и обувью
+            
+                    .filter__block.has-hide
+                      .filter__head(data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse5") Бренды
+                        i.icon-carret-down
+                      .filter__block-wrapper.show#collapse5
+                        .clear15
+                        label.filter__row(for="brand__0")
+                          input(type="checkbox" name="f_brand[]")#brand__0
+                          span.checkbox
+                          span.label Baker
+                        label.filter__row(for="brand__1")
+                          input(type="checkbox" name="f_brand[]")#brand__1
+                          span.checkbox
+                          span.label Barbara Barry
+                        label.filter__row(for="brand__2")
+                          input(type="checkbox" name="f_brand[]")#brand__2
+                          span.checkbox
+                          span.label Bassett Mirror Company
+                        label.filter__row(for="brand__3")
+                          input(type="checkbox" name="f_brand[]")#brand__3
+                          span.checkbox
+                          span.label Century Furniture
+                        label.filter__row(for="brand__4")
+                          input(type="checkbox" name="f_brand[]")#brand__4
+                          span.checkbox
+                          span.label Chaddock
+                        label.filter__row(for="brand__5")
+                          input(type="checkbox" name="f_brand[]")#brand__5
+                          span.checkbox
+                          span.label Chelini
+                        label.filter__row(for="brand__6")
+                          input(type="checkbox" name="f_brand[]")#brand__6
+                          span.checkbox
+                          span.label Christopher Guy
+                        label.filter__row(for="brand__7")
+                          input(type="checkbox" name="f_brand[]")#brand__7
+                          span.checkbox
+                          span.label Duresta
+                        label.filter__row(for="brand__8")
+                          input(type="checkbox" name="f_brand[]")#brand__8
+                          span.checkbox
+                          span.label Christopher Guy
+                        label.filter__row(for="brand__9")
+                          input(type="checkbox" name="f_brand[]")#brand__9
+                          span.checkbox
+                          span.label Eichholtz
+                        label.filter__row(for="brand__10")
+                          input(type="checkbox" name="f_brand[]")#brand__10
+                          span.checkbox
+                          span.label Barbara Barry
+                        label.filter__row(for="brand__11")
+                          input(type="checkbox" name="f_brand[]")#brand__11
+                          span.checkbox
+                          span.label Bassett Mirror Company
+                        label.filter__row(for="brand__12")
+                          input(type="checkbox" name="f_brand[]")#brand__12
+                          span.checkbox
+                          span.label Century Furniture
+                        label.filter__row(for="brand__13")
+                          input(type="checkbox" name="f_brand[]")#brand__13
+                          span.checkbox
+                          span.label Chaddock
+                        label.filter__row(for="brand__14")
+                          input(type="checkbox" name="f_brand[]")#brand__14
+                          span.checkbox
+                          span.label Chelini
+                        label.filter__row(for="brand__15")
+                          input(type="checkbox" name="f_brand[]")#brand__15
+                          span.checkbox
+                          span.label Christopher Guy
+                        label.filter__row(for="brand__16")
+                          input(type="checkbox" name="f_brand[]")#brand__16
+                          span.checkbox
+                          span.label Duresta
+                        label.filter__row(for="brand__17")
+                          input(type="checkbox" name="f_brand[]")#brand__17
+                          span.checkbox
+                          span.label Christopher Guy
+                        label.filter__row(for="brand__18")
+                          input(type="checkbox" name="f_brand[]")#brand__18
+                          span.checkbox
+                          span.label Eichholtz
+
+                    .filter__block
+                      .filter__head(data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2") Цвет
+                        i.icon-carret-down
+                      .filter__block-wrapper.collapse#collapse2
+                        .clear15
+                        label.filter__row(for="color__0")
+                          input(type="checkbox" name="f_color[]")#color__0
+                          span.checkbox
+                          span.label Синий
+                        label.filter__row(for="color__1")
+                          input(type="checkbox" name="f_color[]")#color__1
+                          span.checkbox
+                          span.label Белый
+                        label.filter__row(for="color__2")
+                          input(type="checkbox" name="f_color[]")#color__2
+                          span.checkbox
+                          span.label Красный
+                        
+                    .filter__block
+                      .filter__head(data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3") Размер
+                        i.icon-carret-down
+                      .filter__block-wrapper.collapse#collapse3
+                        .clear15
+                        label.filter__row(for="size__0")
+                          input(type="checkbox" name="f_size[]")#size__0
+                          span.checkbox
+                          span.label 38 - 40
+                        label.filter__row(for="size__1")
+                          input(type="checkbox" name="f_size[]")#size__1
+                          span.checkbox
+                          span.label 42 - 44
+                        label.filter__row(for="size__2")
+                          input(type="checkbox" name="f_size[]")#size__2
+                          span.checkbox
+                          span.label 44 - 46
+                        label.filter__row(for="size__3")
+                          input(type="checkbox" name="f_size[]")#size__3
+                          span.checkbox
+                          span.label 48 - 50
+                        label.filter__row(for="size__4")
+                          input(type="checkbox" name="f_size[]")#size__4
+                          span.checkbox
+                          span.label 52 - 54
+                        
+                    .filter__block.--slider
+                      .filter__head(data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4") Цена
+                        i.icon-carret-down
+                      .filter__block-wrapper.collapse#collapse4
+                        .clear15
+                        .filter__slider
+                          #filter__range
+                        .filter__cost
+                          .div1
+                            input#priceMin(type='text', value='5000').form-control
+                          .div2 -
+                          .div3
+                            input#priceMax(type='text', value='15000').form-control
+                    
+                    button(type="button").btn.--white.--block Сбросить фильтр
+            .col-12.col-lg-8.col-xl-9
+
+              // Catalog
+              .catalog
+                .catalog__head
+                  .catalog__sort
+                    label Выводить по:
+                    .catalog__select
+                      select.niceSelect
+                        option(value="Увеличению цены" selected) Увеличению цены
+                        option(value="Уменьшению цены") Уменьшению цены
+                        option(value="Актуальность") Актуальность
+                        option(value="Популярность") Популярность
+                        option(value="В наличии") В наличии
+                      
+                  .catalog__sort.--limit
+                    label Выводить по:
+                    .catalog__select
+                      select.niceSelect
+                        option(value='18', selected) 18
+                        option(value='36') 36
+                        option(value='64') 64
+                        option(value='96') 96
+                        option(value='Все') Все
+                
+                button(type="button" data-id="filterBlock").btn-filter.j-btn Фильтр товаров
+
+                .row.catalog__row
+                  .col-12.col-sm-6.col-xl-4
+                    .catalog__block
+                      .catalog__block-label -50
+                        small %
+                      .catalog__block-label New
+                      .catalog__block-label Hot
+                      button.catalog__block-favourite.j-favourite-test(type="button")
+                      .catalog__block-thumb
+                        a(href="#!") 
+                          img(src="./tmp/catalog-img-1.png", alt="")
+                        button(type="button").btn Подробнее
+                      .catalog__block-title Диван (ткань - ёлочка, ножки- темная бронза)
+                      .catalog__block-price
+                        div
+                          b 165 627
+                            i.icon-rouble
+                          button(type="button")
+                            i.icon-plus-bold
+                            | В корзину
+                  .col-12.col-sm-6.col-xl-4
+                    .catalog__block
+                      .catalog__block-label -50
+                        small %
+                      button.catalog__block-favourite.j-favourite-test.is-active(type="button")
+                      .catalog__block-thumb
+                        a(href="#!") 
+                          img(src="./tmp/catalog-img-2.png", alt="")
+                        button(type="button").btn Подробнее
+                      .catalog__block-title Стеллаж для книг
+                      .catalog__block-price
+                        div
+                          b 52 325
+                            i.icon-rouble
+                          button(type="button")
+                            i.icon-plus-bold
+                            | В корзину
+                  .col-12.col-sm-6.col-xl-4
+                    .catalog__block
+                      .catalog__block-label -50
+                        small %
+                      button.catalog__block-favourite.j-favourite-test(type="button")
+                      .catalog__block-thumb
+                        a(href="#!") 
+                          img(src="./tmp/catalog-img-3.png", alt="")
+                        button(type="button").btn Подробнее
+                      .catalog__block-title Ваза Lamina
+                      .catalog__block-price
+                        div
+                          b 52 325
+                            i.icon-rouble
+                          button(type="button")
+                            i.icon-plus-bold
+                            | В корзину
+                  .col-12.col-sm-6.col-xl-4
+                    .catalog__block
+                      .catalog__block-label -50
+                        small %
+                      button.catalog__block-favourite.j-favourite-test(type="button")
+                      .catalog__block-thumb
+                        a(href="#!") 
+                          img(src="./tmp/catalog-img-4.png", alt="")
+                        button(type="button").btn Подробнее
+                      .catalog__block-title Кашпо круглое (черное с бронзой) 
+                      .catalog__block-price
+                        div
+                          b 528 857
+                            i.icon-rouble
+                          button(type="button")
+                            i.icon-plus-bold
+                            | В корзину
+                  .col-12.col-sm-6.col-xl-4
+                    .catalog__block
+                      .catalog__block-label -50
+                        small %
+                      button.catalog__block-favourite.j-favourite-test(type="button")
+                      .catalog__block-thumb
+                        a(href="#!") 
+                          img(src="./images/no-image.svg", alt="")
+                        button(type="button").btn Подробнее
+                      .catalog__block-title Прикроватный столик Ayton
+                      .catalog__block-price
+                        div
+                          b 23 654
+                            i.icon-rouble
+                          button(type="button")
+                            i.icon-plus-bold
+                            | В корзину
+                  .col-12.col-sm-6.col-xl-4
+                    .catalog__block
+                      .catalog__block-label -50
+                        small %
+                      button.catalog__block-favourite.j-favourite-test(type="button")
+                      .catalog__block-thumb
+                        a(href="#!") 
+                          img(src="./tmp/catalog-img-6.png", alt="")
+                        button(type="button").btn Подробнее
+                      .catalog__block-title Люстра Signature by Barbara Barry
+                      .catalog__block-price
+                        div
+                          b 84 352
+                            i.icon-rouble
+                          button(type="button")
+                            i.icon-plus-bold
+                            | В корзину
+                  .col-12.col-sm-6.col-xl-4
+                    .catalog__block
+                      .catalog__block-label -50
+                        small %
+                      button.catalog__block-favourite.j-favourite-test(type="button")
+                      .catalog__block-thumb
+                        a(href="#!") 
+                          img(src="./tmp/catalog-img-7.png", alt="")
+                        button(type="button").btn Подробнее
+                      .catalog__block-title Прикроватный столик Cannes
+                      .catalog__block-price
+                        div
+                          b 66 454
+                            i.icon-rouble
+                          button(type="button")
+                            i.icon-plus-bold
+                            | В корзину
+                  .col-12.col-sm-6.col-xl-4
+                    .catalog__block
+                      .catalog__block-label -50
+                        small %
+                      button.catalog__block-favourite.j-favourite-test(type="button")
+                      .catalog__block-thumb
+                        a(href="#!") 
+                          img(src="./tmp/catalog-img-8.png", alt="")
+                        button(type="button").btn Подробнее
+                      .catalog__block-title Барный шкаф Dillon Cabinet
+                      .catalog__block-price
+                        div
+                          b 99 199
+                            i.icon-rouble
+                          button(type="button")
+                            i.icon-plus-bold
+                            | В корзину
+                  .col-12.col-sm-6.col-xl-4
+                    .catalog__block
+                      .catalog__block-label -50
+                        small %
+                      button.catalog__block-favourite.j-favourite-test(type="button")
+                      .catalog__block-thumb
+                        a(href="#!") 
+                          img(src="./tmp/catalog-img-1.png", alt="")
+                        button(type="button").btn Подробнее
+                      .catalog__block-title Диван (ткань - ёлочка, ножки- темная бронза)
+                      .catalog__block-price
+                        div
+                          b 165 627
+                            i.icon-rouble
+                          button(type="button")
+                            i.icon-plus-bold
+                            | В корзину
+                  .col-12.col-sm-6.col-xl-4
+                    .catalog__block
+                      .catalog__block-label -50
+                        small %
+                      button.catalog__block-favourite.j-favourite-test(type="button")
+                      .catalog__block-thumb
+                        a(href="#!") 
+                          img(src="./tmp/catalog-img-2.png", alt="")
+                        button(type="button").btn Подробнее
+                      .catalog__block-title Стеллаж для книг
+                      .catalog__block-price
+                        div
+                          b 52 325
+                            i.icon-rouble
+                          button(type="button")
+                            i.icon-plus-bold
+                            | В корзину
+                  .col-12.col-sm-6.col-xl-4
+                    .catalog__block
+                      .catalog__block-label -50
+                        small %
+                      button.catalog__block-favourite.j-favourite-test(type="button")
+                      .catalog__block-thumb
+                        a(href="#!") 
+                          img(src="./tmp/catalog-img-3.png", alt="")
+                        button(type="button").btn Подробнее
+                      .catalog__block-title Ваза Lamina
+                      .catalog__block-price
+                        div
+                          b 52 325
+                            i.icon-rouble
+                          button(type="button")
+                            i.icon-plus-bold
+                            | В корзину
+                  .col-12.col-sm-6.col-xl-4
+                    .catalog__block
+                      .catalog__block-label -50
+                        small %
+                      button.catalog__block-favourite.j-favourite-test(type="button")
+                      .catalog__block-thumb
+                        a(href="#!") 
+                          img(src="./tmp/catalog-img-4.png", alt="")
+                        button(type="button").btn Подробнее
+                      .catalog__block-title Ваза Lamina
+                      .catalog__block-price
+                        div
+                          b 52 325
+                            i.icon-rouble
+                          button(type="button")
+                            i.icon-plus-bold
+                            | В корзину
+                +pagination('catalog')
+                  +pagination-item('1', '#!')
+                  +pagination-item('2', '#!')
+                  +pagination-item('3', '', true)
+                  +pagination-item('4', '#!')
+                  +pagination-item('5', '#!')
+              // /end Catalog
+
+          .row.justify-content-center
+            .col-12.col-lg-10
+              .content__document.--pb0
+                h2 Элитные диваны из США и Европы в шоурумах MAISON
+                p В MAISONпредставлена самая большая коллекция элитной американской мебели в Москве. В нашем каталоге вы найдете продукцию ведущих брендов США и Европы: Ralph Lauren Home, Baker Furniture, Barbara Barry, Kelly Wearstler, Century, Sherrill Furniture, Chelini, Moissonnier, Fornasetti и др. 
+                p 
+                  b Американская мечта Ralph Lauren Home 
+                p Один из самых выдающихся современных дизайнеров, обладатель титула Командора Британской империи, американец Ральф Лорен более 30 лет производит предметы интерьера под торговой маркой Ralph Lauren Home. О своей мебели сам дизайнер когда-то ёмко сказал: "Я продаю мечту". текстиль от Ральфа Лорена изготовляется вручную, по старинным технологиям, из самых дорогих натуральных материалов, при этом марка не забывает об экологии и принципах устойчивого производства (sustainability). Аристократичная, шикарная текстиль Ralph Lauren украшает интерьеры домов знаменитостей и сильных мира сего по всему миру. В России она пользуется неизменным спросом благодаря сочетанию безупречного качества и выразительного дизайна.  
+                p текстиль Ralph Lauren Home создается по эскизам самого Ральфа, при этом дизайнер тщательно контролирует все этапы производства. Пожалуй, никто не умеет так виртуозно комбинировать элементы стилей различных эпох, смешивать английскую классику с голливудским шиком, создавая современные интерьеры для жизни на все времена.  
+
+      // /end Content
+
+      include ./_include/_footer
+      //- div(style="height: 1000px; background-color: #000")
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+

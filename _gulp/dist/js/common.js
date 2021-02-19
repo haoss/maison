@@ -132,12 +132,99 @@ $(document).on('ready', function(){
     slidesToShow: 1
   });
 
+  $("body").on("click", ".catalog-menu .arrow", function() {
+		var thisLi = $(this).closest("li"),
+			thisUl = thisLi.find("ul"),
+			thisArrow = $(this);
+		if (!thisLi.hasClass("open")) {
+			thisUl.slideDown(250, function() {
+				thisLi.addClass("open");
+			});
+		} else {
+			thisUl.slideUp(250, function() {
+				thisLi.removeClass("open");
+			});
+		}
+	});
+
+  // Readmore
+  $('.has-readmore').readmore({
+    speed: 500,
+    collapsedHeight: 230,
+    moreLink: '<div class="readmore"><a href="#">Подробнее</a></div>',
+    lessLink: '<div class="readmore"><a href="#">Закрыть</a></div>'
+  });
+
+  // Jquery UI slider
+  $("#filter__range").slider({
+  	min: 0,
+  	max: 20000,
+  	values: [5000,15000],
+  	range: true,
+  	stop: function(event, ui) {
+      $("input#priceMin").val($("#filter__range").slider("values",0));
+      $("input#priceMax").val($("#filter__range").slider("values",1));
+    },
+    slide: function(event, ui){
+      $("input#priceMin").val($("#filter__range").slider("values",0));
+      $("input#priceMax").val($("#filter__range").slider("values",1));
+    }
+  });
+
+  $("input#priceMin").on('change', function(){
+  	var value1=$("input#priceMin").val();
+  	var value2=$("input#priceMax").val();
+    if(parseInt(value1) > parseInt(value2)){
+  		value1 = value2;
+  		$("input#priceMin").val(value1);
+  	}
+  	$("#filter__range").slider("values", 0, value1);
+  });
+
+  $("input#priceMax").on('change', function(){
+  	var value1=$("input#priceMin").val();
+  	var value2=$("input#priceMax").val();
+  	if (value2 > 20000) { value2 = 20000; $("input#priceMax").val(35000)}
+  	if(parseInt(value1) > parseInt(value2)){
+  		value2 = value1;
+  		$("input#priceMax").val(value2);
+      $('.price-range-max.value').html(value2);
+  	}
+  	$("#filter__range").slider("values",1,value2);
+    $('.price-range-max.value').html(value2);
+  });
+
+  // фильтрация ввода в поля
+  $('.filter__block input').on('keypress', function(event){
+    var key, keyChar;
+    if(!event) var event = window.event;
+    if (event.keyCode) key = event.keyCode;
+    else if(event.which) key = event.which;
+    if(key==null || key==0 || key==8 || key==13 || key==9 || key==46 || key==37 || key==39 ) return true;
+    keyChar=String.fromCharCode(key);
+    if(!/\d/.test(keyChar))	return false;
+  });
+
+  // Hide filter block
+  $('.has-hide').readmore({
+    speed: 500,
+    collapsedHeight: 375,
+    moreLink: '<div class="filter__more"><div>Показать всё</div></div>',
+    lessLink: '<div class="filter__more"><div>Скрыть всё</div></div>'
+  });
+
+  $(document).on('click', '.filter__more', function(e){
+    e.stopPropagation();
+  });
+
   phoneMask();
   mobileNav();
   headerScroll();
   // oneCarousel();
   footerNav();
   jNavigation();
+
+  testFavourite();
 
   // Chrome Smooth Scroll
   try {
@@ -172,7 +259,7 @@ $(window).on('resize', function() {
     $('.j-footer-nav').removeClass('is-active');*/
     $('.j-footer-nav').removeClass('is-active');
     // $('.m-search').removeClass('is-active');
-    // $('body').removeClass('is-fixed');
+    $('body').removeClass('is-fixed');
     $('.footer__nav').attr('style','');
   }
 });
@@ -301,7 +388,7 @@ function mobileNav() {
 
 function headerScroll() {
   var header = $('.header');
-  var navigation = $('.navigation');
+  var navigation = $('.j-btn-target');
   var width = $(window).width();
 
   if ($(window).scrollTop() > header.height()) {
@@ -368,7 +455,7 @@ function jNavigation() {
   $(document).on('click', '.j-btn', function(e){
     e.stopPropagation();
     var _this = $(this);
-    btnTarget = $('#' + _this.data('id') + '.navigation');
+    btnTarget = $('#' + _this.data('id'));
     body.removeClass('is-fixed');
     
     if (btnTarget.hasClass('is-active')) {
@@ -388,4 +475,16 @@ function jNavigation() {
   $(document).on('click', '.j-btn-target', function(e){
     e.stopPropagation();
   });
+}
+
+function testFavourite() {
+  var btn = $('.j-favourite-test');
+  btn.on('click', function(){
+    var _this = $(this);
+    if (_this.hasClass('is-active')) {
+      _this.removeClass('is-active');
+    } else {
+      _this.addClass('is-active');
+    }
+  })
 }

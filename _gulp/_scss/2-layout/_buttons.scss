@@ -65,3 +65,36 @@ a.btn {
   line-height: 50px;
   text-decoration: none;
 }
+
+.btn-filter {
+  display: block;
+  width: 100%;
+  margin: 0 auto 40px;
+  position: relative;
+  border: 1px solid rgba($primary-color,.1);
+  padding: 0 60px 0 64px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  text-align: left;
+  font-weight: 400;
+  line-height: 26px;
+  &::before, &::after {
+    position: absolute;
+    content: '\e921';
+    font-family: $font-icomoon;
+    font-size: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 28px;
+  }
+  &::after {
+    font-size: 10px;
+    left: auto;
+    right: 26px;
+    content: '\e902';
+  }
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
