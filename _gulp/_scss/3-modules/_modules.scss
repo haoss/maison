@@ -3719,7 +3719,7 @@
     text-transform: none;
     font-weight: 400;
     margin-bottom: 25px;
-    margin-top: -15px;
+    margin-top: 10px !important;
     font-size: 16px;
     &>div {
       display: inline-block;
@@ -3732,6 +3732,10 @@
   }
   &__category {
     margin-bottom: 25px;
+  }
+  .btn {
+    max-width: 300px;
+    margin: 0 auto;
   }
   @include media-breakpoint-up(lg) {
     position: relative;
@@ -3757,9 +3761,6 @@
     }
     &__block {
       margin-bottom: 50px;
-    }
-    &__more {
-      margin-top: -45px;
     }
   }
 }

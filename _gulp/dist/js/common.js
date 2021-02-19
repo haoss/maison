@@ -208,7 +208,7 @@ $(document).on('ready', function(){
   // Hide filter block
   $('.has-hide').readmore({
     speed: 500,
-    collapsedHeight: 375,
+    collapsedHeight: 285,
     moreLink: '<div class="filter__more"><div>Показать всё</div></div>',
     lessLink: '<div class="filter__more"><div>Скрыть всё</div></div>'
   });
