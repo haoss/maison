@@ -4,6 +4,7 @@ html(lang="ru")
 
   -var active = 'Список желаний' //активный пункт меню, список в header.jade
   -var pageTitle = 'Список желаний' + ' - Эксклюзивный магазин MAISON' //title страницы для генерации верстки
+  -var lk = true
 
   include ./_include/_head
 
@@ -19,20 +20,85 @@ html(lang="ru")
         .container
 
           .row
-            .col-12.col-lg-4.col-xl-3
+            .col-12.col-lg-3
               nav.lk-navigation
                 ul
                   li: a(href="#!") Профиль
                   li: a(href="#!") История заказов
-                  li: a(href="#!") Список желаний
+                  li: a(href="#!") Статусы заказов
+                  li.active: span Список желаний
                   li.last: a(href="#!") Выйти с сайта
-            .col-12.col-lg-8.col-xl-9
+            .col-12.col-lg-9
               .lk-head
                 .div1
                   h1 Список желаний
                 .div2
+                  .discount-info 
+                    div Ваша скидка:
+                    div 10
+                      small %
+              
+              // Catalog
+              .catalog
+                .row.catalog__row
+                  .col-12.col-sm-6.col-xl-4
+                    .catalog__block
+                      .catalog__block-label -50
+                        small %
+                      button.catalog__block-favourite.j-favourite-test.is-active(type="button")
+                      .catalog__block-thumb
+                        a(href="#!") 
+                          img(src="./tmp/catalog-img-1.png", alt="")
+                        button(type="button").btn Подробнее
+                      .catalog__block-title Диван (ткань - ёлочка, ножки- темная бронза)
+                      .catalog__block-price
+                        div
+                          b 165 627
+                            i.icon-rouble
+                          button(type="button")
+                            i.icon-plus-bold
+                            | В корзину
+                  .col-12.col-sm-6.col-xl-4
+                    .catalog__block
+                      button.catalog__block-favourite.j-favourite-test.is-active(type="button")
+                      .catalog__block-thumb
+                        a(href="#!") 
+                          img(src="./tmp/catalog-img-2.png", alt="")
+                        button(type="button").btn Подробнее
+                      .catalog__block-title Стеллаж для книг
+                      .catalog__block-price
+                        div
+                          b 52 325
+                            i.icon-rouble
+                          button(type="button")
+                            i.icon-plus-bold
+                            | В корзину
+                  .col-12.col-sm-6.col-xl-4
+                    .catalog__block
+                      .catalog__block-label -50
+                        small %
+                      button.catalog__block-favourite.j-favourite-test.is-active(type="button")
+                      .catalog__block-thumb
+                        a(href="#!") 
+                          img(src="./tmp/catalog-img-3.png", alt="")
+                        button(type="button").btn Подробнее
+                      .catalog__block-title Ваза Lamina
+                      .catalog__block-price
+                        div
+                          b 52 325
+                            i.icon-rouble
+                          button(type="button")
+                            i.icon-plus-bold
+                            | В корзину
+
+                a(href="#!").btn Выгрузить товары в pdf
 
       // /end Content
+      
+      // Lk separator
+      .container
+        .lk-line
+      // /end Lk separator
 
       include ./_include/_footer
       //- div(style="height: 1000px; background-color: #000")

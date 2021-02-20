@@ -231,5 +231,65 @@ ul.catalog-menu {
 }
 
 .lk-navigation {
-  
+  letter-spacing: 0.05em;
+  font-weight: 300;
+  &__head {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 20px;
+    font-weight: 400;
+    &::before {
+      content: '\e90b';
+      font-family: $font-icomoon;
+      position: absolute;
+      left: 0;
+      top: 11px;
+      font-size: 10px;
+    }
+  }
+  ul {
+    li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+      &.last {
+        margin-top: 30px;
+      }
+      &::before {
+        display: none;
+      }
+      &>a, &>span {
+        text-decoration: none;
+      }
+      &.active {
+        font-weight: 400;
+        &::before {
+          display: block;
+          content: '\e90b';
+          font-family: $font-icomoon;
+          position: absolute;
+          left: 0;
+          top: 11px;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(sm) {}
+  @include media-breakpoint-up(md) {}
+  @include media-breakpoint-up(lg) {}
+  @include media-breakpoint-up(xl) {
+    ul {
+      li {
+        &>a {
+          opacity: 1;
+          transition: all 0.35s;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(xxl) {}
 }

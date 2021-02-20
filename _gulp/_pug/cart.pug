@@ -1,0 +1,383 @@
+doctype
+
+html(lang="ru")
+
+  -var active = 'Ваша корзина' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Ваша корзина' + ' - Эксклюзивный магазин MAISON' //title страницы для генерации верстки
+  -var lk = true
+
+  include ./_include/_head
+
+  body
+    .base
+      // Preloader
+      include ./_include/_preloader
+
+      include ./_include/_header
+
+      // Content
+      .content
+        .container
+
+          // Cart
+          .cart
+            form(action="#!") 
+              .row
+                .col-12.col-xl-9
+                  fieldset.--mb40
+                    legend.lk-legend Ваша корзина
+                    
+                    button.btn-cart-clean(type="button") Очистить корзину
+                    .cart__table
+                      .cart__table-row
+                        .div1
+                          button.cart__table-close(type='button')
+                        .div2
+                          a(href="#!")
+                            img(src="./tmp/cart-small-img.png", width="70", height="70", alt="").cart__table-img
+                        .div3
+                          .cart__table-wrapper
+                            .div1
+                              .cart__table-title
+                                a(href="#!") Кашпо круглое (черное с бронзой) 
+                            .div2
+                              .form-count.j-count
+                                button(type="button").btn-minus
+                                button(type="button").btn-plus
+                                input(type='text' value='5')
+                            .div3
+                              .cart__table-price 56 778
+                                i.icon-rouble
+                              del.cart__table-price 100 758
+                                i.icon-rouble
+                      .cart__table-row
+                        .div1
+                          button.cart__table-close(type='button')
+                        .div2
+                          a(href="#!")
+                            img(src="./tmp/cart-small-img.png", width="70", height="70", alt="").cart__table-img
+                        .div3
+                          .cart__table-wrapper
+                            .div1
+                              .cart__table-title
+                                a(href="#!") Кашпо круглое (черное с бронзой) 
+                            .div2
+                              .form-count.j-count
+                                button(type="button").btn-minus
+                                button(type="button").btn-plus
+                                input(type='text' value='13')
+                            .div3
+                              .cart__table-price 56 778
+                                i.icon-rouble
+                      .cart__table-row
+                        .div1
+                          button.cart__table-close(type='button')
+                        .div2
+                          a(href="#!")
+                            img(src="./tmp/cart-small-img.png", width="70", height="70", alt="").cart__table-img
+                        .div3
+                          .cart__table-wrapper
+                            .div1
+                              .cart__table-title
+                                a(href="#!") Кашпо круглое (черное с бронзой) 
+                            .div2
+                              .form-count.j-count
+                                button(type="button").btn-minus
+                                button(type="button").btn-plus
+                                input(type='text' value='1')
+                            .div3
+                              .cart__table-price 56 778
+                                i.icon-rouble
+                    .cart-total.d-xl-none.d-xxl-none
+                      .cart-total__head
+                        .div1 Итого
+                        .div2
+                          strong 156 778
+                            i.icon-rouble
+                      .cart-total__row
+                        .div1 Товары, 31шт
+                        .div1
+                          b 156 778
+                            i.icon-rouble
+                      .cart-total__row
+                        .div1 Скидка
+                        .div1
+                          b -20
+                            i.icon-rouble
+                      .cart-total__row
+                        .div1 Доставка
+                        .div1
+                          b 20 000
+                            i.icon-rouble
+                      .clear10
+                      .form-group
+                        +field-checkbox({
+                          title: 'Согласен с условиями <a href="#!">Правил пользования торговой площадкой</a> и <a href="#!">правилами возврата</a>',
+                          isLink: false,
+                          mods: '',
+                          attrs: {
+                            name: 'checkbox21',
+                            checked: true,
+                          }
+                        })
+                      button(type="submit").btn.--block Оформить заказ
+                  fieldset.--mb40
+                    legend.lk-legend Ваш профиль
+                    p.--fs14.color.--gray Для заказа товаров требуется регистрация. Если вы уже зарегистрированы, 
+                      a(href="#!")
+                        b войдите
+                      |  в свою учетную запись
+                    .row
+                      .col-12.col-lg-6
+                        .form-group
+                          +field-text({
+                            title: '',
+                            hasJs: false,
+                            isTextarea: false,
+                            hasError: false,
+                            helpText: '',
+                            mods: '',
+                            val: '',
+                            attrs: {
+                              name: 'cart_name',
+                              placeholder: 'Имя и Фамилия'
+                            }
+                          })
+                        .form-group
+                          +field-text({
+                            title: '',
+                            hasJs: false,
+                            isTextarea: false,
+                            hasError: false,
+                            helpText: '',
+                            mods: '',
+                            val: '',
+                            attrs: {
+                              name: 'cart_phone',
+                              placeholder: 'Телефон',
+                              class: 'j-phone-mask'
+                            }
+                          })
+                        .form-group
+                          +field-text({
+                            title: '',
+                            hasJs: false,
+                            isTextarea: false,
+                            hasError: false,
+                            helpText: '',
+                            mods: '',
+                            val: '',
+                            attrs: {
+                              name: 'cart_email',
+                              placeholder: 'E-mail'
+                            }
+                          })
+                      .col-12.col-lg-6
+                        .form-group.--mb0
+                          +field-text({
+                            title: '',
+                            hasJs: false,
+                            isTextarea: true,
+                            hasError: false,
+                            helpText: '',
+                            mods: '',
+                            val: '',
+                            attrs: {
+                              name: 'cart_message',
+                              placeholder: 'Ваш комментарий',
+                              rows: 7
+                            }
+                          })
+                  .row
+                    .col-12.col-md-6
+                      fieldset.--mb50
+                        legend.lk-legend Доставка
+                        .form-group
+                          +field-radio({
+                            title: 'Самовывоз с деревни Воронки <small class="field-checkbox__info">Бесплатно</small>',
+                            isLink: false,
+                            mods: '',
+                            attrs: {
+                              name: 'radio21',
+                              checked: false,
+                            }
+                          })
+                        .form-group
+                          +field-radio({
+                            title: 'Самовывоз с ТД Жуковка Плаза <small class="field-checkbox__info">Бесплатно</small>',
+                            isLink: false,
+                            mods: '',
+                            attrs: {
+                              name: 'radio21',
+                              checked: false,
+                            }
+                          })
+                        .form-group
+                          +field-radio({
+                            title: 'Доставка по России <small class="field-checkbox__info">Доставка службамы СДЭК, Деливери, DHL, FedEX от 50 000 кг и 150 000 рублей</small>',
+                            isLink: false,
+                            mods: '',
+                            attrs: {
+                              name: 'radio21',
+                              checked: false,
+                            }
+                          })
+                        .form-group
+                          +field-radio({
+                            title: 'Доставка по Москве и МО <small class="field-checkbox__info">Доставка службамы СДЭК, Деливери, DHL, FedEX от 100 000 кг и 150 000 000 рублей</small>',
+                            isLink: false,
+                            mods: '',
+                            attrs: {
+                              name: 'radio21',
+                              checked: true,
+                            }
+                          })
+                        .form-group
+                          +field-text({
+                            title: '',
+                            hasJs: false,
+                            isTextarea: false,
+                            hasError: false,
+                            helpText: '',
+                            mods: '',
+                            val: '',
+                            attrs: {
+                              name: 'delivery_city',
+                              placeholder: 'Ваш город'
+                            }
+                          })
+                        .form-group
+                          +field-text({
+                            title: '',
+                            hasJs: false,
+                            isTextarea: false,
+                            hasError: false,
+                            helpText: '',
+                            mods: '',
+                            val: '',
+                            attrs: {
+                              name: 'delivery_house',
+                              placeholder: 'Дом'
+                            }
+                          })
+                        .form-group
+                          +field-text({
+                            title: '',
+                            hasJs: false,
+                            isTextarea: false,
+                            hasError: false,
+                            helpText: '',
+                            mods: '',
+                            val: '',
+                            attrs: {
+                              name: 'delivery_street',
+                              placeholder: 'Улица'
+                            }
+                          })
+                        .form-group.--mb0
+                          +field-text({
+                            title: '',
+                            hasJs: false,
+                            isTextarea: false,
+                            hasError: false,
+                            helpText: '',
+                            mods: '',
+                            val: '',
+                            attrs: {
+                              name: 'delivery_apartment',
+                              placeholder: 'Квартира'
+                            }
+                          })
+                    .col-12.col-md-6
+                      fieldset.--mb50
+                        legend.lk-legend Оплата
+                        .form-group
+                          +field-radio({
+                            title: 'Наличный <small class="field-checkbox__info">При оплате в одном из наших магазинов или курьеру</small>',
+                            isLink: false,
+                            mods: '',
+                            attrs: {
+                              name: 'radio22',
+                              checked: true,
+                            }
+                          })
+                        .form-group
+                          +field-radio({
+                            title: 'Картой на сайте <small class="field-checkbox__info">Оплата платежными картами (Visa, MasterCard, Apple Pay) через Интернет	</small>',
+                            isLink: false,
+                            mods: '',
+                            attrs: {
+                              name: 'radio22',
+                              checked: false,
+                            }
+                          })
+                        .form-group
+                          +field-radio({
+                            title: 'Картой в магазине <small class="field-checkbox__info">Оплата через POS-терминал в наших магазинах (Visa, MasterCard, Apple Pay, Google Pay)</small>',
+                            isLink: false,
+                            mods: '',
+                            attrs: {
+                              name: 'radio22',
+                              checked: false,
+                            }
+                          })
+                        .form-group
+                          +field-radio({
+                            title: 'Оформить, но оплатить позже <small class="field-checkbox__info">Произвести оплату можете в разеделе “История заказов” в личном кабинете. Товар бронируется на 1 день</small>',
+                            isLink: false,
+                            mods: '',
+                            attrs: {
+                              name: 'radio22',
+                              checked: false,
+                            }
+                          })
+                .col-12.col-xl-3
+                  .cart-total
+                    .cart-total__head
+                      .div1 Итого
+                      .div2
+                        strong 156 778
+                          i.icon-rouble
+                    .cart-total__row
+                      .div1 Товары, 31шт
+                      .div1
+                        b 156 778
+                          i.icon-rouble
+                    .cart-total__row
+                      .div1 Скидка
+                      .div1
+                        b -20
+                          i.icon-rouble
+                    .cart-total__row
+                      .div1 Доставка
+                      .div1
+                        b 20 000
+                          i.icon-rouble
+                    .clear10
+                    .form-group
+                      +field-checkbox({
+                        title: 'Согласен с условиями <a href="#!">Правил пользования торговой площадкой</a> и <a href="#!">правилами возврата</a>',
+                        isLink: false,
+                        mods: '',
+                        attrs: {
+                          name: 'checkbox21',
+                          checked: true,
+                        }
+                      })
+                    button(type="submit").btn.--block Оформить заказ
+          // /end Cart
+
+      // /end Content
+      
+      // Lk separator
+      .container
+        .lk-line
+      // /end Lk separator
+
+      include ./_include/_footer
+      //- div(style="height: 1000px; background-color: #000")
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+

@@ -225,6 +225,7 @@ $(document).on('ready', function(){
   jNavigation();
 
   testFavourite();
+  countTest();
 
   // Chrome Smooth Scroll
   try {
@@ -487,4 +488,27 @@ function testFavourite() {
       _this.addClass('is-active');
     }
   })
+}
+
+function countTest() {
+  var block = $('.j-count');
+
+  block.each(function(){
+    var _this = $(this);
+    var plus = _this.find('.btn-plus');
+    var minus = _this.find('.btn-minus');
+    var input = _this.find('input');
+    var value = input.val();
+
+    plus.on('click', function(){
+      value = parseFloat(value) + 1;
+      input.val(value);
+    });
+  
+    minus.on('click', function(){
+      if (value <= 1) return;
+      value = parseFloat(value) - 1;
+      input.val(value);
+    });
+  });
 }

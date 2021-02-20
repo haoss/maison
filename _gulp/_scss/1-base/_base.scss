@@ -319,11 +319,14 @@ ol {
 
 /* color */
 .color {
-  &--black {
+  &.--black {
     color: $color-black !important;
   }
-  &--white {
+  &.--white {
     color: $color-white !important;
+  }
+  &.--gray {
+    color: #929292 !important;
   }
 }
 

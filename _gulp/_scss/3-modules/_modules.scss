@@ -3790,9 +3790,6 @@
   &:focus {
     outline: none;
   }
-  &+.ui-slider-handle {
-    
-  }
 }
 
 .price-range-min, .price-range-max {
@@ -3825,4 +3822,307 @@
 .has-hide[data-readmore] {
   transition: height 500ms;
   overflow: hidden;
+}
+
+.lk-head {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  .h1, h1 {
+    font-weight: 300;
+    font-size: 30px;
+  }
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .h1, h1 {
+      margin-bottom: 0;
+    }
+  }
+  @include media-breakpoint-up(md) {}
+  @include media-breakpoint-up(lg) {}
+  @include media-breakpoint-up(xl) {
+    .h1, h1 {
+      font-size: 35px;
+    }
+  }
+  @include media-breakpoint-up(xxl) {
+    .h1, h1 {
+      font-size: 40px;
+    }
+  }
+}
+
+.discount-info {
+  display: inline-flex;
+  min-width: 210px;
+  height: 50px;
+  border: 2px solid $primary-color;
+  font-size: 16px;
+  letter-spacing: 0.15em;
+  font-weight: 400;
+  white-space: nowrap;
+  &>div {
+    line-height: 47px;
+    &:first-child {
+      flex-grow: 1;
+      padding-left: 15px;
+    }
+    &+div {
+      flex-shrink: 0;
+      border-left: 2px dashed $primary-color;
+      padding: 0 10px 0 15px;
+    }
+  }
+  small {
+    font-size: 12px;
+  }
+  @include media-breakpoint-up(sm) {}
+  @include media-breakpoint-up(md) {}
+  @include media-breakpoint-up(lg) {}
+  @include media-breakpoint-up(xl) {}
+  @include media-breakpoint-up(xxl) {}
+}
+
+.lk-line {
+  height: 1px;
+  background: rgba($primary-color,.1);
+  margin-bottom: 40px;
+}
+
+.cart {
+  &__table {
+    overflow: hidden;
+    clear: both;
+    border-bottom: 1px solid rgba($primary-color,.1);
+    @include clearfix;
+    &-row {
+      border-top: 1px solid rgba($primary-color,.1);
+      display: flex;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      &>div {
+        flex-shrink: 0;
+        &.div2 {
+          padding-left: 20px;
+        }
+        &.div3 {
+          padding-left: 26px;
+        }
+      }
+    }
+    &-close {
+      font-size: 16px;
+      font-weight: bold;
+      width: 16px;
+      height: 16px;
+      display: block;
+      opacity: 1;
+      transition: all 0.35s;
+      margin-top: 24px;
+      &::before {
+        content: '\e906';
+        font-family: $font-icomoon;
+        line-height: 1;
+        display: block;
+      }
+    }
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      &>div {
+        &.div1 {
+          width: 100%;
+        }
+        &.div3 {
+          padding-left: 20px;
+        }
+      }
+    }
+    &-img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      display: block;
+    }
+    &-title {
+      font-weight: 300;
+      font-size: 16px;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+      a {
+        text-decoration: none;
+      }
+    }
+    &-price {
+      line-height: 50px;
+      font-size: 24px;
+      font-weight: 400;
+      white-space: nowrap;
+      .icon-rouble {
+        margin-left: 5px;
+        font-size: 16px;
+      }
+    }
+  }
+  @include media-breakpoint-up(sm) {
+    &__table {
+      &-row {
+        &>div {
+          &.div3 {
+            flex-shrink: 1;
+            padding-left: 15px;
+            flex-grow: 1;
+          }
+        }
+      }
+      &-wrapper {
+        flex-wrap: nowrap;
+        &>div {
+          &.div1 {
+            width: auto;
+            flex-shrink: 1;
+            flex-grow: 1;
+          }
+          &.div2 {
+            padding-left: 15px;
+          }
+          &.div3 {
+            padding-left: 15px;
+            flex-shrink: 0;
+            min-width: 115px;
+          }
+        }
+      }
+      &-price {
+        text-align: right;
+      }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    &__table {
+      &-wrapper {
+        &>div {
+          &.div3 {
+            min-width: 195px;
+          }
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    textarea {
+      max-height: 160px;
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    &__table {
+      &-title {
+        font-size: 20px;
+        a {
+          opacity: 1;
+          transition: all 0.35s;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+      &-img {
+        width: 100px;
+        height: 100px;
+      }
+      &-price {
+        font-size: 26px;
+      }
+      &-close {
+        opacity: 1;
+        transition: all 0.35s;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(xxl) {
+    &__table {
+      &-title {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+del.cart__table-price {
+  color: #929292;
+  padding: 0 5px;
+  font-size: 20px;
+  line-height: normal;
+  display: block;
+  @include media-breakpoint-up(sm) {
+    margin-right: -5px;
+  }
+}
+
+.btn-cart-clean {
+  float: right;
+  font-size: 16px;
+  border-bottom: 1px dashed $primary-color;
+  font-weight: 300;
+  margin-bottom: 10px;
+  margin-top: -50px;
+  @include media-breakpoint-up(xl) {
+    transition: all 0.35s;
+    &:hover {
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+.cart-total {
+  background: $color-white;
+  box-shadow: 0px 4px 30px rgba($color-black,.05);
+  padding: 30px;
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 26px;
+    margin-bottom: 15px;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    i.icon-rouble {
+      font-size: 16px;
+      margin-left: 5px;
+      white-space: nowrap;
+    }
+  }
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    margin-bottom: 15px;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+    color: #929292;
+    b {
+      font-weight: 400;
+    }
+    i.icon-rouble {
+      font-size: 14px;
+      margin-left: 5px;
+      white-space: nowrap;
+    }
+  }
+  .field-checkbox__label {
+    color: #929292;
+  }
+  @include media-breakpoint-up(lg) {
+    max-width: 600px;
+    margin: 20px auto 0;
+  }
+  @include media-breakpoint-up(xl) {
+    margin-top: 0;
+  }
 }

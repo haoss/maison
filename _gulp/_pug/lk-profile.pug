@@ -1,0 +1,217 @@
+doctype
+
+html(lang="ru")
+
+  -var active = 'Ваш профиль' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Ваш профиль' + ' - Эксклюзивный магазин MAISON' //title страницы для генерации верстки
+  -var lk = true
+
+  include ./_include/_head
+
+  body
+    .base
+      // Preloader
+      include ./_include/_preloader
+
+      include ./_include/_header
+
+      // Content
+      .content
+        .container
+
+          .row
+            .col-12.col-lg-3
+              nav.lk-navigation
+                ul
+                  li.active: span Профиль
+                  li: a(href="#!") История заказов
+                  li: a(href="#!") Статусы заказов
+                  li: a(href="#!") Список желаний
+                  li.last: a(href="#!") Выйти с сайта
+            .col-12.col-lg-9
+              form(action="#!") 
+                .lk-head
+                  .div1
+                    h1 Ваш профиль
+                  .div2
+                    .discount-info 
+                      div Ваша скидка:
+                      div 10
+                        small %
+
+                fieldset.--mb40
+                  .row
+                    .col-12.col-md-6.col-xl-4
+                      .form-group
+                        +field-text({
+                          title: '',
+                          hasJs: false,
+                          isTextarea: false,
+                          hasError: false,
+                          helpText: '',
+                          mods: '',
+                          val: '',
+                          attrs: {
+                            name: 'lk_name',
+                            placeholder: 'Ваше имя'
+                          }
+                        })
+                    .col-12.col-md-6.col-xl-4
+                      .form-group
+                        +field-text({
+                          title: '',
+                          hasJs: false,
+                          isTextarea: false,
+                          hasError: false,
+                          helpText: '',
+                          mods: '',
+                          val: '',
+                          attrs: {
+                            name: 'lk_lastname',
+                            placeholder: 'Фамилия'
+                          }
+                        })
+                    .col-12.col-md-6.col-xl-4
+                      .form-group
+                        +field-text({
+                          title: '',
+                          hasJs: false,
+                          isTextarea: false,
+                          hasError: false,
+                          helpText: '',
+                          mods: '',
+                          val: '',
+                          attrs: {
+                            name: 'lk_middlename',
+                            placeholder: 'Отчество'
+                          }
+                        })
+                    .col-12.col-md-6.col-xl-4
+                      .form-group
+                        +field-text({
+                          title: '',
+                          hasJs: false,
+                          isTextarea: false,
+                          hasError: false,
+                          helpText: '',
+                          mods: '',
+                          val: '',
+                          attrs: {
+                            name: 'lk_phone',
+                            placeholder: 'Телефон',
+                            class: 'j-phone-mask'
+                          }
+                        })
+                    .col-12.col-md-6.col-xl-4
+                      .form-group
+                        +field-text({
+                          title: '',
+                          hasJs: false,
+                          isTextarea: false,
+                          hasError: false,
+                          helpText: '',
+                          mods: '',
+                          val: '',
+                          attrs: {
+                            name: 'lk_email',
+                            placeholder: 'E-mail'
+                          }
+                        })
+
+                fieldset.--mb40
+                  legend.lk-legend Смена пароля
+                  .row
+                    .col-12.col-md-6.col-xl-4
+                      .form-group
+                        +field-text({
+                          title: '',
+                          hasJs: false,
+                          isTextarea: false,
+                          hasError: false,
+                          helpText: '',
+                          mods: '',
+                          val: '',
+                          attrs: {
+                            name: 'lk_old_password',
+                            placeholder: 'Старый пароль'
+                          }
+                        })
+                    .col-12.col-md-6.col-xl-4
+                      .form-group
+                        +field-text({
+                          title: '',
+                          hasJs: false,
+                          isTextarea: false,
+                          hasError: false,
+                          helpText: '',
+                          mods: '',
+                          val: '',
+                          attrs: {
+                            name: 'lk_password',
+                            placeholder: 'Новый пароль'
+                          }
+                        })
+                    .col-12.col-md-6.col-xl-4
+                      .form-group
+                        +field-text({
+                          title: '',
+                          hasJs: false,
+                          isTextarea: false,
+                          hasError: false,
+                          helpText: '',
+                          mods: '',
+                          val: '',
+                          attrs: {
+                            name: 'lk-password',
+                            placeholder: 'Повторите новый пароль'
+                          }
+                        })
+                
+                fieldset.--mb40
+                  legend.lk-legend Подписки
+                  .form-group
+                    +field-checkbox({
+                      title: 'Получать e-mail о заказах',
+                      isLink: false,
+                      mods: '',
+                      attrs: {
+                        name: 'checkbox1',
+                        checked: true,
+                      }
+                    })
+                  .form-group
+                    +field-checkbox({
+                      title: 'Получать смс о заказах',
+                      isLink: false,
+                      mods: '',
+                      attrs: {
+                        name: 'checkbox2',
+                        checked: true,
+                      }
+                    })
+                  .form-group
+                    +field-checkbox({
+                      title: 'Получать уведомления в Telegram / Viber',
+                      isLink: false,
+                      mods: '',
+                      attrs: {
+                        name: 'checkbox3',
+                        checked: false,
+                      }
+                    })
+              button(type="submit").btn Сохранить
+
+      // /end Content
+      
+      // Lk separator
+      .container
+        .lk-line
+      // /end Lk separator
+
+      include ./_include/_footer
+      //- div(style="height: 1000px; background-color: #000")
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+
