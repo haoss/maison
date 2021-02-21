@@ -1,0 +1,269 @@
+doctype
+
+html(lang="ru")
+
+  -var active = 'История заказов' //активный пункт меню, список в header.jade
+  -var pageTitle = 'История заказов' + ' - Эксклюзивный магазин MAISON' //title страницы для генерации верстки
+  -var lk = true
+
+  include ./_include/_head
+
+  body
+    .base
+      // Preloader
+      include ./_include/_preloader
+
+      include ./_include/_header
+
+      // Content
+      .content
+        .container
+
+          .row
+            .col-12.col-lg-3
+              nav.lk-navigation
+                ul
+                  li: a(href="#!") Профиль
+                  li.active: span История заказов
+                  li: a(href="#!") Статусы заказов
+                  li: a(href="#!") Список желаний
+                  li.last: a(href="#!") Выйти с сайта
+            .col-12.col-lg-9
+              
+              // History
+              .history
+                .history__row
+                  .history__head
+                    .div1
+                      .history__head-div
+                        span Номер заказа
+                        b 0000354534
+                    .div2
+                      .history__head-div
+                        span Дата заказа
+                        b 20.01.2020
+                    .div3
+                      .history__head-div
+                        span Статус
+                        b Выполнен
+                    .div4
+                      button(type="button" data-toggle="collapse" data-target="#historyBody1" aria-expanded="true" aria-controls="historyBody1").btn-history
+                        span.span-false Развернуть заказ
+                        span.span-true Свернуть заказ
+                  #historyBody1.history__body.collapse.show
+                    .history__body-row
+                      .div1
+                        a(href="#!")
+                          img(src="./tmp/cart-small-img.png", width="70", height="70", alt="").history__body-img
+                      .div2
+                        .history__body-wrapper
+                          .div1
+                            a(href="#!").history__body-title Кашпо круглое (черное с бронзой) 
+                            .history__body-price
+                              b 28 857
+                              i.icon-rouble
+                          .div2
+                            p Вид оплаты: 
+                            p Текущий статус: 
+                          .div3
+                            p
+                              b Картой на сайте
+                            p 
+                              b Возврат
+                    .history__body-row
+                      .div1
+                        a(href="#!")
+                          img(src="./tmp/cart-small-img.png", width="70", height="70", alt="").history__body-img
+                      .div2
+                        .history__body-wrapper
+                          .div1
+                            a(href="#!").history__body-title Кашпо круглое (черное с бронзой) 
+                            .history__body-price
+                              b 28 857
+                              i.icon-rouble
+                          .div2
+                            p Вид оплаты: 
+                            p Текущий статус: 
+                          .div3
+                            p
+                              b Картой на сайте
+                            p 
+                              b Возврат
+                    .history__address
+                      .div1 Адрес доставки:
+                      .div2
+                        strong.--fs16 Московская область, Красногорский р-н., Новорижское ш., деревня Коронки, д.5
+                    .history__total
+                      .div1
+                        .div 
+                          a(href="#!") Оплатить
+                        .div
+                          a(href="#!") Выгрузить в Excel
+                      .div2
+                        .div Итого
+                        .div 
+                          b 56 778 
+                          i.icon-rouble
+                  
+                .history__row
+                  .history__head
+                    .div1
+                      .history__head-div
+                        span Номер заказа
+                        b 0000354534
+                    .div2
+                      .history__head-div
+                        span Дата заказа
+                        b 20.01.2020
+                    .div3
+                      .history__head-div
+                        span Статус
+                        b Отменен
+                    .div4
+                      button(type="button" data-toggle="collapse" data-target="#historyBody2" aria-expanded="false" aria-controls="historyBody2").btn-history
+                        span.span-false Развернуть заказ
+                        span.span-true Свернуть заказ
+                  #historyBody2.history__body.collapse
+                    .history__body-row
+                      .div1
+                        a(href="#!")
+                          img(src="./tmp/cart-small-img.png", width="70", height="70", alt="").history__body-img
+                      .div2
+                        .history__body-wrapper
+                          .div1
+                            a(href="#!").history__body-title Кашпо круглое (черное с бронзой) 
+                            .history__body-price
+                              b 28 857
+                              i.icon-rouble
+                          .div2
+                            p Вид оплаты: 
+                            p Текущий статус: 
+                          .div3
+                            p
+                              b Картой на сайте
+                            p 
+                              b Возврат
+                    .history__body-row
+                      .div1
+                        a(href="#!")
+                          img(src="./tmp/cart-small-img.png", width="70", height="70", alt="").history__body-img
+                      .div2
+                        .history__body-wrapper
+                          .div1
+                            a(href="#!").history__body-title Кашпо круглое (черное с бронзой) 
+                            .history__body-price
+                              b 28 857
+                              i.icon-rouble
+                          .div2
+                            p Вид оплаты: 
+                            p Текущий статус: 
+                          .div3
+                            p
+                              b Картой на сайте
+                            p 
+                              b Возврат
+                    .history__address
+                      .div1 Адрес доставки:
+                      .div2
+                        strong.--fs16 Московская область, Красногорский р-н., Новорижское ш., деревня Коронки, д.5
+                    .history__total
+                      .div1
+                        .div 
+                          a(href="#!") Оплатить
+                        .div
+                          a(href="#!") Выгрузить в Excel
+                      .div2
+                        .div Итого
+                        .div 
+                          b 56 778 
+                          i.icon-rouble
+                  
+                .history__row
+                  .history__head
+                    .div1
+                      .history__head-div
+                        span Номер заказа
+                        b 0000354534
+                    .div2
+                      .history__head-div
+                        span Дата заказа
+                        b 20.01.2020
+                    .div3
+                      .history__head-div
+                        span Статус
+                        b Выполнен
+                    .div4
+                      button(type="button" data-toggle="collapse" data-target="#historyBody3" aria-expanded="false" aria-controls="historyBody3").btn-history
+                        span.span-false Развернуть заказ
+                        span.span-true Свернуть заказ
+                  #historyBody3.history__body.collapse
+                    .history__body-row
+                      .div1
+                        a(href="#!")
+                          img(src="./tmp/cart-small-img.png", width="70", height="70", alt="").history__body-img
+                      .div2
+                        .history__body-wrapper
+                          .div1
+                            a(href="#!").history__body-title Кашпо круглое (черное с бронзой) 
+                            .history__body-price
+                              b 28 857
+                              i.icon-rouble
+                          .div2
+                            p Вид оплаты: 
+                            p Текущий статус: 
+                          .div3
+                            p
+                              b Картой на сайте
+                            p 
+                              b Возврат
+                    .history__body-row
+                      .div1
+                        a(href="#!")
+                          img(src="./tmp/cart-small-img.png", width="70", height="70", alt="").history__body-img
+                      .div2
+                        .history__body-wrapper
+                          .div1
+                            a(href="#!").history__body-title Кашпо круглое (черное с бронзой) 
+                            .history__body-price
+                              b 28 857
+                              i.icon-rouble
+                          .div2
+                            p Вид оплаты: 
+                            p Текущий статус: 
+                          .div3
+                            p
+                              b Картой на сайте
+                            p 
+                              b Возврат
+                    .history__address
+                      .div1 Адрес доставки:
+                      .div2
+                        strong.--fs16 Московская область, Красногорский р-н., Новорижское ш., деревня Коронки, д.5
+                    .history__total
+                      .div1
+                        .div 
+                          a(href="#!") Оплатить
+                        .div
+                          a(href="#!") Выгрузить в Excel
+                      .div2
+                        .div Итого
+                        .div 
+                          b 56 778 
+                          i.icon-rouble
+                  
+              // /end history
+
+      // /end Content
+      
+      // Lk separator
+      .container
+        .lk-line
+      // /end Lk separator
+
+      include ./_include/_footer
+      //- div(style="height: 1000px; background-color: #000")
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+

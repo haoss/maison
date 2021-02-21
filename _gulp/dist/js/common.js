@@ -111,7 +111,7 @@ $(document).on('ready', function(){
     mobileFirst: true,
     dots: false,
     arrow: false,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: true,
     variableWidth: true,
@@ -124,12 +124,86 @@ $(document).on('ready', function(){
     mobileFirst: true,
     dots: false,
     arrow: true,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: true,
     fade: false,
     variableWidth: true,
     slidesToShow: 1
+  });
+
+  $('.analogue__carousel').slick({
+    mobileFirst: true,
+    dots: false,
+    arrow: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
+    fade: false,
+    variableWidth: false,
+    slidesToShow: 1,
+    prevArrow: '.analogue__btns-left',
+    nextArrow: '.analogue__btns-right',
+    responsive: [
+      {
+        breakpoint: 599,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 1023,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 1279,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4
+        }
+      }
+    ]
+  });
+
+  // Product gallery carousel
+  $('.product__carousel-small').slick({
+    mobileFirst: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    asNavFor: '.product__carousel-big',
+    dots: false,
+    centerMode: false,
+    focusOnSelect: true,
+    arrows: true,
+    centerPadding: '0px',
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 1279,
+        settings: {
+          vertical: true,
+          verticalSwiping: true,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          variableWidth: false
+        }
+      }
+    ]
+  });
+
+  // Product gallery carousel
+  $('.product__carousel-big').slick({
+    mobileFirst: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: true,
+    dots: false,
+    asNavFor: '.product__carousel-small'
   });
 
   $("body").on("click", ".catalog-menu .arrow", function() {

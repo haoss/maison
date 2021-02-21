@@ -98,3 +98,30 @@ a.btn {
     display: none;
   }
 }
+
+.btn-history {
+  width: 55px;
+  text-align: left;
+  font-size: 12px;
+  &>span {
+    border-bottom: 1px dashed $primary-color;
+    display: inline;
+    &.span-true {
+      display: none;
+    }
+  }
+  &[aria-expanded="true"] {
+    &>span {
+      &.span-true {
+        display: inline;
+      }
+      &.span-false {
+        display: none;
+      }
+    }
+  }
+  @include media-breakpoint-up(sm) {
+    width: auto;
+    font-size: 14px;
+  }
+}
