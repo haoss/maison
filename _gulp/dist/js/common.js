@@ -294,7 +294,6 @@ $(document).on('ready', function(){
   phoneMask();
   mobileNav();
   headerScroll();
-  // oneCarousel();
   footerNav();
   jNavigation();
 
@@ -474,31 +473,6 @@ function headerScroll() {
     navigation.removeClass('is-scroll');
   }
 }
-
-// function oneCarousel() {
-//   var width = $(window).width();
-
-//   var $slickElementPagination = $('.one-apartment__carousel-pagination');
-//   var $slickElement = $('.j-one-apartment');
-
-//   if (width <= 767) {
-//     $slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
-//       //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
-//       var i = (currentSlide ? currentSlide : 0) + 1;
-//       $slickElementPagination.text(i + ' / ' + slick.slideCount);
-//     });  
-//     $slickElement.not('.slick-initialized').slick({
-//       mobileFirst: true,
-//       arrows: false,
-//       infinite: true,
-//       dots: false
-//     });
-//   } else {
-//     if($slickElement.hasClass('slick-initialized')){
-//       $slickElement.slick('unslick');
-//     }
-//   }
-// }
 
 function footerNav() {
   var link = $('.j-footer-nav');
