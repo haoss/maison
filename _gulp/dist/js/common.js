@@ -291,6 +291,19 @@ $(document).on('ready', function(){
     e.stopPropagation();
   });
 
+  $('.btn-product-th-more').on('click', function(e){
+    e.preventDefault();
+    var _this = $(this);
+    var table = _this.prev('table');
+    if (table.hasClass('is-active')) {
+      table.removeClass('is-active');
+      _this.removeClass('is-active');
+    } else {
+      table.addClass('is-active');
+      _this.addClass('is-active');
+    }
+  });
+
   phoneMask();
   mobileNav();
   headerScroll();

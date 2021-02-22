@@ -125,3 +125,24 @@ a.btn {
     font-size: 14px;
   }
 }
+
+.btn-product-th-more {
+  font-size: 16px;
+  &>span {
+    display: inline-block;
+    border-bottom: 1px dashed $primary-color;
+    &.span-false {
+      display: none;
+    }
+  }
+  &.is-active {
+    &>span {
+      &.span-false {
+        display: block;
+      }
+      &.span-true {
+        display: none;
+      }
+    }
+  }
+}

@@ -4585,6 +4585,130 @@ del.cart__table-price {
     text-transform: uppercase;
     opacity: 0.5;
   }
+  &__price {
+    white-space: nowrap;
+    margin-bottom: 15px;
+    strong {
+      font-size: 50px;
+      letter-spacing: 0.05em;
+      font-weight: bold;
+    }
+    i {
+      margin-left: 5px;
+      font-size: 28px;
+    }
+  }
+  &__availability {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    margin-bottom: 30px;
+    &-row {
+      display: flex;
+      margin-bottom: 7px;
+      &.--not-available {
+        color: rgba($primary-color,.5);
+      }
+      &>div {
+        &.div1 {
+          min-width: 130px;
+          padding-right: 15px;
+          flex-shrink: 0;
+        }
+      }
+    }
+    i {
+      font-size: 12px;
+      margin-right: 5px;
+    }
+  }
+  &__buy {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    .catalog__block-favourite {
+      position: relative;
+      color: $primary-color;
+      background: rgba($primary-color,.05);
+      top: auto;
+      right: auto;
+      opacity: 1;
+      visibility: visible;
+    }
+    &>div {
+      &.div1 {
+        order: 1;
+      }
+      &.div3 {
+        order: 2;
+        margin-left: 30px;
+        margin-bottom: 30px;
+      }
+      &.div2 {
+        order: 3;
+      }
+    }
+  }
+  &__colors {
+    margin-bottom: 10px;
+    ul {
+      flex-wrap: wrap;
+      display: flex;
+      margin: 0 -20px 0 0;
+      padding: 0;
+      &>li {
+        padding: 0;
+        margin: 0 20px 20px 0;
+        width: 50px;
+        &::before {
+          display: none;
+        }
+        img {
+          width: 50px;
+          height: 50px;
+          opacity: 0.3;
+          display: block;
+        }
+        &.active {
+          img {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  &__th {
+    margin-bottom: 40px;
+    table {
+      font-size: 18px;
+      font-weight: 400;
+      tr {
+        display: none;
+        td {
+          display: block;
+          &:first-child {
+            font-weight: 300;
+            font-size: 14px;
+          }
+          &:last-child {
+            margin-bottom: 10px;
+          }
+        }
+        @include first(7) {
+          display: block;
+        }
+      }
+      &.is-active {
+        tr {
+          display: block;
+        }
+      }
+    }
+  }
+  &__description {
+    font-size: 18px;
+  }
   @include media-breakpoint-up(sm) {
     &__gallery {
       &-top {
