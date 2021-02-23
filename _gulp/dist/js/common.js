@@ -309,6 +309,8 @@ $(document).on('ready', function(){
   headerScroll();
   footerNav();
   jNavigation();
+  search();
+  catalogNavigation();
 
   testFavourite();
   countTest();
@@ -572,4 +574,48 @@ function countTest() {
       input.val(value);
     });
   });
+}
+
+function search() {
+  var btn = $('.j-btn-search');
+  var search = $('#search');
+  var input = search.find('input');
+
+  btn.on('click', function(){
+    input.val('');
+    if (search.hasClass('is-active')) {
+      search.removeClass('is-active');
+    } else {
+      search.addClass('is-active');
+    }
+  });
+}
+
+function catalogNavigation() {
+  var width = $(window).width();
+  var menu = $('#catalog-navigation'); 
+  var menu2 = $('.header__navigation');
+
+  if (width >= 1280) {
+    menu.find('.active').removeClass('active');
+    menu2.find('.active').removeClass('active');
+  }
+
+  $(window).on('resize', function(){
+    var width = $(window).width();
+    if (width >= 1280 ) {
+      menu.find('.active').removeClass('active');
+      menu2.find('.active').removeClass('active');
+      $('#catalog-navigation').removeClass('is-active');
+    }
+  });
+
+  $(document).mouseup(function(e) { 
+    var container = $("#catalog-navigation"); // target ID or class 
+    // if the target of the click isn't the container nor a descendant of the container 
+    if (!container.is(e.target) && container.has(e.target).length === 0) { 
+        // get Event here 
+        $('.active').removeClass('active'); 
+    } 
+  }); 
 }

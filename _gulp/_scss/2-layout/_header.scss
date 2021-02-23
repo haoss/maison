@@ -2,7 +2,7 @@
 .header {
   background-color: $primary-color;
   position: fixed;
-  z-index: 100;
+  z-index: 160;
   top: 0;
   left: 0;
   right: 0;
@@ -89,12 +89,42 @@
   &.--main + .header-holder {
     display: none;
   }
+  &__navigation {
+    position: absolute;
+    top: 77px;
+    width: 100%;
+    left: 0;
+    height: 37px;
+    background: rgba($color-white,0);
+    transition: all 0.35s;
+    .is-scroll & {
+      background: rgba($color-white,.8);
+      backdrop-filter: blur(20px);
+      top: 60px;
+    }
+    ul {
+      display: none;
+    }
+  }
   @include media-breakpoint-up(sm) {
     &__links {
       &>button, &>a {
         &+* {
           margin-left: 30px;
         }
+      }
+    }
+    &__navigation {
+      position: relative;
+      top: auto;
+      width: auto;
+      background: transparent;
+      height: auto;
+      text-align: center;
+      .is-scroll & {
+        background: transparent;
+        backdrop-filter: blur(0px);
+        top: auto;
       }
     }
   }
@@ -111,6 +141,7 @@
       display: block;
       margin-right: 42px;
     }
+    
   }
   @include media-breakpoint-up(lg) {
     &__wrapper {
@@ -121,6 +152,10 @@
     }
     &__phone {
       margin-right: 63px;
+    }
+    &__navigation {
+      text-align: left;
+      padding-left: 90px;
     }
   }
   @include media-breakpoint-up(xl) {
@@ -139,6 +174,74 @@
         transition: all 0.35s;
         &:hover {
           opacity: 0.5;
+        }
+      }
+    }
+    &__navigation {
+      padding: 0 60px;
+      ul {
+        display: flex;
+        margin: 0;
+        justify-content: space-around;
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        &>li {
+          padding: 0;
+          &::before {
+            display: none;
+          }
+          &>a, &>span {
+            color: $color-white;
+            height: 90px;
+            line-height: 90px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            padding: 0 15px;
+            transition: all 0.35s;
+            &:hover {
+              opacity: 0.7;
+            }
+            &::before {
+              content: '';
+              width: 10px;
+              height: 10px;
+              position: absolute;
+              transform-origin: 50%;
+              bottom: -4px;
+              background: $color-white;
+              left: 50%;
+              transform: translateX(-50%) rotate(45deg);
+              opacity: 0;
+              visibility: hidden;
+              transition: all 0.35s;
+            }
+            &.active {
+              color: $color-white;
+              background: $primary-color;
+              &::before {
+                opacity: 1;
+                visibility: visible;
+              }
+            }
+            .is-scroll & {
+              height: 60px;
+              line-height: 60px;
+              color: $primary-color;
+            }
+            &.active {
+              background: $color-white;
+              color: $primary-color;
+              .is-scroll & {
+                background: $primary-color;
+                color: $color-white;
+                &::before {
+                  background: $primary-color;
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -202,4 +305,186 @@
   &::before {
     content: '\e91f';
   }
+}
+
+.search {
+  position: fixed;
+  height: 88px;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: $primary-color;
+  color: $color-white;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s;
+  justify-content: center;
+  z-index: 20;
+  .is-scroll & {
+    height: 60px;
+    background: $color-white;
+    color: $primary-color;
+  }
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+  &__form {
+    width: 100%;
+    position: relative;
+    max-width: 510px;
+  }
+  &__input {
+    height: 37px;
+    border: 0;
+    width: 100%;
+    padding: 0 38px;
+    border-bottom: 1px solid rgba($color-white,.2);
+    background: transparent;
+    color: $color-white;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+    caret-color: $color-white;
+    &::-webkit-input-placeholder {
+      color: rgba($color-white,.5);
+      .is-scroll & {
+        color: rgba($primary-color,0.5);
+      }
+    }
+    &::-moz-placeholder {
+      color: rgba($color-white,.5);
+      .is-scroll & {
+        color: rgba($primary-color,0.5);
+      }
+    }
+    &:-ms-input-placeholder {
+      color: rgba($color-white,.5);
+      .is-scroll & {
+        color: rgba($primary-color,0.5);
+      }
+    }
+    &:-moz-placeholder {
+      color: rgba($color-white,.5);
+      .is-scroll & {
+        color: rgba($primary-color,0.5);
+      }
+    }
+    .is-scroll & {
+      border-bottom-color: rgba($primary-color,0.1);
+    }
+  }
+  button {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    background: transparent;
+    border: 0;
+    font-size: 20px;
+    color: $color-white;
+    font-weight: 200;
+    &::before {
+      font-family: $font-icomoon;
+    }
+    .is-scroll & {
+      color: $primary-color;
+    }
+  }
+  &__close {
+    left: 0;
+    top: 0;
+    font-size: 16px !important;
+    &::before {
+      content: '\e906';
+    }
+  }
+  &__submit {
+    right: 0;
+    top: 0;
+    &::before {
+      content: '\e912';
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    background: transparent;
+    pointer-events: none;
+    .is-scroll & {
+      background: transparent;
+    }
+    &__form {
+      pointer-events: auto;
+      background: $primary-color;
+      max-width: 548px;
+      .is-scroll & {
+        background: rgba($color-white,.8);
+        backdrop-filter: blur(20px);
+      }
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    &__form {
+      max-width: 789px;
+    }
+    
+  }
+  @include media-breakpoint-up(xxl) {
+    &__form {
+      max-width: 1066px;
+    }
+  }
+}
+
+.btn-catalog {
+  height: 35px;
+  background: rgba($color-white,.02);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  width: 346px;
+  color: $color-white;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  position: absolute;
+  white-space: nowrap;
+  i {
+    font-size: 10px;
+    margin-left: 10px;
+    vertical-align: 3px;
+  }
+  .is-scroll & {
+    background: rgba($primary-color,1);
+    color: $color-white;
+  }
+  @include media-breakpoint-up(sm) {
+    width: auto;
+    background: transparent;
+    position: relative;
+    transform: none;
+    left: auto;
+    display: inline-block;
+    span {
+      display: none;
+    }
+    .is-scroll & {
+      background: transparent;
+      color: $primary-color;
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    display: none;
+  }
+}
+
+.catalog-locker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: none;
 }

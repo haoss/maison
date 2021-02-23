@@ -21,12 +21,30 @@
             <!-- Header-->
             <header class="header">
                 <div class="container">
+                    <div class="search" id="search">
+                        <form class="search__form" action="#!">
+                            <input class="search__input" type="text" placeholder="Поиск товара">
+                            <button class="search__close j-btn-search" type="button"></button>
+                            <button class="search__submit" type="submit"></button>
+                        </form>
+                    </div>
                     <div class="header__wrapper">
                         <div class="logo"><a href="#!"> <img class="svg-inline" src="./images/logo.svg" width="120" height="31" alt=""></a></div>
-                        <div class="div2">2</div>
+                        <div class="div2">
+                            <div class="header__navigation">
+                                <button class="btn-catalog j-btn" type="button" data-id="catalog-navigation">Каталог<span> сайта</span><i class="icon-carret-down"></i></button>
+                                <ul class="nav">
+                                    <li><a id="home-tab1" data-toggle="tab" href="#menu1" role="tab" aria-controls="menu1" aria-selected="true">Текстить</a></li>
+                                    <li><a id="home-tab2" data-toggle="tab" href="#menu2" role="tab" aria-controls="menu2" aria-selected="false">Мебель</a></li>
+                                    <li><a id="home-tab3" data-toggle="tab" href="#menu3" role="tab" aria-controls="menu3" aria-selected="false">Аксессуары</a></li>
+                                    <li><a id="home-tab4" data-toggle="tab" href="#menu4" role="tab" aria-controls="menu4" aria-selected="false">Свет</a></li>
+                                    <li><a id="home-tab5" data-toggle="tab" href="#menu5" role="tab" aria-controls="menu5" aria-selected="false">Посуда</a></li>
+                                </ul>
+                            </div>
+                        </div>
                         <div class="header__phone"><a href="tel:">8 (495) <b>532-87-72</b></a></div>
                         <div class="header__links">
-                            <button class="btn-search" type="button"></button><a class="btn-favourite" href="#!"></a>
+                            <button class="btn-search j-btn-search" type="button"></button><a class="btn-favourite" href="#!"></a>
                             <button class="btn-cart j-btn" type="button" data-id="cart"></button>
                             <button class="btn-user j-btn" type="button" data-id="enter"></button>
                             <button class="btn-burger j-btn" type="button" data-id="menu"></button>
@@ -241,6 +259,67 @@
                                     <button class="btn --block" type="submit">Оформить заказ</button>
                                 </div>
                             </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-navigation j-btn-target" id="catalog-navigation">
+                <div class="catalog-navigation__wrapper">
+                    <div class="catalog-navigation__body">
+                        <nav class="nav">
+                            <ul class="nav" role="tablist">
+                                <li><a class="active" id="home-tab1" data-toggle="tab" href="#menu1" role="tab" aria-controls="menu1" aria-selected="true">Текстить</a></li>
+                                <li><a id="home-tab2" data-toggle="tab" href="#menu2" role="tab" aria-controls="menu2" aria-selected="false">Мебель</a></li>
+                                <li><a id="home-tab3" data-toggle="tab" href="#menu3" role="tab" aria-controls="menu3" aria-selected="false">Аксессуары</a></li>
+                                <li><a id="home-tab4" data-toggle="tab" href="#menu4" role="tab" aria-controls="menu4" aria-selected="false">Свет</a></li>
+                                <li><a id="home-tab5" data-toggle="tab" href="#menu5" role="tab" aria-controls="menu5" aria-selected="false">Посуда</a></li>
+                            </ul>
+                        </nav>
+                        <div class="tab-pane active" id="menu1" role="tabpanel" aria-labelledby="home-tab1">
+                            <nav>
+                                <p>1</p>
+                            </nav>
+                        </div>
+                        <div class="tab-pane" id="menu2" role="tabpanel" aria-labelledby="home-tab2">
+                            <nav>
+                                <p>2</p>
+                            </nav>
+                        </div>
+                        <div class="tab-pane" id="menu3" role="tabpanel" aria-labelledby="home-tab3">
+                            <nav>
+                                <ul>
+                                    <li><a href="#!">ФАРФОР</a></li>
+                                    <li><a href="#!">СЕРВИРОВКА СТОЛА</a>
+                                        <ul>
+                                            <li><a href="#!">СТОЛОВЫЕ ПРИБОРЫ</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#!">СЕРВИЗЫ СТОЛОВЫЕ</a></li>
+                                    <li><a href="#!">СЕРВИЗЫ ЧАЙНЫЕ</a></li>
+                                    <li><a href="#!">СЕРВИЗЫ КОФЕЙНЫЕ</a></li>
+                                    <li><a href="#!">БОКАЛЫ</a></li>
+                                    <li><a href="#!">КРУЖКИ</a></li>
+                                    <li><a href="#!">КУВШИНЫ</a></li>
+                                    <li><a href="#!">ВЕДРА ДЛЯ ЛЬДА</a></li>
+                                    <li><a href="#!">САЛАТНИКИ</a></li>
+                                    <li><a href="#!">ПОДНОСЫ</a></li>
+                                    <li><a href="#!">ДЕКАНТЕРЫ</a></li>
+                                    <li><a href="#!">МЕНАЖНИЦЫ/СОУСНИКИ</a></li>
+                                    <li><a href="#!">ТАРЕЛКИ</a></li>
+                                    <li><a href="#!">ЧАЙНИКИ</a></li>
+                                    <li><a href="#!">ЕМКОСТИ</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="tab-pane" id="menu4" role="tabpanel" aria-labelledby="home-tab4">
+                            <nav>
+                                <p>4</p>
+                            </nav>
+                        </div>
+                        <div class="tab-pane" id="menu5" role="tabpanel" aria-labelledby="home-tab5">
+                            <nav>
+                                <p>5</p>
+                            </nav>
                         </div>
                     </div>
                 </div>

@@ -14,16 +14,32 @@ header.header
     //-         li
     //-           a(href=val, title=key)= key
 
+    #search.search
+      form(action="#!").search__form
+        input.search__input(type="text" placeholder="Поиск товара")
+        button(type="button").search__close.j-btn-search
+        button(type="submit").search__submit
+
     .header__wrapper
       .logo
         a(href="#!") 
           img(src="./images/logo.svg", width="120", height="31", alt="").svg-inline
-      .div2 2
+      .div2
+        .header__navigation
+          button(type="button" data-id="catalog-navigation").btn-catalog.j-btn Каталог
+            span  сайта
+            i.icon-carret-down
+          ul.nav
+            li: a(id="home-tab1" data-toggle="tab" href="#menu1" role="tab" aria-controls="menu1" aria-selected="true") Текстить
+            li: a(id="home-tab2" data-toggle="tab" href="#menu2" role="tab" aria-controls="menu2" aria-selected="false") Мебель
+            li: a(id="home-tab3" data-toggle="tab" href="#menu3" role="tab" aria-controls="menu3" aria-selected="false") Аксессуары
+            li: a(id="home-tab4" data-toggle="tab" href="#menu4" role="tab" aria-controls="menu4" aria-selected="false") Свет
+            li: a(id="home-tab5" data-toggle="tab" href="#menu5" role="tab" aria-controls="menu5" aria-selected="false") Посуда
       .header__phone
         a(href="tel:") 8 (495) 
           b 532-87-72
       .header__links
-        button(type="button").btn-search
+        button(type="button").btn-search.j-btn-search
         a(href="#!").btn-favourite
         button(type="button" data-id="cart").btn-cart.j-btn
         button(type="button" data-id="enter").btn-user.j-btn
@@ -284,3 +300,49 @@ header.header
             .clear30
           .form-group
             button(type="submit").btn.--block Оформить заказ
+
+#catalog-navigation.catalog-navigation.j-btn-target
+  .catalog-navigation__wrapper
+    .catalog-navigation__body
+      nav.nav
+        ul.nav(role="tablist")
+          li: a.active(id="home-tab1" data-toggle="tab" href="#menu1" role="tab" aria-controls="menu1" aria-selected="true") Текстить
+          li: a(id="home-tab2" data-toggle="tab" href="#menu2" role="tab" aria-controls="menu2" aria-selected="false") Мебель
+          li: a(id="home-tab3" data-toggle="tab" href="#menu3" role="tab" aria-controls="menu3" aria-selected="false") Аксессуары
+          li: a(id="home-tab4" data-toggle="tab" href="#menu4" role="tab" aria-controls="menu4" aria-selected="false") Свет
+          li: a(id="home-tab5" data-toggle="tab" href="#menu5" role="tab" aria-controls="menu5" aria-selected="false") Посуда
+      #menu1(role="tabpanel" aria-labelledby="home-tab1").tab-pane.active
+        nav
+          p 1
+      #menu2(role="tabpanel" aria-labelledby="home-tab2").tab-pane
+        nav
+          p 2
+      #menu3(role="tabpanel" aria-labelledby="home-tab3").tab-pane
+        nav
+          ul
+            li: a(href="#!") ФАРФОР
+            li
+              a(href="#!") СЕРВИРОВКА СТОЛА
+              ul
+                li
+                  a(href="#!") СТОЛОВЫЕ ПРИБОРЫ
+            li: a(href="#!") СЕРВИЗЫ СТОЛОВЫЕ
+            li: a(href="#!") СЕРВИЗЫ ЧАЙНЫЕ
+            li: a(href="#!") СЕРВИЗЫ КОФЕЙНЫЕ
+            li: a(href="#!") БОКАЛЫ
+            li: a(href="#!") КРУЖКИ
+            li: a(href="#!") КУВШИНЫ
+            li: a(href="#!") ВЕДРА ДЛЯ ЛЬДА
+            li: a(href="#!") САЛАТНИКИ
+            li: a(href="#!") ПОДНОСЫ
+            li: a(href="#!") ДЕКАНТЕРЫ
+            li: a(href="#!") МЕНАЖНИЦЫ/СОУСНИКИ
+            li: a(href="#!") ТАРЕЛКИ
+            li: a(href="#!") ЧАЙНИКИ
+            li: a(href="#!") ЕМКОСТИ
+      #menu4(role="tabpanel" aria-labelledby="home-tab4").tab-pane
+        nav
+          p 4
+      #menu5(role="tabpanel" aria-labelledby="home-tab5").tab-pane
+        nav
+          p 5

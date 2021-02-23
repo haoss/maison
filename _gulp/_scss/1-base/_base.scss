@@ -30,7 +30,9 @@ body {
     overflow: hidden;
     touch-action: none;
     -ms-touch-action: none;
-    padding-right: 3px;
+    @include media-breakpoint-up(xl) {
+      padding-right: 3px;
+    }
   }
   &::-webkit-scrollbar {
     width: 3px

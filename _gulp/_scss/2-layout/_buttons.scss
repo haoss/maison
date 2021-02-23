@@ -145,4 +145,11 @@ a.btn {
       }
     }
   }
+  @include media-breakpoint-up(xl) {
+    &:hover {
+      span {
+        border-bottom-color: transparent;
+      }
+    }
+  }
 }

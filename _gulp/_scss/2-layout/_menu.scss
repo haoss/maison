@@ -293,3 +293,205 @@ ul.catalog-menu {
   }
   @include media-breakpoint-up(xxl) {}
 }
+
+.catalog-navigation {
+  position: fixed;
+  top: 112px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 150;
+  // overflow: auto;
+  text-align: center;
+  transition: all .35s;
+  text-align: left;
+  transform: translateX(-100%);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.35s;
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  &__wrapper {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: -10px 4px 15px rgba(0, 0, 0, 0.03);
+    backdrop-filter: blur(10px);
+    left: 0px;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0px 10px 30px rgba($primary-color,.1);
+    overflow: auto;
+    &-body {
+      padding: 23px 30px;
+      overflow: auto;
+      min-height: 100%;
+      height: auto;
+      position: relative;
+    }
+  }
+  &.is-scroll {
+    top: 95px;
+  }
+  .nav {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 60px;
+      left: 0;
+      right: 0;
+      background: rgba($primary-color, 0.1);
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.02);
+      backdrop-filter: blur(20px);
+    }
+    ul {
+      display: flex;
+      margin-bottom: 0;
+      li {
+        position: relative;
+        padding: 0;
+        &::before {
+          display: none;
+        }
+        &>a, &>span {
+          display: block;
+          height: 60px;
+          line-height: 60px;
+          text-decoration: none;
+          padding: 0 17px;
+          position: relative;
+          &::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            transform-origin: 50%;
+            bottom: -4px;
+            background: $primary-color;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.35s;
+          }
+          &.active {
+            color: $color-white;
+            background: $primary-color;
+            &::before {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+  }
+  .tab-pane {
+    nav {
+      font-weight: 400;
+      font-size: 20px;
+      padding: 20px 15px;
+    }
+    ul {
+      margin: 0;
+      li {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 10px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &::before {
+          display: none;
+        }
+        &>a, &>span {
+          text-decoration: none;
+        }
+      }
+      ul {
+        margin-top: 10px;
+        li {
+          &::before {
+            font-family: $font-icomoon;
+            content: '\e90b';
+            display: inline-block;
+            margin-right: 10px;
+            position: relative;
+            top: -3px;
+          }
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(sm) {
+    top: 88px;
+    &.is-scroll {
+      top: 60px;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    .tab-pane {
+      ul {
+        column-count: 2;
+      }
+      nav {
+        font-size: 16px;
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    .tab-pane {
+      ul {
+        column-count: 3;
+        white-space: nowrap;
+      }
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    opacity: 1;
+    visibility: visible;
+    transition: none;
+    transform: none;
+    bottom: auto;
+    top: 89px;
+    &__wrapper {
+      position: relative;
+    }
+    &__body {
+      max-width: 1200px;
+      padding: 0 15px;
+      margin: 0 auto;
+    }
+    .nav {
+      display: none;
+    }
+    .tab-pane {
+      ul {
+        column-count: 4;
+      }
+      nav {
+        padding: 30px 0;
+      }
+    }
+  }
+  @include media-breakpoint-up(xxl) {
+    &__body {
+      max-width: 1560px;
+    }
+    .tab-pane ul li>a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
