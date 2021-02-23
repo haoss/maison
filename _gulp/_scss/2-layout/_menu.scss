@@ -14,10 +14,10 @@
 .navigation {
   position: fixed;
   top: 77px;
-  width: 280px;
+  width: 270px;
   right: 0;
   bottom: 0;
-  z-index: 150;
+  z-index: 170;
   // overflow: auto;
   text-align: center;
   transition: all .35s;
@@ -109,6 +109,9 @@
   }
   &.is-scroll {
     top: 60px;
+  }
+  @include media-breakpoint-up(xs480) {
+    width: 280px;
   }
   @include media-breakpoint-up(xl) {
     &__social, &__contacts {
