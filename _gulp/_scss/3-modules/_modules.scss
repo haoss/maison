@@ -384,17 +384,22 @@
           margin-bottom: 22px;
         }
         a {
-          opacity: 1;
-          transition: all 0.35s;
+          .span {
+            opacity: 1;
+            transition: all 0.5s;
+          }
           &:hover {
-            opacity: 0.3;
+            .span {
+              opacity: 0.3;
+            }
           }
         }
+        
       }
     }
     &__btns {
       button {
-        transition: all 0.35s;
+        transition: all 0.5s;
       }
       &-left {
         &:hover {
@@ -439,7 +444,9 @@
     display: flex;
     flex-direction: column;
     background: $primary-color;
+    position: relative;
     &-img {
+      overflow: hidden;
       position: relative;
       display: flex;
       align-items: center;
@@ -461,7 +468,7 @@
         z-index: 2;
         background: $primary-color;
         opacity: 0.6;
-        transition: all 0.35s;
+        transition: all 0.5s;
       }
       img {
         position: absolute;
@@ -520,7 +527,7 @@
         }
         &>.span {
           font-size: 0;
-          transition: all 0.35s;
+          transition: all 0.5s;
           display: block;
           overflow: hidden;
           &::after {
@@ -529,7 +536,7 @@
             width: 35px;
             background: #929292;
             display: block;
-            transition: all 0.35s;
+            transition: all 0.5s;
             margin-right: 0;
             margin-left: auto;
           }
@@ -537,7 +544,7 @@
             display: block;
             line-height: 0px;
             margin: 0;
-            transition: all 0.35s;
+            transition: all 0.5s;
           }
         }
         &.slick-active {
@@ -637,7 +644,17 @@
             font-size: 30px;
           }
         }
+        img {
+          transform: scale(1);
+          transition: all 0.5s;
+        }
+        &:hover {
+          img {
+            transform: scale(1.1);
+          }
+        }
       }
+      
     }
     &__bottom {
       top: 175px;
@@ -712,6 +729,7 @@
     top: 0;
     height: 100%;
     width: 100%;
+    object-fit: cover;
   }
   &>.container {
     position: relative;
@@ -726,6 +744,7 @@
   }
   &__content {
     letter-spacing: 0.05em;
+    font-weight: 300;
     p {
       &:last-child {
         margin-bottom: 0;
@@ -888,7 +907,7 @@
     .span {
       opacity: 0;
       visibility: hidden;
-      transition: all 0.35s;
+      transition: all 0.5s;
       position: absolute;
       right: 0;
       bottom: 0;
@@ -1026,7 +1045,7 @@
     font-size: 20px;
     &__carousel {
       .slick-arrow {
-        transition: all 0.35s;
+        transition: all 0.5s;
       }
       .slick-prev {
         &:hover {
@@ -1513,7 +1532,7 @@
         height: 100%;
         object-fit: contain;
         opacity: 1;
-        transition: all 0.35s;
+        transition: all 0.5s;
       }
       button {
         position: absolute;
@@ -1524,7 +1543,11 @@
         width: 180px;
         opacity: 0;
         visibility: hidden;
-        transition: all 0.35s;
+        transition: all 0.5s;
+        &:hover {
+          background: $primary-color;
+          color: $color-white;
+        }
       }
       a {
         // background: lightblue;
@@ -1542,6 +1565,10 @@
       line-height: 27px;
       letter-spacing: 0.05em;
       margin-bottom: 5px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;  
+      overflow: hidden;
     }
     &-price {
       display: flex;
@@ -1554,7 +1581,7 @@
         font-weight: 700;
         opacity: 1;
         visibility: visible;
-        transition: all 0.35s;
+        transition: all 0.5s;
         [class*="icon"] {
           margin-left: 5px;
         }
@@ -1571,7 +1598,7 @@
         font-weight: 700;
         opacity: 0;
         visibility: hidden;
-        transition: all 0.35s;
+        transition: all 0.5s;
         i {
           vertical-align: 1px;
           font-size: 13px;
@@ -1621,7 +1648,7 @@
       font-size: 22px;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.35s;
+      transition: all 0.5s;
       z-index: 10;
       &::before {
         font-family: $font-icomoon;
@@ -1718,7 +1745,7 @@
         color: $primary-color;
         opacity: 1;
         visibility: visible;
-        transition: all 0.35s;
+        transition: all 0.5s;
       }
       .option {
         min-height: 35px;
@@ -1734,7 +1761,7 @@
       &::after {
         opacity: 1;
         visibility: visible;
-        transition: all 0.35s;
+        transition: all 0.5s;
         border: 0;
         content: "\e913";
         font-family: $font-icomoon;
@@ -1795,10 +1822,16 @@
   }
   @include media-breakpoint-up(xl) {
     &__block {
+      &>[class*="-thumb"] {
+        img {
+          transform: scale(1);
+        }
+      }
       &:hover {
         &>[class*="-thumb"] {
           img {
             opacity: 0.4;
+            transform: scale(1.1);
           }
         }
       }
@@ -1831,7 +1864,7 @@
     margin: 0 auto;
     font-weight: 300;
     min-height: 184px;
-    transition: all 0.35s;
+    transition: all 0.5s;
     z-index: 5;
     &.--first {
       padding-left: 0;
@@ -1843,15 +1876,14 @@
       top: 0;
       left: 0;
       bottom: 0;
-      background: linear-gradient(270deg, #FFFFFF 25%, rgba(255, 255, 255, 0) 100%);
-      opacity: 0.08;
+      background: linear-gradient(270deg, rgba($color-white,0.08) 25%, rgba(255, 255, 255, 0) 100%);
       width: 45%;
       transform: skewX(-20deg);
     }
     &-btn {
       opacity: 0;
       visibility: hidden;
-      transition: all 0.35s;
+      transition: all 0.5s;
       position: absolute;
       right: 0;
       bottom: 0;
@@ -2027,6 +2059,8 @@
         left: 40px;
         font-size: 90px;
         top: 22px;
+        transform: translateX(0);
+        transition: transform 2s;
       }
       &-wrapper {
         margin-left: 30px;
@@ -2041,14 +2075,26 @@
           font-size: 14px;
         }
       }
+      &::before {
+        transform: skewX(-20deg) translateX(-150%);
+        transition: all 0.5s;
+        opacity: 0;
+        visibility: hidden;
+      }
       &:hover {
         background: $primary-color;
         color: $color-white;
+        &::before {
+          transform: skewX(-20deg) translateX(0%);
+          opacity: 1;
+          visibility: visible;
+        }
         #{$this} {
           &__block {
             &-shadow {
               color: $color-white;
               opacity: 0.03;
+              transform: translateX(-20px);
             }
             &-btn {
               opacity: 1;
@@ -2122,7 +2168,7 @@
     .span {
       opacity: 0;
       visibility: hidden;
-      transition: all 0.35s;
+      transition: all 0.5s;
       position: absolute;
       right: 0;
       bottom: 0;
@@ -2149,7 +2195,7 @@
       height: 25px;
       opacity: 1;
       visibility: visible;
-      transition: all 0.35s;
+      transition: all 0.5s;
       &.--top {
         top: 0;
         left: 0;
@@ -2286,10 +2332,13 @@
     &__row {
       display: flex;
       margin: 0 -15px 80px -15px;
+      align-items: center;
       &>div {
         padding: 0 15px;
         width: 50%;
         &.div1 {
+          box-shadow: 50px -10px 0 $color-white, 50px 10px 0 $color-white;
+          position: relative;
           p {
             &:last-child {
               margin-bottom: 0;
@@ -2301,6 +2350,7 @@
         &>div {
           &.div1 {
             order: 2;
+            box-shadow: -50px -10px 0 $color-white, -50px 10px 0 $color-white;
           }
           &.div2 {
             order: 1;
@@ -2365,7 +2415,7 @@
     h2, .h2 {
       max-width: inherit;
       font-size: 40px;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.1em;
       margin-bottom: 45px;
     }
   }
@@ -2400,7 +2450,7 @@
         display: block;
         object-fit: cover;
         opacity: 0.4;
-        transition: all 0.35s;
+        transition: all 0.5s;
       }
     }
     &-title {
@@ -2507,7 +2557,7 @@
     &__block {
       &-title {
         bottom: 50px;
-        transition: all 0.35s;
+        transition: all 0.5s;
       }
       &:hover {
         [class*="-title"] {
@@ -2584,7 +2634,7 @@
     color: $primary-color;
     pointer-events: none;
     opacity: 1;
-    transition: all 0.35s;
+    transition: all 0.5s;
     &::before {
       content: "\e90f";
       font-size: 60px;
@@ -2756,7 +2806,7 @@
     height: 25px;
     opacity: 1;
     visibility: visible;
-    transition: all 0.35s;
+    transition: all 0.5s;
     &.--top {
       top: 0;
       left: 0;
@@ -2787,7 +2837,7 @@
     height: 240px;
     text-align: center;
     font-weight: 400;
-    background: $color-white;
+    background: transparent;
     &-number {
       position: absolute;
       font-weight: 900;
@@ -2880,19 +2930,15 @@
       margin-bottom: 122px;
     }
     &__block {
+      transition: all 0.5s;
+      background: transparent;
       &-number {
         font-size: 200px;
         margin-top: -40px;
+        transition: transform 2s;
       }
       &-text {
         max-width: 260px;
-      }
-      &:hover {
-        background: $primary-color;
-        transition: all 0.35s;
-        [class*="-text"], [class*="-number"] {
-          color: $color-white;
-        }
       }
       &::before {
         content: '';
@@ -2901,10 +2947,26 @@
         top: 0;
         left: 0;
         bottom: 0;
-        background: linear-gradient(270deg, #FFFFFF 25%, rgba(255, 255, 255, 0) 100%);
-        opacity: 0.08;
+        background: linear-gradient(270deg, rgba($color-white,.08) 25%, rgba(255, 255, 255, 0) 100%);
         width: 51%;
-        transform: skewX(-20deg);
+        transform: skewX(-20deg) translateX(-150%);
+        transition: all 0.5s;
+        opacity: 0;
+        visibility: hidden;
+      }
+      &:hover {
+        background: $primary-color;
+        [class*="-text"], [class*="-number"] {
+          color: $color-white;
+        }
+        [class*="-number"] {
+          transform: translate(calc(-50% - 20px),-50%);
+        }
+        &::before {
+          transform: skewX(-20deg) translateX(0%);
+          opacity: 1;
+          visibility: visible;
+        }
       }
     }
   }
@@ -2921,7 +2983,7 @@
     max-width: 305px;
     margin: 0 auto 70px;
     font-weight: 300;
-    transition: all 0.35s;
+    transition: all 0.5s;
     z-index: 5;
     &::before {
       content: '';
@@ -2938,7 +3000,7 @@
     &-btn {
       opacity: 0;
       visibility: hidden;
-      transition: all 0.35s;
+      transition: all 0.5s;
       position: absolute;
       right: 0;
       bottom: 0;
@@ -3161,7 +3223,7 @@
         color: $primary-color;
         opacity: 1;
         visibility: visible;
-        transition: all 0.35s;
+        transition: all 0.5s;
       }
       .option {
         min-height: 35px;
@@ -3177,7 +3239,7 @@
       &::after {
         opacity: 1;
         visibility: visible;
-        transition: all 0.35s;
+        transition: all 0.5s;
         border: 0;
         content: "\e913";
         font-family: $font-icomoon;
@@ -3251,7 +3313,7 @@
       [class*="-thumb"] {
         img {
           transform: scale(1);
-          transition: all 0.35s;
+          transition: all 0.5s;
           opacity: 1;
         }
       }
@@ -3292,7 +3354,7 @@
       }
     }
     a {
-      transition: all 0.35s;
+      transition: all 0.5s;
       &[href*="tel:"], &[href*="mailto:"] {
         text-decoration: none;
         &:hover {
@@ -3428,7 +3490,7 @@
         }
       }
       .slick-arrow {
-        transition: all 0.35s;
+        transition: all 0.5s;
       }
       .slick-prev {
         &:hover {
@@ -3934,7 +3996,7 @@
       height: 16px;
       display: block;
       opacity: 1;
-      transition: all 0.35s;
+      transition: all 0.5s;
       margin-top: 24px;
       &::before {
         content: '\e906';
@@ -4047,7 +4109,7 @@
         font-size: 20px;
         a {
           opacity: 1;
-          transition: all 0.35s;
+          transition: all 0.5s;
           &:hover {
             opacity: 0.6;
           }
@@ -4062,7 +4124,7 @@
       }
       &-close {
         opacity: 1;
-        transition: all 0.35s;
+        transition: all 0.5s;
         &:hover {
           opacity: 0.7;
         }
@@ -4097,7 +4159,7 @@ del.cart__table-price {
   margin-bottom: 10px;
   margin-top: -50px;
   @include media-breakpoint-up(xl) {
-    transition: all 0.35s;
+    transition: all 0.5s;
     &:hover {
       border-bottom-color: transparent;
     }
@@ -4481,7 +4543,7 @@ del.cart__table-price {
   @include media-breakpoint-up(xl) {
     &__btns {
       button {
-        transition: all 0.35s;
+        transition: all 0.5s;
         &:hover {
           border-color: $primary-color;
           background: $primary-color;
@@ -4558,7 +4620,7 @@ del.cart__table-price {
           height: 70px;
           object-fit: contain;
           opacity: 0.5;
-          transition: all 0.35s;
+          transition: all 0.5s;
           cursor: pointer;
         }
         &.slick-current {
@@ -4810,7 +4872,7 @@ del.cart__table-price {
         object-fit: cover;
       }
       .span {
-        transition: all 0.35s;
+        transition: all 0.5s;
         position: absolute;
         right: 0;
         bottom: 0;
@@ -4907,14 +4969,14 @@ del.cart__table-price {
   @include media-breakpoint-up(lg) {
     margin-bottom: 70px;
     &__gallery {
-      max-width: 444px;
+      max-width: 450px;
       margin-bottom: 0;
       &-top {
         margin-bottom: 15px;
-        width: 444px;
+        width: 450px;
         img {
-          width: 444px;
-          height: 444px;
+          width: 450px;
+          height: 450px;
         }
       }
     }
@@ -4980,7 +5042,7 @@ del.cart__table-price {
         }
         .slick-arrow {
           opacity: 0;
-          transition: all 0.35s;
+          transition: all 0.5s;
           &:hover {
             background: $primary-color;
             color: $color-white;
@@ -5034,7 +5096,7 @@ del.cart__table-price {
       }
     }
     &__brand {
-      transition: all 0.35s;
+      transition: all 0.5s;
       &:hover {
         box-shadow: 0px 4px 50px rgba($color-black,.15);
       }
@@ -5043,7 +5105,7 @@ del.cart__table-price {
       ul {
         &>li {
           img {
-            transition: all 0.35s;
+            transition: all 0.5s;
             &:hover {
               opacity: 1;
             }

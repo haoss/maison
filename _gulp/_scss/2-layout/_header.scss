@@ -23,7 +23,7 @@
     height: 88px;
     display: flex;
     align-items: center;
-    transition: all 0.35s;
+    transition: all 0.5s;
     .is-scroll & {
       height: 60px;
     }
@@ -81,7 +81,7 @@
   }
   &-holder {
     height: 88px;
-    transition: all 0.35s;
+    transition: all 0.5s;
   }
   &.is-scroll + .header-holder {
     height: 60px;
@@ -96,7 +96,7 @@
     left: 0;
     height: 35px;
     background: rgba($color-white,0);
-    transition: all 0.35s;
+    transition: all 0.5s;
     .is-scroll & {
       background: rgba($color-white,.8);
       backdrop-filter: blur(20px);
@@ -161,17 +161,27 @@
     }
     &__phone {
       margin-right: 63px;
+      opacity: 1;
+      transition: all 0.35s;
+      .is-search & {
+        opacity: 0;
+      }
     }
     &__navigation {
       text-align: left;
       padding-left: 90px;
+      opacity: 1;
+      transition: all 0.35s;
+      .is-search & {
+        opacity: 0;
+      }
     }
   }
   @include media-breakpoint-up(xl) {
     &__links {
       &>button, &>a {
         opacity: 1;
-        transition: all 0.35s;
+        transition: all 0.5s;
         &:hover {
           opacity: 0.5;
         }
@@ -180,7 +190,7 @@
     &__phone {
       a {
         opacity: 1;
-        transition: all 0.35s;
+        transition: all 0.5s;
         &:hover {
           opacity: 0.5;
         }
@@ -208,7 +218,7 @@
             display: block;
             text-align: center;
             padding: 0 15px;
-            transition: all 0.35s;
+            transition: all 0.5s;
             &:hover {
               opacity: 0.7;
             }
@@ -224,7 +234,7 @@
               transform: translateX(-50%) rotate(45deg);
               opacity: 0;
               visibility: hidden;
-              transition: all 0.35s;
+              transition: all 0.5s;
             }
             &.active {
               color: $color-white;
@@ -329,7 +339,7 @@
   align-items: center;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.35s;
+  transition: all 0.5s;
   justify-content: center;
   z-index: 20;
   .is-scroll & {
@@ -424,12 +434,8 @@
     }
     &__form {
       pointer-events: auto;
-      background: $primary-color;
+      background: transparent;
       max-width: 548px;
-      .is-scroll & {
-        background: rgba($color-white,.8);
-        backdrop-filter: blur(20px);
-      }
     }
   }
   @include media-breakpoint-up(xl) {

@@ -311,6 +311,8 @@ $(document).on('ready', function(){
   jNavigation();
   search();
   catalogNavigation();
+  stickyCart();
+  stickyGallery();
 
   testFavourite();
   countTest();
@@ -580,13 +582,16 @@ function search() {
   var btn = $('.j-btn-search');
   var search = $('#search');
   var input = search.find('input');
+  var header = $('.header');
 
   btn.on('click', function(){
     input.val('');
     if (search.hasClass('is-active')) {
       search.removeClass('is-active');
+      header.removeClass('is-search');
     } else {
       search.addClass('is-active');
+      header.addClass('is-search');
     }
   });
 }
@@ -617,8 +622,34 @@ function catalogNavigation() {
       // if the target of the click isn't the container nor a descendant of the container 
       if (!container.is(e.target) && container.has(e.target).length === 0) { 
           // get Event here 
-          $('.active').removeClass('active'); 
+          $('.header__navigation nav .active').removeClass('active'); 
       } 
     }
   }); 
+}
+
+function stickyCart() {
+  var cart = $('#cartTotal');
+  var width = $(window).width();
+
+  if (width >= 1280) {
+    cart.stick_in_parent({
+      offset_top: 100
+    });
+  } else {
+    cart.trigger("sticky_kit:detach");
+  }
+}
+
+function stickyGallery() {
+  var gallery = $('.product__gallery');
+  var width = $(window).width();
+
+  if (width >= 1024) {
+    gallery.stick_in_parent({
+      offset_top: 100
+    });
+  } else {
+    gallery.trigger("sticky_kit:detach");
+  }
 }
