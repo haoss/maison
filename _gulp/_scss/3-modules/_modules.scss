@@ -1086,11 +1086,16 @@
       height: 170px;
       box-shadow: 0px 4px 30px rgba($color-black, 0);
       margin: 20px 0;
+      .span {
+        transform: translateY(100%);
+        transition-delay: 0s;
+      }
       &:hover {
         box-shadow: 0px 4px 30px rgba($color-black,.05);
         .span {
           opacity: 1;
           visibility: visible;
+          transform: translateY(0%);
         }
       }
     }
@@ -2075,6 +2080,10 @@
           font-size: 14px;
         }
       }
+      &-btn {
+        transform: translateY(100%);
+        transition-delay: 0s;
+      }
       &::before {
         transform: skewX(-20deg) translateX(-150%);
         transition: all 0.5s;
@@ -2099,6 +2108,8 @@
             &-btn {
               opacity: 1;
               visibility: visible;
+              transform: translateY(0%);
+              transition-delay: 0.1s;
             }
             &-title {
               color: $color-white;
@@ -2263,6 +2274,15 @@
     }
     &__link {
       height: 280px;
+      .span {
+        transform: translateY(100%);
+        transition-delay: 0s;
+      }
+      &:hover {
+        .span {
+          transform: translateY(0%);
+        }
+      }
     }
   }
   @include media-breakpoint-up(xl) {
@@ -2992,10 +3012,12 @@
       top: 0;
       left: 0;
       bottom: 0;
-      background: linear-gradient(270deg, #FFFFFF 25%, rgba(255, 255, 255, 0) 100%);
-      opacity: 0.08;
+      background: linear-gradient(270deg, rgba($color-white,.08) 25%, rgba(255, 255, 255, 0) 100%);
       width: 45%;
-      transform: skewX(-20deg);
+      transform: skewX(-20deg) translateX(-150%);
+      transition: all 0.5s;
+      opacity: 0;
+      visibility: hidden;
     }
     &-btn {
       opacity: 0;
@@ -3096,17 +3118,27 @@
         max-height: 174px;
         margin: 0 30px 0 0;
       }
+      &-btn {
+        transform: translateY(100%);
+        transition-delay: 0.1s;
+      }
       &-wrapper {
         flex-direction: row;
       }
       &:hover {
         background: $primary-color;
         color: $color-white;
+        &::before {
+          transform: skewX(-20deg) translateX(0%);
+          opacity: 1;
+          visibility: visible;
+        }
         #{$this} {
           &__block {
             &-btn {
               opacity: 1;
               visibility: visible;
+              transform: translateY(0%);
             }
             &-title {
               color: $color-white;

@@ -44,7 +44,6 @@
     }
     span {
       display: block;
-      max-width: 255px;
       letter-spacing: 0.05em;
     }
   }
@@ -316,6 +315,11 @@
         }
       }
     }
+    &__logo {
+      span {
+        max-width: 255px;
+      }
+    }
   }
   @include media-breakpoint-up(xl) {
     &__center {
@@ -341,6 +345,7 @@
     &__title {
       cursor: default;
     }
+    
   }
   @include media-breakpoint-up(xxl) {
     &__center {
