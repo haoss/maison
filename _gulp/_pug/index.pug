@@ -100,9 +100,9 @@ html(lang="ru")
 
         // Main video
         .main-video
-          .main-video__block
-            a(href="https://www.youtube.com/watch?v=0-7IHOXkiV8" data-fancybox)
+          #mainVideoBlock.main-video__block
             img(src="./tmp/main-video-img.png", alt="").main-video__block-img
+            iframe(width='560' height='315' src='https://www.youtube.com/embed/0-7IHOXkiV8?enablejsapi=1' frameborder='0' allowfullscreen)#mainVideo.main-video__block-img
             .main-video__play
           .main-video__bottom
             .container
@@ -258,17 +258,35 @@ html(lang="ru")
                 .main-choice__title-shadow
                   div The best choice
                 .main-choice__title-div Лучший выбор
-            .main-choice__top
-              .div1
-                
-                .main-choice__content
-                  p Каждый предмет в MAISON имеет право носить звание "Лучший выбор" - мы очень тщательно подходим к вопросу выбора фабрик, которые представленны у нас. Мы работаем с производителями, а значит, готовы предложить Вам лучшую цену.  При этом мы работаем не только с брендами, имена которых, говорят сами за себя, но и, с удовольствием открываем для Вас новые "имена", не уступающие по качеству и дизайну.
-              .div2
-                .main-choice__carousel
-                  img(src="./tmp/main-choice-img.png", width="296", height="151", alt="")
-                  img(src="./tmp/main-choice-img-2.png", width="296", height="151", alt="")
-                  img(src="./tmp/main-choice-img.png", width="296", height="151", alt="")
-                  img(src="./tmp/main-choice-img-2.png", width="296", height="151", alt="")
+            .main-choice__carousel
+              .main-choice__top
+                .div1
+                  .main-choice__content
+                    p Каждый предмет в MAISON имеет право носить звание "Лучший выбор" - мы очень тщательно подходим к вопросу выбора фабрик, которые представленны у нас. Мы работаем с производителями, а значит, готовы предложить Вам лучшую цену.  При этом мы работаем не только с брендами, имена которых, говорят сами за себя, но и, с удовольствием открываем для Вас новые "имена", не уступающие по качеству и дизайну.
+                .div2
+                  .main-choice__carousel
+                    img(src="./tmp/main-choice-img.png", width="296", height="151", alt="")
+              .main-choice__top
+                .div1
+                  .main-choice__content
+                    p Каждый предмет в MAISON имеет право носить звание "Лучший выбор" - мы очень тщательно подходим к вопросу выбора фабрик, которые представленны у нас. Мы работаем с производителями, а значит, готовы предложить Вам лучшую цену.
+                .div2
+                  .main-choice__carousel
+                    img(src="./tmp/main-choice-img-2.png", width="296", height="151", alt="")
+              .main-choice__top
+                .div1
+                  .main-choice__content
+                    p Каждый предмет в MAISON имеет право носить звание "Лучший выбор" - мы очень тщательно подходим к вопросу выбора фабрик, которые представленны у нас. Мы работаем с производителями, а значит, готовы предложить Вам лучшую цену.  При этом мы работаем не только с брендами, имена которых, говорят сами за себя, но и, с удовольствием открываем для Вас новые "имена", не уступающие по качеству и дизайну.
+                .div2
+                  .main-choice__carousel
+                    img(src="./tmp/main-choice-img.png", width="296", height="151", alt="")
+              .main-choice__top
+                .div1
+                  .main-choice__content
+                    p Каждый предмет в MAISON имеет право носить звание "Лучший выбор" - мы очень тщательно подходим к вопросу выбора фабрик, которые представленны у нас. Мы работаем с производителями, а значит, готовы предложить Вам лучшую цену.
+                .div2
+                  .main-choice__carousel
+                    img(src="./tmp/main-choice-img-2.png", width="296", height="151", alt="")
             .main-choice__bottom
               .main-choice__carousel2
                 a(href="#!").main-choice__link
@@ -298,10 +316,40 @@ html(lang="ru")
 
     // Load Scripts
     include ./_include/_footer-js
-    script(src="./js/common.js?v14")
+    script(src="./js/common.js?v20")
 
     script().
       $(document).ready(function(){
         $('.header').addClass('--main');
       })
+      // global variable for the player
+      var player;
+
+      // this function gets called when API is ready to use
+      function onYouTubePlayerAPIReady() {
+          // create the global player from the specific iframe (#video)
+          player = new YT.Player('mainVideo', {
+              events: {
+                  // call this function when player is ready to use
+                  'onReady': onPlayerReady
+              }
+          });
+      }
+
+      function onPlayerReady(event) {
+
+          // bind events
+          var playButton = document.getElementById("mainVideoBlock");
+          playButton.addEventListener("click", function() {
+              player.playVideo();
+              playButton.classList.add('is-active');
+          });
+          
+      }
+
+      // Inject YouTube API script
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/player_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 

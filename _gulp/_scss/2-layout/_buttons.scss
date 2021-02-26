@@ -105,7 +105,7 @@ a.btn {
   font-size: 12px;
   &>span {
     border-bottom: 1px dashed $primary-color;
-    display: inline;
+    display: inline-block;
     &.span-true {
       display: none;
     }
@@ -113,7 +113,7 @@ a.btn {
   &[aria-expanded="true"] {
     &>span {
       &.span-true {
-        display: inline;
+        display: inline-block;
       }
       &.span-false {
         display: none;

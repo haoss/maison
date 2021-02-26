@@ -117,6 +117,7 @@ $(document).on('ready', function(){
     autoplaySpeed: 4000,
     pauseOnHover: false,
     fade: true,
+    adaptiveHeight: true
   });
 
   $('.main-choice__carousel2').slick({
@@ -241,6 +242,14 @@ $(document).on('ready', function(){
     lessLink: '<div class="readmore"><a href="#">Закрыть</a></div>'
   });
 
+  // Readmore
+  $('.j-readmore').readmore({
+    speed: 500,
+    collapsedHeight: 330,
+    moreLink: '<div class="readmore"><span>Развернуть</span></div>',
+    lessLink: '<div class="readmore"><span>Свернуть</span></div>'
+  });
+
   // Jquery UI slider
   $("#filter__range").slider({
   	min: 0,
@@ -325,6 +334,7 @@ $(document).on('ready', function(){
   catalogNavigation();
   stickyCart();
   stickyGallery();
+  deliveryTest();
 
   testFavourite();
   countTest();
@@ -627,17 +637,20 @@ function catalogNavigation() {
     }
   });
 
-  $(document).mouseup(function(e) { 
-    var width = $(window).width();
-    if (width >= 1280 ) {
-      var container = $("#catalog-navigation"); // target ID or class 
-      // if the target of the click isn't the container nor a descendant of the container 
-      if (!container.is(e.target) && container.has(e.target).length === 0) { 
-          // get Event here 
-          $('.header__navigation nav .active').removeClass('active'); 
-      } 
-    }
-  }); 
+   
+  $(document).on('mouseover', function(e) { 
+    var container = $("#catalog-navigation");
+    if (!container.is(e.target) && container.has(e.target).length === 0) { 
+      $('.catalog-navigation__body .active').removeClass('active'); 
+      $('.header__navigation .active').removeClass('active'); 
+    } 
+  });
+
+  $(document).on('click', '.header__navigation .active', function(e) { 
+    var href = $(this).attr('href').substring(1); 
+    $(this).removeClass('active'); 
+    $('.catalog-navigation__body .tab-pane[id="' + href + '"]').removeClass('active'); 
+  });
 }
 
 function stickyCart() {
@@ -664,4 +677,17 @@ function stickyGallery() {
   } else {
     gallery.trigger("sticky_kit:detach");
   }
+}
+
+function deliveryTest() {
+  var input = $('.j-delivery-test');
+  var block = $('#deliveryCity');
+  
+  input.on('change', function() {
+    var _this = $(this);
+    block.addClass('d-none');
+    if (_this.attr('id') == 'radio23' || _this.attr('id') == 'radio24') {
+      block.removeClass('d-none');
+    }
+  });
 }

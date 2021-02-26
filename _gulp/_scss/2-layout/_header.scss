@@ -436,18 +436,18 @@
     &__form {
       pointer-events: auto;
       background: transparent;
-      max-width: 548px;
+      max-width: 557px;
     }
   }
   @include media-breakpoint-up(xl) {
     &__form {
-      max-width: 789px;
+      max-width: 797px;
     }
     
   }
   @include media-breakpoint-up(xxl) {
     &__form {
-      max-width: 1066px;
+      max-width: 1077px;
     }
   }
 }

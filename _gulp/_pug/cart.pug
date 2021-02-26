@@ -21,7 +21,7 @@ html(lang="ru")
 
           // Cart
           .cart
-            form(action="#!") 
+            form(action="#!" autocomplete="off") 
               .row
                 .col-12.col-xl-9
                   fieldset.--mb40
@@ -118,13 +118,14 @@ html(lang="ru")
                           attrs: {
                             name: 'checkbox21',
                             checked: true,
+                            required: true
                           }
                         })
                       button(type="submit").btn.--block Оформить заказ
                   fieldset.--mb40
                     legend.lk-legend Ваш профиль
                     p.--fs14.color.--gray Для заказа товаров требуется регистрация. Если вы уже зарегистрированы, 
-                      a(href="#!")
+                      a(href="#!" data-id="enter").j-btn
                         b войдите
                       |  в свою учетную запись
                     .row
@@ -140,7 +141,8 @@ html(lang="ru")
                             val: '',
                             attrs: {
                               name: 'cart_name',
-                              placeholder: 'Имя и Фамилия'
+                              placeholder: 'Имя и Фамилия',
+                              required: true
                             }
                           })
                         .form-group
@@ -155,7 +157,8 @@ html(lang="ru")
                             attrs: {
                               name: 'cart_phone',
                               placeholder: 'Телефон',
-                              class: 'j-phone-mask'
+                              class: 'j-phone-mask',
+                              required: true
                             }
                           })
                         .form-group
@@ -169,7 +172,8 @@ html(lang="ru")
                             val: '',
                             attrs: {
                               name: 'cart_email',
-                              placeholder: 'E-mail'
+                              placeholder: 'E-mail',
+                              required: true
                             }
                           })
                       .col-12.col-lg-6
@@ -199,7 +203,9 @@ html(lang="ru")
                             mods: '',
                             attrs: {
                               name: 'radio21',
-                              checked: false,
+                              checked: true,
+                              class: 'j-delivery-test',
+                              id: 'radio21'
                             }
                           })
                         .form-group
@@ -210,6 +216,8 @@ html(lang="ru")
                             attrs: {
                               name: 'radio21',
                               checked: false,
+                              class: 'j-delivery-test',
+                              id: 'radio22'
                             }
                           })
                         .form-group
@@ -220,6 +228,8 @@ html(lang="ru")
                             attrs: {
                               name: 'radio21',
                               checked: false,
+                              class: 'j-delivery-test',
+                              id: 'radio23'
                             }
                           })
                         .form-group
@@ -229,65 +239,68 @@ html(lang="ru")
                             mods: '',
                             attrs: {
                               name: 'radio21',
-                              checked: true,
+                              checked: false,
+                              class: 'j-delivery-test',
+                              id: 'radio24'
                             }
                           })
-                        .form-group
-                          +field-text({
-                            title: '',
-                            hasJs: false,
-                            isTextarea: false,
-                            hasError: false,
-                            helpText: '',
-                            mods: '',
-                            val: '',
-                            attrs: {
-                              name: 'delivery_city',
-                              placeholder: 'Ваш город'
-                            }
-                          })
-                        .form-group
-                          +field-text({
-                            title: '',
-                            hasJs: false,
-                            isTextarea: false,
-                            hasError: false,
-                            helpText: '',
-                            mods: '',
-                            val: '',
-                            attrs: {
-                              name: 'delivery_house',
-                              placeholder: 'Дом'
-                            }
-                          })
-                        .form-group
-                          +field-text({
-                            title: '',
-                            hasJs: false,
-                            isTextarea: false,
-                            hasError: false,
-                            helpText: '',
-                            mods: '',
-                            val: '',
-                            attrs: {
-                              name: 'delivery_street',
-                              placeholder: 'Улица'
-                            }
-                          })
-                        .form-group.--mb0
-                          +field-text({
-                            title: '',
-                            hasJs: false,
-                            isTextarea: false,
-                            hasError: false,
-                            helpText: '',
-                            mods: '',
-                            val: '',
-                            attrs: {
-                              name: 'delivery_apartment',
-                              placeholder: 'Квартира'
-                            }
-                          })
+                        div#deliveryCity.d-none
+                          .form-group
+                            +field-text({
+                              title: '',
+                              hasJs: false,
+                              isTextarea: false,
+                              hasError: false,
+                              helpText: '',
+                              mods: '',
+                              val: '',
+                              attrs: {
+                                name: 'delivery_city',
+                                placeholder: 'Ваш город'
+                              }
+                            })
+                          .form-group
+                            +field-text({
+                              title: '',
+                              hasJs: false,
+                              isTextarea: false,
+                              hasError: false,
+                              helpText: '',
+                              mods: '',
+                              val: '',
+                              attrs: {
+                                name: 'delivery_house',
+                                placeholder: 'Дом'
+                              }
+                            })
+                          .form-group
+                            +field-text({
+                              title: '',
+                              hasJs: false,
+                              isTextarea: false,
+                              hasError: false,
+                              helpText: '',
+                              mods: '',
+                              val: '',
+                              attrs: {
+                                name: 'delivery_street',
+                                placeholder: 'Улица'
+                              }
+                            })
+                          .form-group.--mb0
+                            +field-text({
+                              title: '',
+                              hasJs: false,
+                              isTextarea: false,
+                              hasError: false,
+                              helpText: '',
+                              mods: '',
+                              val: '',
+                              attrs: {
+                                name: 'delivery_apartment',
+                                placeholder: 'Квартира'
+                              }
+                            })
                     .col-12.col-md-6
                       fieldset.--mb50
                         legend.lk-legend Оплата
@@ -360,7 +373,7 @@ html(lang="ru")
                         isLink: false,
                         mods: '',
                         attrs: {
-                          name: 'checkbox21',
+                          name: 'checkbox22',
                           checked: true,
                         }
                       })
@@ -379,5 +392,5 @@ html(lang="ru")
 
     // Load Scripts
     include ./_include/_footer-js
-    script(src="./js/common.js?v14")
+    script(src="./js/common.js?v20")
 

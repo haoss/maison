@@ -4,6 +4,7 @@
   &__document {
     overflow: hidden;
     padding-bottom: 70px;
+    position: relative;
     p {
       &:last-child {
         margin-bottom: 0;
@@ -13,6 +14,40 @@
       max-width: 100%;
       height: auto;
       display: block;
+    }
+    &.j-readmore {
+      transition: all 0.25s;
+      margin-bottom: 20px;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 100px;
+        background: linear-gradient(to top, $color-white, rgba($color-white,0));
+        pointer-events: none;
+        transition: all 0.1s;
+      }
+      &+.readmore {
+        width: 100%;
+        text-align: center;
+        text-transform: none;
+        font-weight: 400;
+        margin-bottom: 25px;
+        margin-top: 10px!important;
+        font-size: 16px;
+        &>span {
+          display: inline-block;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+      &[aria-expanded="true"] {
+        &::before {
+          background: linear-gradient(to top, rgba($color-white,0), rgba($color-white,0));
+        }
+      }
     }
   }
   &__img {
@@ -812,7 +847,7 @@
   font-size: 18px;
   &__top {
     margin-bottom: 72px;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     &>div {
       &.div2 {
@@ -856,12 +891,13 @@
       align-items: center;
       position: absolute;
       right: 0;
-      bottom: 0;
+      bottom: 72px;
       top: auto;
       transform: none;
       cursor: pointer;
       font-size: 0;
       left: auto;
+      z-index: 5;
       &::before {
         font-size: 14px;
         font-family: $font-icomoon;
@@ -871,7 +907,7 @@
     }
     .slick-prev {
       transform: translateX(0%);
-      right: -50px;
+      right: 0px;
       color: $color-white;
       background: $primary-color;
       &::before {
@@ -881,6 +917,7 @@
     .slick-next {
       color: $primary-color;
       background: $color-white;
+      right: 50px;
       &::before {
         content: '\e902';
       }
@@ -998,6 +1035,7 @@
     &__link {
       height: 210px;
     }
+    
     &__carousel2 {
       .slick-slide {
         width: 210px;
@@ -1038,12 +1076,30 @@
         width: 130px;
       }
     }
+    &__carousel {
+      .slick-arrow {
+        left: 450px;
+        top: 178px;
+        bottom: auto;
+        right: auto;
+      }
+      .slick-next {
+        left: 400px;
+      }
+    }
   }
   @include media-breakpoint-up(xl) {
     padding-top: 123px;
     padding-bottom: 55px;
     font-size: 20px;
     &__carousel {
+      .slick-arrow {
+        left: 570px;
+        top: 240px;
+      }
+      .slick-next {
+        left: 520px;
+      }
       .slick-arrow {
         transition: all 0.5s;
       }
@@ -1146,6 +1202,17 @@
         }
       }
     }
+    &__carousel {
+      .slick-arrow {
+        left: 700px;
+        top: 305px;
+        bottom: auto;
+        right: auto;
+      }
+      .slick-next {
+        left: 650px;
+      }
+    }
     &__carousel2 {
       .slick-slide {
         width: 230px;
@@ -1171,32 +1238,38 @@
 
 .main-video {
   position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-    background: {
-      image: $bg-dot;
-      position: 0 0;
-      repeat: repeat;
-    };
-  }
   &__block {
     background: $primary-color;
     height: 258px;
     position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 25;
+      background: {
+        image: $bg-dot;
+        position: 0 0;
+        repeat: repeat;
+      };
+    }
     &-img {
       position: absolute;
-      z-index: 0;
+      z-index: 10;
       left: 0;
       top: 0;
       height: 100%;
       width: 100%;
       object-fit: cover;
+      .is-active & {
+        opacity: 0;
+        visibility: hidden;
+      }
     }
     &>a {
       content: '';
@@ -1207,10 +1280,39 @@
       bottom: 0;
       z-index: 5;
     }
+    iframe {
+      z-index: 5;
+      opacity: 0;
+      visibility: hidden;
+    }
+    &.is-active {
+      iframe {
+        opacity: 1;
+        visibility: visible;
+      }
+      &::before {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
   }
   &__bottom {
     position: relative;
-    z-index: 5;
+    z-index: 35;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 15;
+      background: {
+        image: $bg-dot;
+        position: 0 0;
+        repeat: repeat;
+      };
+    }
     &-icon {
       display: none;
     }
@@ -1224,6 +1326,8 @@
       box-shadow: 400px 0 0 $primary-color, -400px 0 0 $primary-color;
       display: flex;
       align-items: center;
+      position: relative;
+      z-index: 25;
     }
   }
   &__play {
@@ -1234,10 +1338,16 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    z-index: 5;
+    z-index: 35;
     text-decoration: none;
     color: $primary-color;
     pointer-events: none;
+    opacity: 1;
+    visibility: visible;
+    .is-active & {
+      opacity: 0;
+      visibility: hidden;
+    }
     &::before {
       content: "\e90f";
       font-size: 46px;
@@ -1266,7 +1376,7 @@
         position: absolute;
         background: $color-white;
         display: block;
-        z-index: 1;
+        z-index: 15;
         bottom: 0;
         &::before {
           content: "\e90f";
@@ -1914,6 +2024,7 @@
       margin: 50px 0 15px 0px;
       .--first & {
         flex-direction: column;
+        margin-top: 0;
       }
     }
     &-thumb {
@@ -1994,6 +2105,9 @@
       }
       &-shadow {
         left: 50px;
+        .--first & {
+          left: 0;
+        }
       }
       &-wrapper {
         margin-left: 5px;
