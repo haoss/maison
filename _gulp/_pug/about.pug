@@ -110,13 +110,18 @@ html(lang="ru")
                 p Для удобства наших клиентов мы создали шторную студию MAISON, в которой представлено множество тканей различных производителей - Англия, Франция, Италия. Поэтому всегда легко выбрать оббивку для мебели, ткань для декоративных подушек, покрывал, и конечно, портьер. Наши дизайнеры всегда рады помочь с выбором, предложить идею для нестандартного окна и выехать на замеры.
                 p Мы как никто другой знаем, что текcтиль в интерьере очень важен. Благодаря ему создается уют и комфорт в каждом доме. Поэтому мы постарались представить у нас лучших из лучших производителей текстиля - будь то постельное или столовое белье, полотенца, халаты, изделия из кашемира. Также у нас представлены FASHION коллекции одежды для дома и сна. И, конечно, мы всегда рады помочь подобрать Вам подушки и одеяла из нашего наличия или по Вашим индивидуальным размерам.
 
-        // About video
-        .about-video
-          .about-video__block
-            a(href="https://www.youtube.com/watch?v=0-7IHOXkiV8" data-fancybox)
-            img(src="./tmp/main-video-img.png", alt="").about-video__block-img
-            .about-video__play
-        // /end About video
+        // Main video
+        .main-video
+          #mainVideoBlock.main-video__block
+            img(src="./tmp/main-video-img.png", alt="").main-video__block-img
+            iframe(width='560' height='315' src='https://www.youtube.com/embed/0-7IHOXkiV8?enablejsapi=1' frameborder='0' allowfullscreen)#mainVideo.main-video__block-img
+            .video-play
+              .video-play__mask
+                .video-play__text.--progress
+                  i.icon-play
+              .video-play__text.--preload
+                i.icon-play
+        // /end Main video
 
       // /end Content
 
@@ -127,3 +132,34 @@ html(lang="ru")
     include ./_include/_footer-js
     script(src="./js/common.js?v20")
 
+    script().
+      // global variable for the player
+      var player;
+
+      // this function gets called when API is ready to use
+      function onYouTubePlayerAPIReady() {
+          // create the global player from the specific iframe (#video)
+          player = new YT.Player('mainVideo', {
+              events: {
+                  // call this function when player is ready to use
+                  'onReady': onPlayerReady
+              }
+          });
+      }
+
+      function onPlayerReady(event) {
+
+          // bind events
+          var playButton = document.getElementById("mainVideoBlock");
+          playButton.addEventListener("click", function() {
+              player.playVideo();
+              playButton.classList.add('is-active');
+          });
+          
+      }
+
+      // Inject YouTube API script
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/player_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);

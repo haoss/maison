@@ -12,7 +12,7 @@
         <meta name="format-detection" content="email=no">
         <meta content="notranslate" name="google">
         <link rel="stylesheet" href="./js/libs/fancybox/jquery.fancybox.css">
-        <link rel="stylesheet" href="./css/style.min.css?v30">
+        <link rel="stylesheet" href="./css/style.min.css?v31">
         <link rel="stylesheet" href="./css/add.css?v0">
     </head>
     <body>
@@ -387,11 +387,23 @@
                 <div class="main-video">
                     <div class="main-video__block" id="mainVideoBlock"><img class="main-video__block-img" src="./tmp/main-video-img.png" alt="">
                         <iframe class="main-video__block-img" width="560" height="315" src="https://www.youtube.com/embed/0-7IHOXkiV8?enablejsapi=1" frameborder="0" allowfullscreen id="mainVideo"></iframe>
-                        <div class="main-video__play"></div>
+                        <div class="video-play">
+                            <div class="video-play__mask">
+                                <div class="video-play__text --progress"><i class="icon-play"></i></div>
+                            </div>
+                            <div class="video-play__text --preload"><i class="icon-play"></i></div>
+                        </div>
                     </div>
                     <div class="main-video__bottom">
                         <div class="container">
-                            <div class="main-video__bottom-icon"></div>
+                            <div class="main-video__bottom-icon">
+                                <div class="video-play">
+                                    <div class="video-play__mask">
+                                        <div class="video-play__text --progress"><i class="icon-play"></i></div>
+                                    </div>
+                                    <div class="video-play__text --preload"><i class="icon-play"></i></div>
+                                </div>
+                            </div>
                             <div class="main-video__bottom-content"> 
                                 <div>MAISON - это новый проект, который собрал в себе лучшие бренды со всего мира и многолетний опыт работы в сфере дизайна интерьера. </div>
                             </div>
@@ -688,7 +700,7 @@
         <script src="./js/libs/jquery-ui/jquery.ui.touch-punch.min.js"></script>
         <script src="./js/libs/bootstrap/bootstrap.min.js"></script>
         <script src="./js/libs/sticky-kit.min.js"></script>
-        <script src="./js/common.js?v19"></script>
+        <script src="./js/common.js?v20"></script>
         <script>
             $(document).ready(function(){
               $('.header').addClass('--main');

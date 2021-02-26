@@ -103,10 +103,21 @@ html(lang="ru")
           #mainVideoBlock.main-video__block
             img(src="./tmp/main-video-img.png", alt="").main-video__block-img
             iframe(width='560' height='315' src='https://www.youtube.com/embed/0-7IHOXkiV8?enablejsapi=1' frameborder='0' allowfullscreen)#mainVideo.main-video__block-img
-            .main-video__play
+            .video-play
+              .video-play__mask
+                .video-play__text.--progress
+                  i.icon-play
+              .video-play__text.--preload
+                i.icon-play
           .main-video__bottom
             .container
               .main-video__bottom-icon
+                .video-play
+                  .video-play__mask
+                    .video-play__text.--progress
+                      i.icon-play
+                  .video-play__text.--preload
+                    i.icon-play
               .main-video__bottom-content 
                 div MAISON - это новый проект, который собрал в себе лучшие бренды со всего мира и многолетний опыт работы в сфере дизайна интерьера. 
         // /end Main video

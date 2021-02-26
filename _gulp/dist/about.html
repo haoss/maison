@@ -12,7 +12,7 @@
         <meta name="format-detection" content="email=no">
         <meta content="notranslate" name="google">
         <link rel="stylesheet" href="./js/libs/fancybox/jquery.fancybox.css">
-        <link rel="stylesheet" href="./css/style.min.css?v30">
+        <link rel="stylesheet" href="./css/style.min.css?v31">
         <link rel="stylesheet" href="./css/add.css?v0">
     </head>
     <body>
@@ -419,13 +419,19 @@
                         </div>
                     </div>
                 </div>
-                <!-- About video-->
-                <div class="about-video">
-                    <div class="about-video__block"><a href="https://www.youtube.com/watch?v=0-7IHOXkiV8" data-fancybox></a><img class="about-video__block-img" src="./tmp/main-video-img.png" alt="">
-                        <div class="about-video__play"></div>
+                <!-- Main video-->
+                <div class="main-video">
+                    <div class="main-video__block" id="mainVideoBlock"><img class="main-video__block-img" src="./tmp/main-video-img.png" alt="">
+                        <iframe class="main-video__block-img" width="560" height="315" src="https://www.youtube.com/embed/0-7IHOXkiV8?enablejsapi=1" frameborder="0" allowfullscreen id="mainVideo"></iframe>
+                        <div class="video-play">
+                            <div class="video-play__mask">
+                                <div class="video-play__text --progress"><i class="icon-play"></i></div>
+                            </div>
+                            <div class="video-play__text --preload"><i class="icon-play"></i></div>
+                        </div>
                     </div>
                 </div>
-                <!-- /end About video-->
+                <!-- /end Main video-->
             </div>
             <!-- /end Content-->
             <!-- Insta carousel-->
@@ -521,6 +527,38 @@
         <script src="./js/libs/jquery-ui/jquery.ui.touch-punch.min.js"></script>
         <script src="./js/libs/bootstrap/bootstrap.min.js"></script>
         <script src="./js/libs/sticky-kit.min.js"></script>
-        <script src="./js/common.js?v19"></script>
+        <script src="./js/common.js?v20"></script>
+        <script>
+            // global variable for the player
+            var player;
+            
+            // this function gets called when API is ready to use
+            function onYouTubePlayerAPIReady() {
+                // create the global player from the specific iframe (#video)
+                player = new YT.Player('mainVideo', {
+                    events: {
+                        // call this function when player is ready to use
+                        'onReady': onPlayerReady
+                    }
+                });
+            }
+            
+            function onPlayerReady(event) {
+            
+                // bind events
+                var playButton = document.getElementById("mainVideoBlock");
+                playButton.addEventListener("click", function() {
+                    player.playVideo();
+                    playButton.classList.add('is-active');
+                });
+                
+            }
+            
+            // Inject YouTube API script
+            var tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/player_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        </script>
     </body>
 </html>
