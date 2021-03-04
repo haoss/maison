@@ -325,6 +325,8 @@ $(document).on('ready', function(){
     }
   });
 
+  $('.catalog__block-title').matchHeight();
+
   phoneMask();
   mobileNav();
   headerScroll();

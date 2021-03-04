@@ -4970,6 +4970,44 @@ del.cart__table-price {
   }
   &__description {
     font-size: 18px;
+    overflow: hidden;
+    position: relative;
+    &.j-readmore {
+      transition: all 0.25s;
+      margin-bottom: 20px;
+      &:not([style="max-height: none;"]) {
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          height: 100px;
+          background: linear-gradient(to top, $color-white, rgba($color-white,0));
+          pointer-events: none;
+          transition: all 0.1s;
+        }
+        &+.readmore {
+          width: 100%;
+          text-align: center;
+          text-transform: none;
+          font-weight: 400;
+          margin-bottom: 25px;
+          margin-top: 10px!important;
+          font-size: 16px;
+          &>span {
+            display: inline-block;
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        }
+        &[aria-expanded="true"] {
+          &::before {
+            background: linear-gradient(to top, rgba($color-white,0), rgba($color-white,0));
+          }
+        }
+      }
+    }
   }
   @include media-breakpoint-up(xs480) {
     &__gallery {
