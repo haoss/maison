@@ -1,0 +1,38 @@
+doctype
+
+html(lang="ru")
+
+  -var active = 'Ваша корзина' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Ваша корзина' + ' - Эксклюзивный магазин MAISON' //title страницы для генерации верстки
+  -var lk = true
+
+  include ./_include/_head
+
+  body
+    .base
+      // Preloader
+      include ./_include/_preloader
+
+      include ./_include/_header
+
+      // Content
+      .content
+        .container
+
+          .h2 Спасибо за ваш заказ
+          p Ваш заказ №31567 принят ...
+
+      // /end Content
+      
+      // Lk separator
+      .container
+        .lk-line
+      // /end Lk separator
+
+      include ./_include/_footer
+      //- div(style="height: 1000px; background-color: #000")
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js?v22")
+

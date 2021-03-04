@@ -49,6 +49,7 @@
       background: transparent;
       text-decoration: none;
       display: block;
+      position: relative;
       &::before {
         display: block;
         line-height: 1;
@@ -56,6 +57,25 @@
       }
       &+* {
         margin-left: 10px;
+      }
+      .span {
+        position: absolute;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        top: -4px;
+        right: -4px;
+        font-size: 8px;
+        background: $color-white;
+        color: $primary-color;
+        text-align: center;
+        line-height: 13px;
+        font-weight: bold;
+        overflow: hidden;
+        .is-scroll & {
+          background: $primary-color;
+          color: $color-white;
+        }
       }
       .is-scroll & {
         color: $primary-color;

@@ -1710,6 +1710,22 @@
         [class*="icon"] {
           margin-left: 5px;
         }
+        margin: 0 15px;
+      }
+      del {
+        color: #929292;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0 15px;
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.5s;
+        [class*="icon"] {
+          font-size: 12px;
+        }
+        [class*="icon"] {
+          margin-left: 5px;
+        }
       }
       button {
         position: absolute;
@@ -1724,6 +1740,7 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.5s;
+        margin: 0;
         i {
           vertical-align: 1px;
           font-size: 13px;
@@ -1735,6 +1752,7 @@
       }
       &>div {
         position: relative;
+        display: flex;
       }
     }
     &-label {
@@ -1815,6 +1833,10 @@
           }
         }
         b {
+          opacity: 0;
+          visibility: hidden;
+        }
+        del {
           opacity: 0;
           visibility: hidden;
         }
@@ -4857,6 +4879,16 @@ del.cart__table-price {
     i {
       margin-left: 5px;
       font-size: 28px;
+    }
+    del {
+      font-size: 20px;
+      color: #929292;
+      white-space: nowrap;
+      font-weight: 400;
+      margin-left: 20px;
+      i {
+        font-size: 18px;
+      }
     }
   }
   &__availability {
