@@ -37,20 +37,42 @@ html(lang="ru")
               .news__sort
                 label Категория:
                 .news__select
-                  select.niceSelect
-                    option(value="Все материалы") Все материалы
-                    option(value="Текстиль") Текстиль
-                    option(value="Мебель") Мебель
+                  //- select.niceSelect
+                  //-   option(value="Все материалы") Все материалы
+                  //-   option(value="Текстиль") Текстиль
+                  //-   option(value="Мебель") Мебель
+                  .nice-select.niceSelect(tabindex='0')
+                    span.current Все материалы
+                    ul.list
+                      li.option.selected.focus
+                        a(href="#!") Все материалы
+                      li.option
+                        a(href="#!") Текстиль
+                      li.option
+                        a(href="#!") Мебель
                   
               .news__sort.--limit
                 label Выводить по:
                 .news__select
-                  select.niceSelect
-                    option(value='18', selected='selected') 18
-                    option(value='36') 36
-                    option(value='64') 64
-                    option(value='96') 96
-                    option(value='Все') Все
+                  //- select.niceSelect
+                  //-   option(value='18', selected='selected') 18
+                  //-   option(value='36') 36
+                  //-   option(value='64') 64
+                  //-   option(value='96') 96
+                  //-   option(value='Все') Все
+                  .nice-select.niceSelect(tabindex='0')
+                    span.current 18
+                    ul.list
+                      li.option.selected.focus
+                        a(href="#!") 18
+                      li.option
+                        a(href="#!") 36
+                      li.option
+                        a(href="#!") 64
+                      li.option
+                        a(href="#!") 96
+                      li.option
+                        a(href="#!") Все
             #grid.row
               .col-12.col-md-6.col-lg-4
                 .news__block

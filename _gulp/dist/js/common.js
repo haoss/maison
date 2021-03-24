@@ -131,8 +131,6 @@ $(document).on('ready', function(){
     centerPadding: '30px'
   });
 
-  $('select.niceSelect').niceSelect();
-
   $('.contacts__carousel').slick({
     mobileFirst: true,
     dots: false,
@@ -336,9 +334,10 @@ $(document).on('ready', function(){
   catalogNavigation();
   stickyCart();
   stickyGallery();
-  deliveryTest();
   mobileNav();
-
+  sortingSelect();
+  
+  deliveryTest();
   testFavourite();
   countTest();
 
@@ -351,9 +350,6 @@ $(document).on('ready', function(){
   } catch(err) {
 
   };
-
-  // simpleForm version 2015-09-23 14:30 GMT +2
-  simpleForm('form.form-callback');
 });
 
 $(window).on('load', function() {
@@ -620,4 +616,25 @@ function mobileNav() {
   navWrapper.on('click', function(e){
     e.stopPropagation();
   })
+}
+
+function sortingSelect(){
+  var select = $('.niceSelect');
+  select.on('click', function(e){
+    e.stopPropagation();
+    var _this = $(this);
+    select.removeClass('is-active');
+    if (_this.hasClass('is-active')) {
+      _this.removeClass('is-active');
+    } else {
+      _this.addClass('is-active');
+    }
+  });
+
+  $(document).on('click', function(e) { 
+    select.removeClass('is-active');
+  });
+  $('.nice-select .list').on('click', function(e) { 
+    e.stopPropagation();
+  });
 }

@@ -37,22 +37,49 @@ html(lang="ru")
               .catalog__sort
                 label Выводить по:
                 .catalog__select
-                  select.niceSelect
-                    option(value="Увеличению цены" selected) Увеличению цены
-                    option(value="Уменьшению цены") Уменьшению цены
-                    option(value="Актуальность") Актуальность
-                    option(value="Популярность") Популярность
-                    option(value="В наличии") В наличии
+                  //- select.niceSelect
+                  //-   option(value="Увеличению цены" selected)
+                  //-     a(href="#!")  Увеличению цены
+                  //-   option(value="Уменьшению цены") Уменьшению цены
+                  //-   option(value="Актуальность") Актуальность
+                  //-   option(value="Популярность") Популярность
+                  //-   option(value="В наличии") В наличии
+                  .nice-select.niceSelect(tabindex='0')
+                    span.current Увеличению цены
+                    ul.list
+                      li.option.selected.focus
+                        a(href="#!") Увеличению цены
+                      li.option
+                        a(href="#!") Уменьшению цены
+                      li.option
+                        a(href="#!") Актуальность
+                      li.option
+                        a(href="#!") Популярность
+                      li.option
+                        a(href="#!") В наличии
                   
               .catalog__sort.--limit
                 label Выводить по:
                 .catalog__select
-                  select.niceSelect
-                    option(value='18', selected) 18
-                    option(value='36') 36
-                    option(value='64') 64
-                    option(value='96') 96
-                    option(value='Все') Все
+                  //- select.niceSelect
+                  //-   option(value='18', selected) 18
+                  //-   option(value='36') 36
+                  //-   option(value='64') 64
+                  //-   option(value='96') 96
+                  //-   option(value='Все') Все
+                  .nice-select.niceSelect(tabindex='0')
+                    span.current 18
+                    ul.list
+                      li.option.selected.focus
+                        a(href="#!") 18
+                      li.option
+                        a(href="#!") 36
+                      li.option
+                        a(href="#!") 64
+                      li.option
+                        a(href="#!") 96
+                      li.option
+                        a(href="#!") Все
             .row.catalog__row
               .col-12.col-sm-6.col-lg-4.col-xl-3
                 .catalog__block

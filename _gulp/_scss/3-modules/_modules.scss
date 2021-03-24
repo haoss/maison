@@ -1631,6 +1631,109 @@
   }
 }
 
+.nice-select {
+  height: 30px;
+  line-height: 28px;
+  border-color: transparent;
+  padding-left: 0px;
+  padding-right: 20px;
+  color: rgba($primary-color,.6);
+  min-width: 50px;
+  border: 0 !important;
+  .list {
+    box-shadow: 0px 4px 30px rgba($color-black,.05);
+    border-radius: 0;
+    padding: 20px;
+    font-size: 18px;
+    margin-left: -14px;
+    margin-top: -46px;
+    li {
+      padding: 0;
+      font-weight: 400;
+      line-height: 27px;
+      margin-bottom: 10px;
+      min-height: 27px;
+      a {
+        text-decoration: none;
+        color: rgba($primary-color,.6);
+        &:hover {
+          background: none;
+          color: $primary-color;
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &::before {
+        display: none;
+      }
+      &:hover {
+        background: none;
+        color: $primary-color;
+      }
+      &.selected {
+        background: none !important;
+        a {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+  .current {
+    font-weight: 400;
+    font-size: 20px;
+    color: $primary-color;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s;
+  }
+  .option {
+    min-height: 35px;
+    line-height: 35px;
+    padding-left: 10px;
+    padding-right: 20px;
+    &.selected {
+      font-weight: 400;
+      color: $primary-color;
+      background: transparent;
+    }
+  }
+  &::after {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s;
+    border: 0;
+    content: "\e913";
+    font-family: $font-icomoon;
+    font-size: 8px;
+    right: 10px;
+    margin-top: -11px;
+    color: $primary-color;
+    transform: none;
+  }
+  &.open {
+    &::after {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .current {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  &.is-active {
+    .current {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .list {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1) translateY(0);
+    }
+  }
+}
+
 .catalog {
   &__block {
     position: relative;
@@ -1853,82 +1956,6 @@
     display: block;
     vertical-align: middle;
     min-width: 45px;
-    .nice-select {
-      height: 30px;
-      line-height: 28px;
-      border-color: transparent;
-      padding-left: 0px;
-      padding-right: 20px;
-      color: rgba($primary-color,.6);
-      min-width: 50px;
-      .list {
-        box-shadow: 0px 4px 30px rgba($color-black,.05);
-        border-radius: 0;
-        padding: 20px;
-        font-size: 18px;
-        margin-left: -14px;
-        margin-top: -46px;
-        li {
-          padding: 0;
-          font-weight: 400;
-          line-height: 27px;
-          margin-bottom: 10px;
-          min-height: 27px;
-          &:last-child {
-            margin-bottom: 0;
-          }
-          &::before {
-            display: none;
-          }
-          &:hover {
-            background: none;
-            color: $primary-color;
-          }
-        }
-      }
-      .current {
-        font-weight: 400;
-        font-size: 20px;
-        color: $primary-color;
-        opacity: 1;
-        visibility: visible;
-        transition: all 0.5s;
-      }
-      .option {
-        min-height: 35px;
-        line-height: 35px;
-        padding-left: 10px;
-        padding-right: 20px;
-        &.selected {
-          font-weight: 400;
-          color: $primary-color;
-          background: transparent;
-        }
-      }
-      &::after {
-        opacity: 1;
-        visibility: visible;
-        transition: all 0.5s;
-        border: 0;
-        content: "\e913";
-        font-family: $font-icomoon;
-        font-size: 8px;
-        right: 10px;
-        margin-top: -11px;
-        color: $primary-color;
-        transform: none;
-      }
-      &.open {
-        &::after {
-          opacity: 0;
-          visibility: hidden;
-        }
-        .current {
-          opacity: 0;
-          visibility: hidden;
-        }
-      }
-    }
   }
   &__sort {
     font-weight: 600;
@@ -3363,81 +3390,6 @@
     display: block;
     vertical-align: middle;
     min-width: 45px;
-    .nice-select {
-      height: 30px;
-      line-height: 28px;
-      border-color: transparent;
-      padding-left: 5px;
-      padding-right: 25px;
-      color: rgba($primary-color,.6);
-      .list {
-        box-shadow: 0px 4px 30px rgba($color-black,.05);
-        border-radius: 0;
-        padding: 20px;
-        font-size: 18px;
-        margin-left: -14px;
-        margin-top: -46px;
-        li {
-          padding: 0;
-          font-weight: 400;
-          line-height: 27px;
-          margin-bottom: 10px;
-          min-height: 27px;
-          &:last-child {
-            margin-bottom: 0;
-          }
-          &::before {
-            display: none;
-          }
-          &:hover {
-            background: none;
-            color: $primary-color;
-          }
-        }
-      }
-      .current {
-        font-weight: 400;
-        font-size: 20px;
-        color: $primary-color;
-        opacity: 1;
-        visibility: visible;
-        transition: all 0.5s;
-      }
-      .option {
-        min-height: 35px;
-        line-height: 35px;
-        padding-left: 10px;
-        padding-right: 20px;
-        &.selected {
-          font-weight: 400;
-          color: $primary-color;
-          background: transparent;
-        }
-      }
-      &::after {
-        opacity: 1;
-        visibility: visible;
-        transition: all 0.5s;
-        border: 0;
-        content: "\e913";
-        font-family: $font-icomoon;
-        font-size: 8px;
-        right: 10px;
-        margin-top: -11px;
-        color: $primary-color;
-        transform: none;
-      }
-      &.open {
-        &::after {
-          opacity: 0;
-          visibility: hidden;
-        }
-        .current {
-          opacity: 0;
-          visibility: hidden;
-        }
-      }
-    }
   }
   &__sort {
     font-weight: 600;
