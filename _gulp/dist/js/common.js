@@ -471,36 +471,6 @@ jQuery.extend(jQuery.validator.messages, {
   min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
 });
 
-function mobileNav() {
-  /*var btn = $('.btn-mobile');
-  var body = $('body');
-  var nav = $('.mobile-nav');
-  var navWrapper = $('.mobile-nav__wrapper');
-
-  btn.on('click', function(){
-    var _this = $(this);
-    if (_this.hasClass('is-active')) {
-      btn.removeClass('is-active');
-      body.removeClass('is-fixed');
-      nav.removeClass('is-active');
-    } else {
-      btn.addClass('is-active');
-      body.addClass('is-fixed');
-      nav.addClass('is-active');
-    }
-  });
-
-  nav.on('click', function(){
-    btn.removeClass('is-active');
-    body.removeClass('is-fixed');
-    nav.removeClass('is-active');
-  });
-
-  navWrapper.on('click', function(e){
-    e.stopPropagation();
-  })*/
-}
-
 function headerScroll() {
   var header = $('.header');
   var navigation = $('.j-btn-target');
