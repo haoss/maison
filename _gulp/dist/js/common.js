@@ -620,15 +620,30 @@ function mobileNav() {
 
 function sortingSelect(){
   var select = $('.niceSelect');
-  select.on('click', function(e){
-    e.stopPropagation();
+  
+  select.each(function(){
     var _this = $(this);
-    select.removeClass('is-active');
-    if (_this.hasClass('is-active')) {
-      _this.removeClass('is-active');
-    } else {
-      _this.addClass('is-active');
-    }
+    var a = _this.find('a');
+    var title = _this.find('.current');
+    var li = _this.find('li');
+
+    _this.on('click', function(e){
+      e.stopPropagation();
+      var _this = $(this);
+      select.removeClass('is-active');
+      if (_this.hasClass('is-active')) {
+        _this.removeClass('is-active');
+      } else {
+        _this.addClass('is-active');
+      }
+    });
+
+    a.on('click', function() {
+      li.removeClass('selected');
+      select.removeClass('is-active');
+      title.text($(this).text());
+      $(this).parent().addClass('selected');
+    })
   });
 
   $(document).on('click', function(e) { 
