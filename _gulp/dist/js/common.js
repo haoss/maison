@@ -363,85 +363,12 @@ $(window).on('scroll', function() {
 });
 $(window).on('resize', function() {
   var width = $(window).width();
-  /*var btn = $('.btn-mobile');
-  var body = $('body');
-  var nav = $('.mobile-nav');*/
-
   if (width >= 1024) {
-    /*btn.removeClass('is-active');
-    body.removeClass('is-fixed');
-    nav.removeClass('is-active');
-    $('.j-footer-nav').removeClass('is-active');*/
     $('.j-footer-nav').removeClass('is-active');
-    // $('.m-search').removeClass('is-active');
     $('body').removeClass('is-fixed');
     $('.footer__nav').attr('style','');
   }
 });
-
-/*
-version 2015-09-23 14:30 GMT +2
-*/
-function simpleForm(form, callback) {
-  $(document).on('submit', form, function(e){
-    e.preventDefault();
-    var formData = {};
-    var hasFile = false;
-    if ($(this).find('[type=file]').length < 1) {
-      formData = $(this).serialize();
-    }
-    else {
-      formData = new FormData();
-      $(this).find('[name]').each(function(){
-
-        switch($(this).prop('type')) {
-
-          case 'file':
-            if ($(this)[0]['files'].length > 0) {
-              formData.append($(this).prop('name'), $(this)[0]['files'][0]);
-              hasFile = true;
-            }
-            break;
-
-          case 'radio':
-          case 'checkbox':
-            if (!$(this).prop('checked')) {
-              break;
-            }
-            formData.append($(this).prop('name'), $(this).val().toString());
-            break;
-
-          default:
-            formData.append($(this).prop('name'), $(this).val().toString());
-            break;
-        }
-      });
-    }
-
-    $.ajax({
-      url: $(this).prop('action'),
-      data: formData,
-      type: 'POST',
-      contentType : hasFile ? 'multipart/form-data' : 'application/x-www-form-urlencoded',
-      cache       : false,
-      processData : false,
-      success: function(response) {
-        $(form).removeClass('ajax-waiting');
-        $(form).find("[type=submit]").prop("disabled", false);
-        $(form).html($(response).find(form).html());
-
-        if (typeof callback === 'function') {
-          callback(response);
-        }
-      }
-    });
-
-    $(form).addClass('ajax-waiting');
-    $(form).find("[type=submit]").prop("disabled", true);
-
-    return false;
-  });
-}
 
 function phoneMask() {
   var phone = $('.j-phone-mask');
