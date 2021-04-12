@@ -335,7 +335,6 @@ $(document).on('ready', function(){
   stickyCart();
   stickyGallery();
   mobileNav();
-  sortingSelect();
   
   deliveryTest();
   testFavourite();
@@ -616,40 +615,4 @@ function mobileNav() {
   navWrapper.on('click', function(e){
     e.stopPropagation();
   })
-}
-
-function sortingSelect(){
-  var select = $('.niceSelect');
-  
-  select.each(function(){
-    var _this = $(this);
-    var a = _this.find('a');
-    var title = _this.find('.current');
-    var li = _this.find('li');
-
-    _this.on('click', function(e){
-      e.stopPropagation();
-      var _this = $(this);
-      select.removeClass('is-active');
-      if (_this.hasClass('is-active')) {
-        _this.removeClass('is-active');
-      } else {
-        _this.addClass('is-active');
-      }
-    });
-
-    a.on('click', function() {
-      li.removeClass('selected');
-      select.removeClass('is-active');
-      title.text($(this).text());
-      $(this).parent().addClass('selected');
-    })
-  });
-
-  $(document).on('click', function(e) { 
-    select.removeClass('is-active');
-  });
-  $('.nice-select .list').on('click', function(e) { 
-    e.stopPropagation();
-  });
 }
