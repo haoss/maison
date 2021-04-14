@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   right: 0;
-  transition: background 0.35s, box-shadow 0.35s;
+  transition: all 0.5s;
   &.--main {
     background-color: transparent;
     box-shadow: 0px 4px 15px rgba($color-black,0);
@@ -23,7 +23,7 @@
     height: 88px;
     display: flex;
     align-items: center;
-    transition: all 0.5s;
+    transition: height 0.5s;
     .is-scroll & {
       height: 60px;
     }
@@ -123,7 +123,7 @@
       backdrop-filter: blur(20px);
       top: 60px;
     }
-    ul {
+    .ul {
       display: none;
     }
   }
@@ -219,7 +219,7 @@
     }
     &__navigation {
       padding: 0 60px;
-      ul {
+      .ul {
         display: flex;
         margin: 0;
         justify-content: space-around;
@@ -245,25 +245,20 @@
             }
             &::before {
               content: '';
-              width: 10px;
-              height: 10px;
+              width: 0px;
+              height: 0px;
               position: absolute;
-              transform-origin: 50%;
-              bottom: -4px;
-              background: $color-white;
+              // transform-origin: 50%;
+              bottom: -10px;
               left: 50%;
-              transform: translateX(-50%) rotate(45deg);
+              transform: translateX(-50%);
               opacity: 0;
               visibility: hidden;
               transition: all 0.5s;
-            }
-            &.active {
-              color: $color-white;
-              background: $primary-color;
-              &::before {
-                opacity: 1;
-                visibility: visible;
-              }
+              border-left: 10px solid transparent;
+              border-right: 10px solid transparent;
+              border-top: 10px solid $color-white;
+
             }
             .is-scroll & {
               height: 60px;
@@ -273,11 +268,18 @@
             &.active {
               background: $color-white;
               color: $primary-color;
+              opacity: 1;
+              position: relative;
+              z-index: 151;
+              &::before {
+                opacity: 1;
+                visibility: visible;
+              }
               .is-scroll & {
                 background: $primary-color;
                 color: $color-white;
                 &::before {
-                  background: $primary-color;
+                  border-top-color: $primary-color;
                 }
               }
             }

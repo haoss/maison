@@ -315,6 +315,7 @@ ul.catalog-menu {
   top: 112px;
   width: 100%;
   left: 0;
+  height: calc(100vh - 112px);
   bottom: 0;
   z-index: 150;
   // overflow: auto;
@@ -350,7 +351,8 @@ ul.catalog-menu {
     }
   }
   &.is-scroll {
-    top: 95px;
+    top: 35px;
+    height: calc(100vh - 35px);
   }
   .nav {
     font-size: 18px;
@@ -451,11 +453,16 @@ ul.catalog-menu {
   }
   @include media-breakpoint-up(sm) {
     top: 88px;
+    height: calc(100% - 88px);
     &.is-scroll {
       top: 60px;
     }
   }
   @include media-breakpoint-up(md) {
+    height: auto;
+    &.is-scroll {
+      height: auto;
+    }
     .tab-pane {
       ul {
         column-count: 2;
