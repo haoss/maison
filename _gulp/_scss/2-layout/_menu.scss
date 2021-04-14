@@ -459,10 +459,6 @@ ul.catalog-menu {
     }
   }
   @include media-breakpoint-up(md) {
-    height: auto;
-    &.is-scroll {
-      height: auto;
-    }
     .tab-pane {
       ul {
         column-count: 2;
@@ -487,6 +483,11 @@ ul.catalog-menu {
     transform: none;
     bottom: auto;
     top: 89px;
+    height: auto;
+    transition: all 0.5s;
+    &.is-scroll {
+      height: auto;
+    }
     &__wrapper {
       position: relative;
     }
