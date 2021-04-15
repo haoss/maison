@@ -45,22 +45,10 @@ $(document).on('ready', function(){
     }, 'xml');
   });
 
-  $('[data-fancybox="images-preview"]').fancybox({
-    // Options will go here
-    backFocus: false,
-    infobar: false,
-    buttons: [
-      "thumbs",
-      "close"
-    ],
+  $('[data-fancybox="images"]').fancybox({
     protect: true,
-    mobile : {
-      clickSlide : function( current, event ) {
-        return current.type === 'image' ? 'toggleControls' : "close";
-      }
-    },
     loop: true
-});
+  });
 
   $("a[href*='#'].anchor").mPageScroll2id({
     offset: '.header'
