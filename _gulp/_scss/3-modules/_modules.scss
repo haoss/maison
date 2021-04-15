@@ -101,7 +101,7 @@
 
 .top-img {
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
   &::before {
     position: absolute;
     left: 0;
@@ -3032,6 +3032,7 @@
     text-align: center;
     font-weight: 400;
     background: transparent;
+    overflow: hidden;
     &-number {
       position: absolute;
       font-weight: 900;
@@ -5461,4 +5462,141 @@ del.cart__table-price {
     }
   }
   @include media-breakpoint-up(xxl) {}
+}
+
+.search-result {
+  &__head {
+    margin-bottom: 60px;
+  }
+}
+
+.search-block {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s;
+  justify-content: center;
+  z-index: 20;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+  &__form {
+    width: 100%;
+    position: relative;
+  }
+  &__input {
+    height: 37px;
+    border: 0;
+    width: 100%;
+    padding: 0 25px;
+    border-bottom: 1px solid rgba($color-black,.1);
+    background: transparent;
+    color: $primary-color;
+    letter-spacing: 0.05em;
+    font-size: 14px;
+    caret-color: $primary-color;
+    font-weight: 400;
+    &::-webkit-input-placeholder {
+      color: rgba($color-white,.5);
+      .is-scroll & {
+        color: rgba($primary-color,0.5);
+      }
+    }
+    &::-moz-placeholder {
+      color: rgba($color-white,.5);
+      .is-scroll & {
+        color: rgba($primary-color,0.5);
+      }
+    }
+    &:-ms-input-placeholder {
+      color: rgba($color-white,.5);
+      .is-scroll & {
+        color: rgba($primary-color,0.5);
+      }
+    }
+    &:-moz-placeholder {
+      color: rgba($color-white,.5);
+      .is-scroll & {
+        color: rgba($primary-color,0.5);
+      }
+    }
+    .is-scroll & {
+      border-bottom-color: rgba($primary-color,0.1);
+    }
+  }
+  button {
+    position: absolute;
+    width: 20px;
+    height: 38px;
+    background: transparent;
+    border: 0;
+    font-size: 20px;
+    color: $primary-color;
+    font-weight: 200;
+    &::before {
+      font-family: $font-icomoon;
+    }
+    .is-scroll & {
+      color: $primary-color;
+    }
+  }
+  &__close {
+    left: 0;
+    top: 0;
+    font-size: 16px !important;
+    &::before {
+      content: '\e906';
+    }
+  }
+  &__submit {
+    right: 0;
+    top: 0;
+    &::before {
+      content: '\e912';
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    padding: 25px;
+  }
+}
+
+.no-search-result {
+  text-align: center;
+  background: url('../images/no-search-result.svg') center center no-repeat;
+  background-size: contain;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &>.div {
+    max-width: 915px;
+  }
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    min-height: 480px;
+  }
+}
+
+.page404 {
+  text-align: center;
+  background: url('../images/page-404.svg') center center no-repeat;
+  // background-size: contain;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &>.div {
+    max-width: 915px;
+  }
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    min-height: 480px;
+  }
 }
