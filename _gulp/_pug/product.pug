@@ -24,7 +24,7 @@ html(lang="ru")
             .h1 Элитные диваны
             +breadcrumbs()
               +breadcrumbs-item('Эксклюзивный магазин MAISON', './index.html')
-              +breadcrumbs-item('Название раздела', '#!')
+              +breadcrumbs_dropdown
               +breadcrumbs-item('Название страницы')
 
       // Content
@@ -45,6 +45,10 @@ html(lang="ru")
                       .span
                 .product__gallery
                   .product__gallery-top
+                    .catalog__block-label -50
+                      small %
+                    .catalog__block-label New
+                    .catalog__block-label Hot
                     .product__carousel-big
                       a(href="./tmp/product-gallery-1.png" data-fancybox="images").product__gallery-block
                         img(src="./tmp/product-gallery-1.png", width="346", height="346" alt="")
@@ -166,6 +170,9 @@ html(lang="ru")
                         td td-122
                       tr
                         td td-131 
+                        td td-132
+                      tr
+                        td Один из самых выдающихся современных дизайнеров, обладатель титула Командора Британской империи 
                         td td-132
                   button(type="button").btn-product-th-more
                     span.span-true Показать еще

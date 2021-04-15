@@ -24,17 +24,7 @@ html(lang="ru")
             h1 Ошибка 404
             +breadcrumbs()
               +breadcrumbs-item('Эксклюзивный магазин MAISON', './index.html')
-              li.breadcrumbs__item
-                a(href='#!') Название раздела
-                .breadcrumbs__dropdown
-                  a(href="#!") Подушки и одеяла
-                  a(href="#!") Покрывала
-                  a(href="#!") Пледы
-                  a(href="#!") Декоративные подушки
-                  a(href="#!") Тапочки
-                  a(href="#!") Халаты
-                  a(href="#!") Домашняя одежда
-                  a(href="#!") Уход за одеждой и обувью
+              +breadcrumbs_dropdown
               +breadcrumbs-item('Название страницы')
 
       // Content

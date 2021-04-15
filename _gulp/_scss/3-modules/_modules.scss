@@ -202,6 +202,33 @@
     max-width: 310px;
     margin-bottom: 27px;
   }
+  &__form {
+    transition: all 0.5s;
+  }
+  &__success {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+    &-title {
+      font-weight: 300;
+      font-size: 30px;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+    &>.div {
+      max-width: 488px;
+    }
+  }
   @include media-breakpoint-up(md) {
     margin-bottom: -90px;
     padding: 24px 40px 34px 40px;
@@ -5104,6 +5131,8 @@ del.cart__table-price {
     }
     &__th {
       table {
+        width: 100%;
+        max-width: 600px;
         tr {
           display: none;
           @include first(7) {
@@ -5116,6 +5145,7 @@ del.cart__table-price {
             vertical-align: top;
             &:first-child {
               font-size: 16px;
+              padding-right: 15px;
             }
           }
         }
@@ -5487,7 +5517,7 @@ del.cart__table-price {
     height: 37px;
     border: 0;
     width: 100%;
-    padding: 0 25px;
+    padding: 0 25px 0 35px;
     border-bottom: 1px solid rgba($color-black,.1);
     background: transparent;
     color: $primary-color;
@@ -5496,31 +5526,16 @@ del.cart__table-price {
     caret-color: $primary-color;
     font-weight: 400;
     &::-webkit-input-placeholder {
-      color: rgba($color-white,.5);
-      .is-scroll & {
-        color: rgba($primary-color,0.5);
-      }
+      color: rgba($color-black,.5);
     }
     &::-moz-placeholder {
-      color: rgba($color-white,.5);
-      .is-scroll & {
-        color: rgba($primary-color,0.5);
-      }
+      color: rgba($color-black,.5);
     }
     &:-ms-input-placeholder {
-      color: rgba($color-white,.5);
-      .is-scroll & {
-        color: rgba($primary-color,0.5);
-      }
+      color: rgba($color-black,.5);
     }
     &:-moz-placeholder {
-      color: rgba($color-white,.5);
-      .is-scroll & {
-        color: rgba($primary-color,0.5);
-      }
-    }
-    .is-scroll & {
-      border-bottom-color: rgba($primary-color,0.1);
+      color: rgba($color-black,.5);
     }
   }
   button {
@@ -5532,11 +5547,13 @@ del.cart__table-price {
     font-size: 20px;
     color: $primary-color;
     font-weight: 200;
+    opacity: 1;
+    transition: all 0.5s;
     &::before {
       font-family: $font-icomoon;
     }
-    .is-scroll & {
-      color: $primary-color;
+    &:hover {
+      opacity: 0.5;
     }
   }
   &__close {
@@ -5599,4 +5616,12 @@ del.cart__table-price {
   @include media-breakpoint-up(xl) {
     min-height: 480px;
   }
+}
+.hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
 }

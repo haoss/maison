@@ -1,0 +1,19 @@
+mixin breadcrumbs_dropdown
+  li.breadcrumbs__item
+    a(href='#!') Название раздела
+    .breadcrumbs__dropdown
+      a(href="#!") Подушки и одеяла
+      a(href="#!") Покрывала
+      a(href="#!") Пледы
+      a(href="#!") Декоративные подушки
+      a(href="#!") Тапочки
+      a(href="#!") Халаты
+      a(href="#!") Домашняя одежда
+      a(href="#!") Уход за одеждой и обувью
+
+mixin search_block
+  .search-block
+    form(action="#!").search-block__form
+      input.search-block__input(type="text" placeholder="Поиск товара" value="Диван")
+      button(type="button").search-block__close
+      button(type="submit").search-block__submit

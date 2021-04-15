@@ -24,18 +24,14 @@ html(lang="ru")
             h1 Поиск товаров
             +breadcrumbs()
               +breadcrumbs-item('Эксклюзивный магазин MAISON', './index.html')
-              +breadcrumbs-item('Название раздела', '#!')
+              +breadcrumbs_dropdown
               +breadcrumbs-item('Название страницы')
 
       // Content
       .content
         .container
 
-          .search-block
-            form(action="#!").search-block__form
-              input.search-block__input(type="text" placeholder="Поиск товара" value="Диван")
-              button(type="button").search-block__close
-              button(type="submit").search-block__submit
+          +search_block
               
           .search-result__head
             .h2 По вашему запросу 

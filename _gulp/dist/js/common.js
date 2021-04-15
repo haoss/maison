@@ -323,10 +323,12 @@ $(document).on('ready', function(){
   stickyCart();
   stickyGallery();
   mobileNav();
+  searchClear();
   
   deliveryTest();
   testFavourite();
   countTest();
+  formSendTest();
 
   // Chrome Smooth Scroll
   try {
@@ -603,4 +605,28 @@ function mobileNav() {
   navWrapper.on('click', function(e){
     e.stopPropagation();
   })
+}
+
+function formSendTest() {
+  var btn = $('.j-form-send-test');
+
+  btn.on('click', function(e){
+    e.preventDefault();
+    setTimeout(function(){
+      btn.parents('.form__form').addClass('hidden');
+      btn.parents('.form__form').next().addClass('visible');
+
+      setTimeout(function(){
+        btn.parents('.form__form').removeClass('hidden');
+        btn.parents('.form__form').next().removeClass('visible');
+      }, 3000);
+    }, 3000);
+  })
+}
+
+function searchClear() {
+  var search = $('.search-block');
+  search.find('.search-block__close').on('click', function(){
+    search.find('.search-block__input').val('').focus();
+  });
 }

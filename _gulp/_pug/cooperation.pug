@@ -24,7 +24,7 @@ html(lang="ru")
             h1 Сотрудничество
             +breadcrumbs()
               +breadcrumbs-item('Эксклюзивный магазин MAISON', './index.html')
-              +breadcrumbs-item('Название раздела', '#!')
+              +breadcrumbs_dropdown
               +breadcrumbs-item('Название страницы')
 
       // Content
@@ -56,7 +56,7 @@ html(lang="ru")
 
               // Form
               .form
-                form(action="#!" autocomplete="off") 
+                form(action="#!" autocomplete="off").form__form
                   legend.form__legend Для обсуждения всех условий сотрудничества заполните форму обратной связи:
                   .form__wrapper
                     fieldset
@@ -136,8 +136,12 @@ html(lang="ru")
                           }
                         })
                     .div2
-                      button(type="submit").btn.--white.--block
+                      button(type="submit").btn.--white.--block.j-form-send-test
                         span Отправить
+                .form__success
+                  .div
+                    .form__success-title Спасибо за ваше обращение!
+                    p В течении 15 минут с вами свяжется наш менеджер для уточнения всех интересующих деталей
               // /end Form
 
         // Content img
