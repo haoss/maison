@@ -5386,6 +5386,17 @@ del.cart__table-price {
       font-size: 18px;
     }
   }
+  @include media-breakpoint-up(xxxl) {
+    &__gallery-bottom {
+      .slick-arrow {
+        transition: all 0.5s;
+        &:hover {
+          background: $primary-color;
+          color: $color-white;
+        }
+      }
+    }
+  }
 }
 
 .tab-pane {
