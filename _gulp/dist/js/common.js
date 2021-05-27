@@ -424,6 +424,7 @@ function jNavigation() {
   var navigation = $('.j-btn-target');
   var body = $('body');
   var btnTarget;
+  var width = $(window).width();
   
   $(document).on('click', '.j-btn', function(e){
     e.stopPropagation();
@@ -438,6 +439,12 @@ function jNavigation() {
       btnTarget.addClass('is-active');
       body.addClass('is-fixed');
     }
+  });
+
+  $(document).on('click', '.j-btn[data-id="catalog-navigation"]', function(e){
+    $('.catalog-navigation__body .active').removeClass('active'); 
+    $('#menu1').addClass('active');
+    $('#home-tab1').addClass('active');
   });
 
   $(document).on('click', function(e){
@@ -521,20 +528,38 @@ function catalogNavigation() {
       $('#catalog-navigation').removeClass('is-active');
     }
   });
-
    
-  $(document).on('mouseover', function(e) { 
-    var container = $("#catalog-navigation");
-    if (!container.is(e.target) && container.has(e.target).length === 0) { 
-      $('.catalog-navigation__body .active').removeClass('active'); 
-      $('.header__navigation .active').removeClass('active'); 
-    } 
+  // $(document).on('mouseover', function(e) { 
+  //   var container = $("#catalog-navigation");
+  //   if (!container.is(e.target) && container.has(e.target).length === 0) { 
+  //     $('.catalog-navigation__body .active').removeClass('active'); 
+  //     $('.header__navigation .active').removeClass('active'); 
+  //   } 
+  // });
+
+  // $(document).on('click', '.header__navigation .active', function(e) { 
+  //   var href = $(this).attr('href').substring(1); 
+  //   $(this).removeClass('active'); 
+  //   $('.catalog-navigation__body .tab-pane[id="' + href + '"]').removeClass('active'); 
+  // });
+
+  $(document).on('mouseover', function(e) {
+    $('.catalog-navigation__body .active').removeClass('active'); 
+    $('.header__navigation .active').removeClass('active');
+  });
+  
+  $('#catalog-navigation').on('mouseover', function(e){
+    e.stopPropagation();
   });
 
-  $(document).on('click', '.header__navigation .active', function(e) { 
+  $('.header__navigation > ul > li > a').on('mouseover', function(e) {
+    e.stopPropagation();
     var href = $(this).attr('href').substring(1); 
-    $(this).removeClass('active'); 
-    $('.catalog-navigation__body .tab-pane[id="' + href + '"]').removeClass('active'); 
+    $('.header__navigation .active').removeClass('active'); 
+    $(this).addClass('active');
+    $('.catalog-navigation__body .active').removeClass('active'); 
+    $('.catalog-navigation__body .tab-pane[id="' + href + '"]').addClass('active');
+    console.log(e);
   });
 }
 
